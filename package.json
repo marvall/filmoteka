@@ -53,6 +53,8 @@
     "basiclightbox": "^5.0.4",
     "core-js": "^3.6.5",
     "handlebars": "^4.7.6",
+    "material-icons": "^0.5.2",
+    "micromodal": "^0.4.6",
     "paginationjs": "^2.1.5"
   }
 }
