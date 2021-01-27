@@ -1,3 +1,51 @@
 .header {
-  justify-content: space-between;
+  display: block;
+  // justify-content: space-between;
+  //   background-image: url('/src/images/background-mobile2x.jpg');
+  background-color: green;
+  padding-top: 46px;
+  padding-bottom: 43px;
+}
+
+.nav {
+  display: flex;
+  //   justify-content: space-between;
+  margin-bottom: 38px;
+}
+
+.nav-logo-icon {
+  margin-right: 112px;
+}
+
+.nav-logo {
+  display: none;
+}
+
+.film-search {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.film-search-input {
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.film-search-input-error {
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 30px;
+  color: $red-color;
 }

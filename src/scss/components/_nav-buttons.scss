@@ -1,0 +1,24 @@
+.nav-logo {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 30px;
+  color: $white-color;
+}
+.nav-home {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14, 06px;
+  color: $white-color;
+}
+.nav-libery {
+  @extend .nav-home;
+}
