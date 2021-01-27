@@ -9,6 +9,8 @@
   color: $white-color;
 }
 .nav-home {
+  position: relative;
+
   border: 0;
   background: none;
   cursor: pointer;
@@ -21,4 +23,19 @@
 }
 .nav-libery {
   @extend .nav-home;
+}
+
+.current {
+  &::after {
+    position: absolute;
+    bottom: 0;
+
+    content: '';
+    display: block;
+    width: 34px;
+
+    height: 3px;
+
+    background-color: $orange-color;
+  }
 }

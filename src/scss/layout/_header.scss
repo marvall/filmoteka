@@ -1,8 +1,9 @@
 .header {
+  position: r;
   display: block;
   // justify-content: space-between;
-  //   background-image: url('/src/images/background-mobile2x.jpg');
-  background-color: green;
+  background-image: url(/images/background-mobile1x.jpg);
+  // background-color: green;
   padding-top: 46px;
   padding-bottom: 43px;
 }
@@ -21,14 +22,6 @@
   display: none;
 }
 
-.film-search {
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
-  justify-content: center;
-  align-items: center;
-}
-
 .visible {
   visibility: visible;
 }
@@ -37,15 +30,28 @@
   visibility: hidden;
 }
 
+.film-search {
+}
+
 .film-search-input {
-  box-sizing: border-box;
-  text-align: center;
+  width: 100%;
   margin-bottom: 22px;
+  outline: none;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $white-color;
+  font-size: 14px;
+  font-weight: 400;
+  color: $white-color;
+  &::placeholder {
+    color: $white-color;
+  }
 }
 
 .film-search-input-error {
+  position: absolute;
   font-family: $main-font;
-  font-weight: 500;
-  font-size: 30px;
+  font-weight: 400;
+  font-size: 16px;
   color: $red-color;
 }
