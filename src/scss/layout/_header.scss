@@ -1,5 +1,4 @@
 .header {
-  position: r;
   display: block;
   // justify-content: space-between;
   background-image: url(/images/background-mobile1x.jpg);
@@ -31,6 +30,7 @@
 }
 
 .film-search {
+  position: relative;
 }
 
 .film-search-input {
