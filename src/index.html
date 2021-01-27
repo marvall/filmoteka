@@ -20,10 +20,50 @@
       </nav>
       <div data-index="headerDinamicContent"></div>
     </header>
+    <!-- modal window -->
+    <section>
+      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div
+            class="modal__container"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-1-title"
+          >
+            <header class="modal__header">
+              <button
+                class="modal__close"
+                aria-label="Close modal"
+                data-micromodal-close
+              ></button>
+            </header>
+            <main class="modal__content" id="modal-1-content"></main>
+            <footer class="modal__footer"></footer>
+          </div>
+        </div>
+      </div>
+    </section>
     <section>
       MAIN GALLERY
-      <ul data-index="gallery" class="gallery"></ul>
-  
+      <ul data-index="gallery" class="gallery">
+        <div data-index="galleryItem" class="galleryItem">
+          <li class="card" id="111">
+            <img
+              class="card-img"
+              src="https://cdn.pixabay.com/photo/2018/09/22/15/58/cuba-3695578__340.jpg"
+              alt="Film DP poster"
+            />
+
+            <div class="card-info">
+              <h2 class="card-title">trololo</h2>
+              <p class="card-genre">porn</p>
+              <p class="card-release-year">2021</p>
+              <p class="card-vote is-visible" data-hiden="true">5</p>
+            </div>
+          </li>
+        </div>
+      </ul>
+
       <!-- wrapper for spinner -->
       <div class="loader" data-index="spinner"></div>
     </section>
