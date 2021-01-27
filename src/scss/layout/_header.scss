@@ -27,9 +27,14 @@
   color: $white-color;
 }
 
+.nav-logo-icon {
+  width: 24px;
+  height: 24px;
+}
+
 .logo-style {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .logo-text {
