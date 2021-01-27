@@ -1,8 +1,8 @@
 .header {
   display: block;
-  // justify-content: space-between;
+
   background-image: url(/images/background-mobile1x.jpg);
-  // background-color: green;
+
   padding-top: 46px;
   padding-bottom: 43px;
 }
@@ -10,15 +10,15 @@
 .nav {
   display: flex;
   align-items: baseline;
-  //   justify-content: space-between;
-  margin-bottom: 38px;
-}
 
-.nav-logo-icon {
-  margin-right: 112px;
+  margin-bottom: 41px;
 }
 
 .nav-logo {
+  margin-right: 112px;
+}
+
+.logo-text {
   display: none;
 }
 
@@ -35,14 +35,14 @@
 }
 
 .film-search-input {
-  width: 100%;
+  width: 280px;
   margin-bottom: 22px;
   outline: none;
   background: transparent;
   border: none;
   border-bottom: 1px solid $white-color;
   font-size: 14px;
-  font-weight: 400;
+
   color: $white-color;
   &::placeholder {
     color: $white-color;
@@ -52,7 +52,22 @@
 .film-search-input-error {
   position: absolute;
   font-family: $main-font;
-  font-weight: 400;
+
   font-size: 16px;
   color: $red-color;
+}
+
+@media screen and (min-width: 768px) {
+  .film-search-input {
+    width: 330px;
+  }
+  .logo-text {
+    display: block;
+    font-weight: 500;
+    font-size: 30px;
+    color: $white-color;
+  }
+}
+
+@media screen and (min-width: 1024px) {
 }
