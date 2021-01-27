@@ -1,9 +1,9 @@
 {{#each this}}
 <div class="movie-card">
-    <img class="movie-card-img" src="https://image.tmdb.org/t/p/w300/fYQCgVRsQTEfUrP7cW5iAFVYOlh.jpg" alt="" />
+    <img class="movie-card-img" src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt="Film {{title}} poster" />
 
     <div class="card-description-wrapper">
-        <h2 class="movie-card-title">A FISTFUL OF LEAD</h2>
+        <h2 class="movie-card-title">{{title}}</h2>
         <div class="stats-wrapper">
             <div class="stats-titles">
                 <p class="stats-title">Vote / Votes</p>
@@ -13,25 +13,16 @@
             </div>
             <div class="stats-info">
                 <p class="stats-info-vote">
-                    <span class="stats-info-rating">7.6</span> /
-                    <span class="stats-info-votes">1260</span>
+                    <span class="stats-info-rating">{{vote_average}}</span> /
+                    <span class="stats-info-votes">{{vote_count}}</span>
                 </p>
-                <p class="stats-info-popularity">100.2</p>
-                <p class="stats-info-title">A FISTFUL OF LEAD</p>
-                <p class="stats-info-genre">Western</p>
+                <p class="stats-info-popularity">{{popularity}}</p>
+                <p class="stats-info-title">{{title}}</p>
+                <p class="stats-info-genre">{{genre_ids}}</p>
             </div>
         </div>
         <h3 class="movie-card-about-title">about</h3>
-        <p class="movie-card-about">
-            Four of the West’s most infamous outlaws assemble to steal a huge
-            stash of gold from the most corrupt settlement of the gold rush
-            towns. But not all goes to plan one is killed and the other three
-            escapes with bags of gold hide out in the abandoned gold mine where
-            they happen across another gang of three – who themselves were
-            planning to hit the very same bank! As tensions rise, things go from
-            bad to worse as they realise the bags of gold are filled with
-            lead... they’ve been double crossed – but by who and how?
-        </p>
+        <p class="movie-card-about">{{overview}}</p>
         <button class="btn-to-wached" data-index="btn-to-wached">
             add to Watched
         </button>
