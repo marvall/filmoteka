@@ -10,12 +10,20 @@
 .nav {
   display: flex;
   align-items: baseline;
-
   margin-bottom: 41px;
 }
 
 .nav-logo {
+  display: block;
   margin-right: 112px;
+  font-weight: 500;
+  font-size: 30px;
+  color: $white-color;
+}
+
+.logo-style {
+  display: flex;
+  align-items: baseline;
 }
 
 .logo-text {
@@ -32,6 +40,7 @@
 
 .film-search {
   position: relative;
+  text-align: center;
 }
 
 .film-search-input {
@@ -51,13 +60,19 @@
 
 .film-search-input-error {
   position: absolute;
-  font-family: $main-font;
 
   font-size: 16px;
   color: $red-color;
 }
 
 @media screen and (min-width: 768px) {
+  .nav-logo {
+    margin-right: 307px;
+  }
+  .nav-logo-icon {
+    margin-right: 10px;
+  }
+
   .film-search-input {
     width: 330px;
   }
@@ -70,4 +85,7 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .nav-logo {
+    margin-right: 573px;
+  }
 }
