@@ -14,6 +14,11 @@ function getCurrentStorage() {
   return [watched, queue];
 }
 
+/**
+  Функція приймає event 'click' 
+  event listener вішається на спільний контейнер для 2-ох кнопок
+  @param {event} event;
+ */
 function addToStorage(event) {
   if (event.currentTarget === event.target) {
     return;
@@ -52,6 +57,11 @@ function addToStorage(event) {
   addDisabledOnBtn(btnContainer);
 }
 
+/**
+  Функція приймає посилання на DOM Element, який є 
+  спільним контейнером для 2-ох кнопок
+  @param {DOM Element} btnContainer;
+ */
 function addDisabledOnBtn(btnContainer) {
   const btnArr = Array.from(btnContainer.querySelectorAll('button'));
 
@@ -80,6 +90,11 @@ function addDisabledOnBtn(btnContainer) {
   });
 }
 
+/**
+  Функція приймає event 'submit' 
+  event listener вішається на форму із input type="text"
+  @param {event} event;
+ */
 function saveQueryOnStorage(event) {
   event.preventDefault();
   const inputText = event.target[0].value;
