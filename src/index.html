@@ -12,12 +12,24 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <button data-index="logo">FILMOTEKA</button>
-        <button data-index="home">HOME</button>
-        <button data-index="mylibery">MYLIBERY</button>
+    <header class="header container">
+      <nav class="nav">
+        <img src="./images/film.svg" alt="" />
+        <button data-index="logo" class="nav-logo">FILMOTEKA</button>
+        <button data-index="home" class="nav-home">HOME</button>
+        <button data-index="mylibery" class="nav-libery">MYLIBERY</button>
       </nav>
+      <form class="film-search" action="">
+        <input
+          class="film-search-input"
+          data-index="serchInfo"
+          type="text"
+          placeholder="Поиск фильмов"
+        />
+        <p class="film-search-input-error" data-index="fetchStatus">
+          Search result not successful. Enter the correct movie name and
+        </p>
+      </form>
       <div data-index="headerDinamicContent"></div>
     </header>
     <section>
