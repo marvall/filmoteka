@@ -9,18 +9,43 @@
   padding-bottom: 30px;
 }
 
-.section-footer-text {
-  display: flex;
-  justify-content: center;
-}
-
 .footer-text {
   font-family: $main-font;
   color: #545454;
-  font-size: 16px;
 }
 
 .material-icons {
-  color: FF6B08;
+  color: rgb(255, 107, 8);
   font-size: 18px;
+}
+
+.footer-link {
+  border-bottom: 1px solid rgba(84, 84, 84, 1);
+}
+
+@media screen and (min-width: 320px) {
+  .section-footer-text {
+    display: grid;
+  }
+  .footer-text {
+    font-size: 14px;
+  }
+  .footer-span {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer-span {
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section-footer-text {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-text {
+    font-size: 16px;
+  }
 }
