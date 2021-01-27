@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Filmoteka</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header class="header container">
-      <nav class="nav">
-        <img class="nav-logo-icon" src="./images/film.svg" alt="" />
-        <button data-index="logo" class="nav-logo">FILMOTEKA</button>
-        <button data-index="home" class="nav-home current">HOME</button>
-        <button data-index="mylibery" class="nav-libery">MYLIBERY</button>
-      </nav>
-      <form class="film-search" action="">
-        <input
-          class="film-search-input"
-          data-index="serchInfo"
-          type="text"
-          placeholder="Поиск фильмов"
-        />
-        <p class="film-search-input-error" data-index="fetchStatus">
-          Search result not successful. Enter the correct movie name and
-        </p>
-      </form>
-      <div data-index="headerDinamicContent"></div>
-    </header>
-    <section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filmoteka</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header container">
+    <nav class="nav">
+      <img class="nav-logo-icon" src="./images/film.svg" alt="" />
+      <button class="nav-btn current" data-index="home">HOME</button>
+      <button class="nav-btn" data-index="mylibery">MY LIBRARY</button>
+    </nav>
+    <form class="film-search" action="">
+      <input class="film-search-input" data-index="serchInfo" type="text" placeholder="Поиск фильмов" />
+      <p class="film-search-input-error" data-index="fetchStatus">
+        Search result not successful. Enter the correct movie name and
+      </p>
+    </form>
+    <div data-index="headerDinamicContent"></div>
+  </header>
+  <!-- <section>
       MAIN GALLERY
       <ul data-index="gallery"></ul>
     </section>
@@ -40,6 +32,7 @@
       <span>© 2021 | All Rights Reserved | Developed with </span>
       <svg>"heart"</svg>
       <button data-index="students">GoIt Students</button>
-    </footer>
-  </body>
+    </footer> -->
+</body>
+
 </html>

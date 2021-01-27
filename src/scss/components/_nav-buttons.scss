@@ -8,9 +8,11 @@
   font-size: 30px;
   color: $white-color;
 }
-.nav-home {
+
+.nav-btn {
   position: relative;
 
+  padding: 0;
   border: 0;
   background: none;
   cursor: pointer;
@@ -20,22 +22,20 @@
   font-size: 12px;
   line-height: 14, 06px;
   color: $white-color;
-}
-.nav-libery {
-  @extend .nav-home;
+
+  &:not(:last-child) {
+    margin-right: 39px;
+  }
 }
 
 .current {
   &::after {
     position: absolute;
-    bottom: 0;
-
+    bottom: 15;
     content: '';
     display: block;
     width: 34px;
-
     height: 3px;
-
     background-color: $orange-color;
   }
 }
