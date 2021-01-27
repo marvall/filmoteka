@@ -1,0 +1,16 @@
+{{#each this}}
+<li class="card">
+  <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='Film {{title}} poster' />
+
+  <div class="card-info">
+    <h2 class="card-title"> {{title}} </h2>
+    <p class="card-genre"> {{genre_ids}} </p>
+    <p class="card-release-year">
+      {{release_date}}
+    </p>
+    <p class="card-vote is-visible" data-hiden="true">
+      {{vote_average}}
+    </p>
+  </div>
+</li>
+{{/each}}
