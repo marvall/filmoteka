@@ -7,7 +7,7 @@
 }
 
 .movie-card-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.172;
@@ -20,7 +20,7 @@
 }
 
 .stats-titles {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.333;
@@ -33,13 +33,13 @@
 }
 
 .stats-info {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
 }
 
 .stats-info-vote {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.166;
@@ -54,9 +54,9 @@
   padding-top: 1px;
   padding-bottom: 1px;
 
-  background: #ff6b01;
+  background: $orange-color;
   border-radius: 5px;
-  color: #fff;
+  color: $white-color;
   text-align: center;
 }
 
@@ -69,7 +69,7 @@
 
   background: #f7f7f7;
   border-radius: 5px;
-  color: #000;
+  color: $black-color;
   text-align: center;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .movie-card-about-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.333;
@@ -88,7 +88,7 @@
 }
 
 .movie-card-about {
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.67;
@@ -100,15 +100,15 @@
   width: 136px;
   height: 44px;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.333;
-  color: #ffffff;
+  color: $white-color;
 
   text-transform: uppercase;
 
-  background: #ff6b01;
+  background: $orange-color;
   border-radius: 5px;
   margin-right: 4px;
   margin-bottom: 40px;
@@ -118,14 +118,14 @@
   width: 136px;
   height: 44px;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.333;
   text-transform: uppercase;
 
-  color: #000000;
-  background: #fff;
+  color: $black-color;
+  background: $white-color;
   border-radius: 5px;
   margin-bottom: 40px;
 }
