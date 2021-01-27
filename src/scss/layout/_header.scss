@@ -1,7 +1,13 @@
 .header {
   display: block;
 
-  background-image: url(/images/background-mobile1x.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(/images/background-mobile.jpg);
+  background-color: #000000;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   padding-top: 46px;
   padding-bottom: 43px;
