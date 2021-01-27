@@ -80,7 +80,7 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/background-tabl.jpg);
-    background-color: #000000;
+    background-color: $black-color;
   }
   .nav-logo {
     margin-right: 307px;
@@ -104,7 +104,7 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/background-desc.jpg);
-    background-color: #000000;
+    background-color: $black-color;
   }
   .nav-logo {
     margin-right: 573px;
