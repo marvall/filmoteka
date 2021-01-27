@@ -1,0 +1,165 @@
+.movie-card-img {
+  height: 416px;
+  width: 280px;
+
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.movie-card-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.172;
+  margin-bottom: 20px;
+}
+
+.stats-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.stats-titles {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.333;
+  color: #8c8c8c;
+  margin-right: 40px;
+}
+
+.stats-titles > :not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.stats-info {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.stats-info-vote {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.166;
+  color: #8c8c8c;
+  margin-bottom: 10px;
+}
+
+.stats-info-rating {
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  background: #ff6b01;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.stats-info-votes {
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  background: #f7f7f7;
+  border-radius: 5px;
+  color: #000;
+  text-align: center;
+}
+
+.stats-info > :not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.movie-card-about-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.333;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+.movie-card-about {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+
+  margin-bottom: 40px;
+}
+
+.btn-to-wached {
+  width: 136px;
+  height: 44px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.333;
+  color: #ffffff;
+
+  text-transform: uppercase;
+
+  background: #ff6b01;
+  border-radius: 5px;
+  margin-right: 4px;
+  margin-bottom: 40px;
+}
+
+.btn-to-queue {
+  width: 136px;
+  height: 44px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.333;
+  text-transform: uppercase;
+
+  color: #000000;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 320px) {
+}
+@media screen and (min-width: 768px) {
+  .movie-card {
+    display: flex;
+  }
+  .movie-card-img {
+    margin-right: 30px;
+    height: 416px;
+    width: 294px;
+  }
+  .movie-card-title {
+    font-size: 30px;
+    line-height: 1.172;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .movie-card-img {
+    height: 514px;
+    width: 426px;
+  }
+
+  .movie-card-about {
+    margin-bottom: 20px;
+  }
+
+  .btn-to-wached {
+    margin: 0;
+  }
+  .btn-to-queue {
+    margin: 0;
+  }
+}
