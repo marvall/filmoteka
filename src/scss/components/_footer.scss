@@ -1,0 +1,26 @@
+.footer-them-color {
+  background-color: $footer-background-color;
+}
+
+.section-footer {
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.section-footer-text {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-text {
+  font-family: $main-font;
+  color: #545454;
+  font-size: 16px;
+}
+
+.material-icons {
+  color: FF6B08;
+  font-size: 18px;
+}
