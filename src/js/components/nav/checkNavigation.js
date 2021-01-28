@@ -8,8 +8,8 @@ export const checkNavigation = function (e) {
     if (e.target.textContent == 'FILMOTEKA' || e.target.textContent == 'HOME') {
       changeHistory('home');
       getFilms().then(data => renderGallery(data));
-    } else if (e.target.textContent == 'MYLIBERY') {
-      changeHistory('mylibery');
+    } else if (e.target.textContent == 'MY LIBRARY') {
+      changeHistory('mylibrary');
     }
   }
 };

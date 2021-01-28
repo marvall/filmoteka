@@ -5,7 +5,7 @@ import cardForOneMovies from '../../templates/cardForOneMovies.hbs';
  * @param {massiv objects} objects
  */
 export const renderGallery = function (objects) {
-  console.log(objects);
+  document.querySelector("[data-index='gallery']").innerHTML = '';
   if (objects.length === 1) {
     document
       .querySelector("[data-index='gallery']")
