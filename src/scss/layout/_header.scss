@@ -58,18 +58,16 @@
 
 .search-icon {
   position: absolute;
-  right: 0;
-  color: $white-color;
 }
 
 .material-icons.white {
+  margin: 0;
   color: $white-color;
 }
 
 .film-search-input {
   width: 280px;
 
-  // outline: none;
   background: transparent;
   border: transparent;
   border-bottom: 1px solid $white-color;
