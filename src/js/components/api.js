@@ -23,6 +23,12 @@ async function fetchGetMovieById(id) {
 
   return data;
 }
+
+async function fetchGetMovieGenres() {
+  const { data } = await axios.get(`/genre/movie/list?api_key=${API_KEY}`);
+  const { genres } = data;
+  return genres;
+}
 //===========================================//
 async function getFilms(searchValue, pageValue = 1) {
   if (!searchValue) {
@@ -61,4 +67,10 @@ async function getPages(searchValue, pageValue = 1) {
     return data;
   }
 }
-export default { getFilms, getFilmInfo, getPages };
+
+async function getRenres() {
+  const data = await fetchGetMovieGenres().catch(err => console.log(err));
+  return data;
+}
+
+export { getFilms, getFilmInfo, getPages, getRenres };
