@@ -9,8 +9,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
     <header
       class="header header__background-home container"
@@ -23,23 +26,39 @@
           </svg>
           <span class="logo-text">Filmoteka</span>
         </a>
-
         <button class="nav-btn current" data-index="home">HOME</button>
         <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
       </nav>
       <div data-index="headerDinamicContent"></div>
     </header>
+    <!-- modal window -->
     <section>
+      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
+    </section>
+    <section>
+
       <ul data-index="gallery" class="gallery container"></ul>
 
       <!-- wrapper for spinner -->
       <div class="pagination" data-index="pagination"></div>
       <div class="loader" data-index="spinner"></div>
     </section>
-    <footer>
-      <span>© 2021 | All Rights Reserved | Developed with </span>
-      <svg>"heart"</svg>
-      <button data-index="students">GoIt Students</button>
+    <footer class="footer-them-color">
+      <div class="footer-text section-footer">
+        <span class="section-footer-text">
+          <span>© 2021 | All Rights Reserved |</span>
+          <span class="footer-span"
+            >Developed with
+            <i class="material-icons">favorite</i>
+            by
+            <a href class="footer-link">GoIT Students</a>
+          </span>
+        </span>
+
+        <!-- <svg>"heart"</svg> -->
+        <!-- <button data-index="students">GoIt Students</button> -->
+      </div>
+
     </footer>
   </body>
 </html>

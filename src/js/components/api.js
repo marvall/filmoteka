@@ -51,6 +51,7 @@ async function getFilmInfo(filmId) {
   return data;
 }
 
+
 async function getPages(searchValue, pageValue = 1) {
   if (!searchValue) {
     const data = await fetchGetTrending(pageValue)
