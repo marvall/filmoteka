@@ -45,11 +45,7 @@
   display: none;
 }
 
-// утил классы что бы прятать варнинг
-.visible {
-  visibility: visible;
-}
-
+// утил классы что бы прятать варнинz
 .hidden {
   display: none;
 }
@@ -62,8 +58,12 @@
 
 .search-icon {
   position: absolute;
-  top: 4px;
   right: 0;
+  color: $white-color;
+}
+
+.material-icons.white {
+  color: $white-color;
 }
 
 .film-search-input {
@@ -119,7 +119,6 @@
   padding-bottom: 12px;
   &:not(:last-child) {
     margin-right: 15px;
-
   }
   border: 1px solid $white-color;
   box-sizing: border-box;
