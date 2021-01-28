@@ -1,10 +1,5 @@
 .header {
   display: block;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/background-mobile.jpg);
-  background-color: $black-color;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,11 +72,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/background-tabl.jpg);
-    background-color: $black-color;
-  }
   .nav-logo {
     margin-right: 307px;
   }
@@ -101,11 +91,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/background-desc.jpg);
-    background-color: $black-color;
-  }
   .nav-logo {
     margin-right: 573px;
   }
