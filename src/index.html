@@ -34,10 +34,15 @@
           data-index="serchInfo"
           type="text"
           placeholder="Поиск фильмов"
+
+          autocomplete="off"
         />
-        <p class="film-search-input-error" data-index="fetchStatus">
-          Search result not successful. Enter the correct movie name and
-        </p>
+        <svg class="search-icon" width="12" height="12">
+          <use href="./images/sprite.svg#icon-search-2"></use>
+        </svg>
+        <p class="film-search-input-error hidden" data-index="fetchStatus">
+          Search result not successful! Enter the correct movie name and genre!
+        </p>     
       </form>
       <div data-index="headerDinamicContent"></div>
     </header>
@@ -46,6 +51,7 @@
       <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
     </section>
     <section>
+
       <ul data-index="gallery" class="gallery container"></ul>
 
       <!-- wrapper for spinner -->
@@ -67,6 +73,7 @@
         <!-- <svg>"heart"</svg> -->
         <!-- <button data-index="students">GoIt Students</button> -->
       </div>
+
     </footer>
   </body>
 </html>

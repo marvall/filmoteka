@@ -1,3 +1,4 @@
+// фоновое изображение хэддера
 .header {
   display: block;
 
@@ -10,8 +11,16 @@
   background-size: cover;
 
   padding-top: 46px;
-  padding-bottom: 43px;
+  padding-bottom: 97px;
 }
+
+// пока закоментил пока не решим стоит ли добавлять див
+
+// .infinity-bg-color {
+//   background-color: $black-color;
+// }
+
+// кнопки навигации и лого
 
 .nav {
   display: flex;
@@ -41,38 +50,65 @@
   display: none;
 }
 
+// утил классы что бы прятать варнинг
 .visible {
   visibility: visible;
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
+// инпут
 .film-search {
   position: relative;
   text-align: center;
 }
 
+.search-icon {
+  position: absolute;
+  top: 4px;
+  right: 0;
+}
+
 .film-search-input {
   width: 280px;
-  margin-bottom: 22px;
-  outline: none;
+
+  // outline: none;
   background: transparent;
-  border: none;
+  border: transparent;
   border-bottom: 1px solid $white-color;
   font-size: 14px;
+  line-height: 1.17;
 
   color: $white-color;
+
+  @include transition(border-bottom);
+
   &::placeholder {
     color: $white-color;
+
+    // @include transition(color);
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $orange-color;
+
+    // &::placeholder {
+    //   color: $orange-color;
+    // }
   }
 }
 
+// варнинг для запроса
 .film-search-input-error {
   position: absolute;
 
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.14;
+  top: 44px;
+
   color: $red-color;
 }
 
@@ -81,6 +117,8 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/background-tabl.jpg);
     background-color: $black-color;
+
+    padding-top: 41px;
   }
   .nav-logo {
     margin-right: 307px;
@@ -92,11 +130,20 @@
   .film-search-input {
     width: 330px;
   }
+
+  .search-icon {
+    right: 143px;
+  }
+
   .logo-text {
     display: block;
     font-weight: 500;
     font-size: 30px;
     color: $white-color;
+  }
+
+  .film-search-input-error {
+    width: 616px;
   }
 }
 
@@ -105,8 +152,16 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/background-desc.jpg);
     background-color: $black-color;
+
+    padding-top: 41px;
   }
   .nav-logo {
     margin-right: 573px;
+  }
+  .search-icon {
+    right: 275px;
+  }
+  .film-search-input-error {
+    width: 882px;
   }
 }
