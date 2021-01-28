@@ -7,6 +7,11 @@ import myLibery from './../../templates/headers/myLibery.hbs';
 export const renderHeader = function (e) {
   e.preventDefault();
   let path = window.location.origin;
+
+  console.log(path);
+
+  console.log(window.location.origin);
+
   let ref = document.querySelector("[data-index='headerDinamicContent']");
   ref.innerHTML = '';
   if (window.location.href === path + '/home') {
