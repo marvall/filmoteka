@@ -9,7 +9,6 @@
 }
 .card {
   list-style: none;
-  min-width: 280px;
 }
 .card-img {
   min-width: 280px;
@@ -23,6 +22,9 @@
 }
 
 @media screen and (max-width: 767px) {
+  .gallery {
+    padding: 20px;
+  }
   .card {
     width: 100%;
   }
@@ -35,6 +37,11 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .gallery {
+    padding-top: 60px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
   .card {
     width: calc((100% - 30px) / 2);
   }
@@ -49,8 +56,13 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  .gallery {
+    padding-top: 60px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
   .card {
-    width: calc((100% - 60px) / 3);
+    width: calc((100% - 200px) / 3);
   }
   .card:not(:nth-child(3n)) {
     margin-right: 30px;
