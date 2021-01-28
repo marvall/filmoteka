@@ -15,24 +15,23 @@ function getCurrentStorage() {
 }
 
 /**
-  Функція приймає event 'click' 
-  event listener вішається на спільний контейнер для 2-ох кнопок
-  @param {event} event;
+  Функція приймає два параметра filmObj - обєкт із властивостями фільму
+   і filmType - тип фільму (Тільки 2 варіанти: 'watched' або 'queue')
+  
+  @param {objects} filmObj;
+  @param {string} filmType;
  */
-function addToStorage(event) {
-  if (event.currentTarget === event.target) {
-    return;
-  }
-  const btnContainer = event.currentTarget;
-  const { type: btnType, index: filmIndex } = event.target.dataset;
+function addToStorage(filmObj, filmType) {
   const [watched, queue] = getCurrentStorage();
+  const watchedId = watched.map(film => film.id);
+  const queueId = queue.map(film => film.id);
 
-  switch (btnType) {
+  switch (filmType) {
     case 'watched':
-      if (!watched.includes(filmIndex)) {
-        watched.push(filmIndex);
-        const filtrededQueue = queue.filter(id => {
-          return id !== filmIndex;
+      if (!watchedId.includes(filmObj.id)) {
+        watched.push(filmObj);
+        const filtrededQueue = queue.filter(film => {
+          return film.id !== filmObj.id;
         });
 
         localStorage.setItem('watched', JSON.stringify(watched));
@@ -40,10 +39,10 @@ function addToStorage(event) {
       }
       break;
     case 'queue':
-      if (!queue.includes(filmIndex)) {
-        queue.push(filmIndex);
-        const filtrededWatched = watched.filter(id => {
-          return id !== filmIndex;
+      if (!queueId.includes(filmObj.id)) {
+        queue.push(filmObj);
+        const filtrededWatched = watched.filter(film => {
+          return film.id !== filmObj.id;
         });
 
         localStorage.setItem('watched', JSON.stringify(filtrededWatched));
@@ -53,51 +52,14 @@ function addToStorage(event) {
     default:
       console.log('Не коректно вказаний data-type');
   }
-
-  addDisabledOnBtn(btnContainer);
 }
 
 /**
-  Функція приймає посилання на DOM Element, який є 
-  спільним контейнером для 2-ох кнопок
-  @param {DOM Element} btnContainer;
+  Функція приймає inputText із необхідним 
+  @param {text} inputText;
  */
-function addDisabledOnBtn(btnContainer) {
-  const btnArr = Array.from(btnContainer.querySelectorAll('button'));
-
-  btnArr.map(btn => {
-    const { type: btnType, index: filmIndex } = btn.dataset;
-    const [watched, queue] = getCurrentStorage();
-
-    switch (btnType) {
-      case 'watched':
-        if (watched.includes(filmIndex)) {
-          btn.setAttribute('disabled', true);
-        } else {
-          btn.removeAttribute('disabled');
-        }
-        break;
-      case 'queue':
-        if (queue.includes(filmIndex)) {
-          btn.setAttribute('disabled', true);
-        } else {
-          btn.removeAttribute('disabled');
-        }
-        break;
-      default:
-        console.log('Не коректно вказаний data-type');
-    }
-  });
-}
-/**
-  Функція приймає event 'submit' 
-  event listener вішається на форму із input type="text"
-  @param {event} event;
- */
-function saveQueryOnStorage(event) {
-  event.preventDefault();
-  const inputText = event.target[0].value;
+function saveQueryOnStorage(inputText) {
   localStorage.setItem('searchQuery', inputText);
 }
 
-export { addToStorage, addDisabledOnBtn, saveQueryOnStorage };
+export { addToStorage, saveQueryOnStorage };
