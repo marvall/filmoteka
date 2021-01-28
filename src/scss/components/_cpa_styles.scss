@@ -1,0 +1,39 @@
+.header__background-home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(/images/background-mobile.jpg);
+  background-color: $black-color;
+}
+
+.header__background-myLibrary {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url(/images/background__myLibrary-mobile.jpg);
+  background-color: $black-color;
+}
+
+@media screen and (min-width: 768px) {
+  .header__background-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/background-mobile.jpg);
+    background-color: $black-color;
+  }
+
+  .header__background-myLibrary {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/background__myLibrary-mobile.jpg);
+    background-color: $black-color;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header__background-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/background-mobile.jpg);
+    background-color: $black-color;
+  }
+
+  .header__background-myLibrary {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/background__myLibrary-mobile.jpg);
+    background-color: $black-color;
+  }
+}
