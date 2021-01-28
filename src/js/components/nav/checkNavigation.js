@@ -6,7 +6,6 @@ const header = document.querySelector('[data-index="header"]');
 const homeBtn = document.querySelector('[data-index="home"]');
 const mylibraryBtn = document.querySelector('[data-index="mylibrary"]');
 const gallery = document.querySelector('[data-index="gallery"]');
-console.log(header);
 
 export const checkNavigation = function (e) {
   e.preventDefault();
