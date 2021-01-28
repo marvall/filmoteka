@@ -1,0 +1,30 @@
+.nav-btn {
+  position: relative;
+
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+  font-family: $main-font;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $white-color;
+
+  &:not(:last-child) {
+    margin-right: 39px;
+  }
+}
+
+.current {
+  &::after {
+    position: absolute;
+    bottom: 15;
+    content: '';
+    display: block;
+    width: 34px;
+    height: 3px;
+    background-color: $orange-color;
+  }
+}

@@ -11,7 +11,7 @@ export const renderHeader = function (e) {
   ref.innerHTML = '';
   if (window.location.href === path + '/home') {
     ref.insertAdjacentHTML('afterbegin', home());
-  } else if (window.location.href === path + '/mylibery') {
+  } else if (window.location.href === path + '/mylibrary') {
     ref.insertAdjacentHTML('afterbegin', myLibery());
   }
 };
