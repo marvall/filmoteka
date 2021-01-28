@@ -17,10 +17,16 @@
 .material-icons {
   color: rgb(255, 107, 8);
   font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .footer-link {
+  color: #545454;
+  list-style-type: none;
+  font-style: normal;
   border-bottom: 1px solid rgba(84, 84, 84, 1);
+  margin-left: 5px;
 }
 
 @media screen and (min-width: 320px) {
@@ -33,6 +39,7 @@
   .footer-span {
     display: flex;
     justify-content: center;
+    margin-left: 4px;
   }
 }
 @media screen and (max-width: 767px) {
