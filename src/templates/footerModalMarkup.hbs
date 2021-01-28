@@ -1,0 +1,36 @@
+<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+            <h2 class="modal__title" id="modal-1-title">
+                Наша команда
+            </h2>
+            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+            <p>
+            <ul class="footer-team-link">
+                <li class="footer-team-link-list">
+                    <img class="footer-team-img">{{photo}}
+                    <p class="team-name">{{team}}</p>
+                    <ul class="sosial-links">
+                        <li class="link-img">
+                            <a href="{{instagram}}">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                        </li>
+                        <li class="link-img">
+                            <a href="{{facebook}}">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+        </main>
+        <footer class="modal__footer">
+            <button class="modal__btn modal__btn-primary">Continue</button>
+            <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+        </footer>
+    </div>
+</div>
