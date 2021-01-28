@@ -1,3 +1,6 @@
+/*
+  Допоміжна функція. Не експортується.
+*/
 function getCurrentStorage() {
   let watched = localStorage.getItem('watched');
   let queue = localStorage.getItem('queue');
