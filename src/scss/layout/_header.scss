@@ -1,3 +1,4 @@
+// фоновое изображение хэддера
 .header {
   display: block;
 
@@ -12,6 +13,12 @@
   padding-top: 46px;
   padding-bottom: 97px;
 }
+
+// .infinity-bg-color {
+//   background-color: $black-color;
+// }
+
+// кнопки навигации и лого
 
 .nav {
   display: flex;
@@ -41,6 +48,7 @@
   display: none;
 }
 
+// утил классы что бы прятать варнинг
 .visible {
   visibility: visible;
 }
@@ -49,9 +57,16 @@
   visibility: hidden;
 }
 
+// инпут
 .film-search {
   position: relative;
   text-align: center;
+}
+
+.search-icon {
+  position: absolute;
+  top: 4px;
+  right: 0;
 }
 
 .film-search-input {
@@ -68,12 +83,19 @@
   &::placeholder {
     color: $white-color;
   }
+  &:hover {
+    border-bottom: 1px solid $orange-color;
+  }
 }
 
+// варнинг для запроса
 .film-search-input-error {
   position: absolute;
 
   font-size: 14px;
+  line-height: 1.14;
+  top: 44px;
+
   color: $red-color;
 }
 
@@ -95,11 +117,20 @@
   .film-search-input {
     width: 330px;
   }
+
+  .search-icon {
+    right: 143px;
+  }
+
   .logo-text {
     display: block;
     font-weight: 500;
     font-size: 30px;
     color: $white-color;
+  }
+
+  .film-search-input-error {
+    width: 616px;
   }
 }
 
@@ -113,5 +144,11 @@
   }
   .nav-logo {
     margin-right: 573px;
+  }
+  .search-icon {
+    right: 275px;
+  }
+  .film-search-input-error {
+    width: 882px;
   }
 }
