@@ -1,76 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Filmoteka</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <button data-index="logo">FILMOTEKA</button>
-        <button data-index="home">HOME</button>
-        <button data-index="mylibery">MYLIBERY</button>
-      </nav>
-      <div data-index="headerDinamicContent"></div>
-    </header>
-    <!-- modal window -->
-    <section>
-      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-          <div
-            class="modal__container"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="modal-1-title"
-          >
-            <header class="modal__header">
-              <button
-                class="modal__close"
-                aria-label="Close modal"
-                data-micromodal-close
-              ></button>
-            </header>
-            <main class="modal__content" id="modal-1-content"></main>
-            <footer class="modal__footer"></footer>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filmoteka</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header container">
+    <nav class="nav" data-index="navigation">
+      <a href="" class="nav-logo">
+        <div class="logo-style">
+          <svg class="nav-logo-icon">
+            <use href="./images/sprite.svg#icon-film"></use>
+          </svg>
+          <span class="logo-text">Filmoteka</span>
         </div>
-      </div>
-    </section>
-    <section>
-      MAIN GALLERY
-      <ul data-index="gallery" class="gallery">
-        <div data-index="galleryItem" class="galleryItem">
-          <li class="card" id="111">
-            <img
-              class="card-img"
-              src="https://cdn.pixabay.com/photo/2018/09/22/15/58/cuba-3695578__340.jpg"
-              alt="Film DP poster"
-            />
+      </a>
 
-            <div class="card-info">
-              <h2 class="card-title">trololo</h2>
-              <p class="card-genre">porn</p>
-              <p class="card-release-year">2021</p>
-              <p class="card-vote is-visible" data-hiden="true">5</p>
-            </div>
-          </li>
-        </div>
-      </ul>
+      <button class="nav-btn current" data-index="home">HOME</button>
+      <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
+    </nav>
+    <form class="film-search" action="">
+      <input class="film-search-input" data-index="serchInfo" type="text" placeholder="Поиск фильмов" />
+      <p class="film-search-input-error" data-index="fetchStatus">
+        Search result not successful. Enter the correct movie name and
+      </p>
+    </form>
+    <div data-index="headerDinamicContent"></div>
+  </header>
+  <!-- modal window -->
+  <section>
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
+  </section>
+  <section>
+    <ul data-index="gallery" class="gallery container"></ul>
 
-      <!-- wrapper for spinner -->
-      <div class="loader" data-index="spinner"></div>
-    </section>
-    <footer>
-      <span>© 2021 | All Rights Reserved | Developed with </span>
-      <svg>"heart"</svg>
-      <button data-index="students">GoIt Students</button>
-    </footer>
-  </body>
+    <!-- wrapper for spinner -->
+    <div class="pagination" data-index="pagination"></div>
+    <div class="loader" data-index="spinner"></div>
+  </section>
+  <footer>
+    <span>© 2021 | All Rights Reserved | Developed with </span>
+    <svg>"heart"</svg>
+    <button data-index="students">GoIt Students</button>
+  </footer>
+</body>
+
 </html>

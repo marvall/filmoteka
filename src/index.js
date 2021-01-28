@@ -1,13 +1,14 @@
 import './scss/main.scss';
 import { renderHeader } from './js/utils/renderHeader';
 import MicroModal from 'micromodal';
-MicroModal.init();
-import modal from './js/modal'
-import refs from './js/refs';
+import * as modal from './js/components/modal';
+import refs from './js/components/refs';
 
-refs.galleryItem.addEventListener('click', modal.setModalAttribute);
-refs.modalOverlay.addEventListener('click', modal.cleanModalMarkup);
-refs.modalCloseButton.addEventListener('click', modal.cleanModalMarkup);
+
+refs.galleryItem.forEach(element => {
+  element.addEventListener('click', modal.setModalAttribute )
+});
+
 
 // This eventListener observes the evet "changeHistoryEvent". this event is custom, and don't use anythere.
 window.addEventListener('changeHistoryEvent', renderHeader);
