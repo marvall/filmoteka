@@ -15,35 +15,20 @@
     />
   </head>
   <body>
-    <header class="header container">
+    <header
+      class="header header__background-home container"
+      data-index="header"
+    >
       <nav class="nav" data-index="navigation">
-        <a href="" class="nav-logo">
-          <div class="logo-style">
-            <svg class="nav-logo-icon">
-              <use href="./images/sprite.svg#icon-film"></use>
-            </svg>
-            <span class="logo-text">Filmoteka</span>
-          </div>
+        <a href="" class="nav-logo logo-style">
+          <svg class="nav-logo-icon">
+            <use href="./images/sprite.svg#icon-film"></use>
+          </svg>
+          <span class="logo-text">Filmoteka</span>
         </a>
         <button class="nav-btn current" data-index="home">HOME</button>
         <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
       </nav>
-      <form class="film-search" action="">
-        <input
-          class="film-search-input"
-          data-index="serchInfo"
-          type="text"
-          placeholder="Поиск фильмов"
-
-          autocomplete="off"
-        />
-        <svg class="search-icon" width="12" height="12">
-          <use href="./images/sprite.svg#icon-search-2"></use>
-        </svg>
-        <p class="film-search-input-error hidden" data-index="fetchStatus">
-          Search result not successful! Enter the correct movie name and genre!
-        </p>     
-      </form>
       <div data-index="headerDinamicContent"></div>
     </header>
     <!-- modal window -->

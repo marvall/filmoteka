@@ -1,11 +1,6 @@
 // фоновое изображение хэддера
 .header {
   display: block;
-
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/background-mobile.jpg);
-  background-color: $black-color;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,14 +107,37 @@
   color: $red-color;
 }
 
-@media screen and (min-width: 768px) {
-  .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/background-tabl.jpg);
-    background-color: $black-color;
+.myLibraryButtons {
+  text-align: center;
+}
 
-    padding-top: 41px;
+.btn {
+  position: relative;
+  cursor: pointer;
+  width: 132px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  &:not(:last-child) {
+    margin-right: 15px;
+
   }
+  border: 1px solid $white-color;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: transparent;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: $white-color;
+}
+
+.current__myLibraryBtn {
+  background-color: $orange-color;
+  border: 1px solid transparent;
+}
+
+@media screen and (min-width: 768px) {
   .nav-logo {
     margin-right: 307px;
   }
@@ -148,13 +166,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/background-desc.jpg);
-    background-color: $black-color;
-
-    padding-top: 41px;
-  }
   .nav-logo {
     margin-right: 573px;
   }
