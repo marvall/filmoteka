@@ -3,6 +3,7 @@ $size2: 8px;
 $time: 1;
 
 .loader {
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
