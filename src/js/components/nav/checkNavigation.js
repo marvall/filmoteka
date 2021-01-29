@@ -7,9 +7,11 @@ import {
   headerDinamicContentMarkupUpdate,
   checkClickTarget,
 } from './cpaNavLogic';
+import { setModalAttribute } from '../modal';
 
 export const checkNavigation = function (e) {
   e.preventDefault();
+  console.log(e.target);
   if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
       changeHistory('home');
@@ -19,6 +21,8 @@ export const checkNavigation = function (e) {
       changeHistory('mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
+    } else if (e.target.parentNode.dataset.index === 'card') {
+      setModalAttribute(e.target.parentNode);
     }
   }
 };
