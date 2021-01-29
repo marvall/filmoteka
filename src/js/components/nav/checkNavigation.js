@@ -7,7 +7,7 @@ import {
   headerDinamicContentMarkupUpdate,
   checkClickTarget,
 } from './cpaNavLogic';
-import { setModalAttribute } from '../modal';
+import { setModalAttribute, showTeam } from '../modal';
 
 export const checkNavigation = function (e) {
   e.preventDefault();
@@ -22,7 +22,10 @@ export const checkNavigation = function (e) {
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
     } else if (e.target.parentNode.dataset.index === 'card') {
+      //this func open modal in gallery
       setModalAttribute(e.target.parentNode);
+    } else if (e.target.dataset.index === 'team') {
+      showTeam(e.target);
     }
   }
 };
