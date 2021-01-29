@@ -4,6 +4,13 @@ import './paginationPlugin';
 import { renderGallery } from '../renderGallery';
 import { getFilmsPagination } from '../api';
 
+/**
+ * this function initializes pagination,
+ * renders the page markup when the page button is clicked.
+ * query takes dynamic search value
+ * @param {string} query
+ */
+
 async function initPagination(query) {
   const container = $('[data-index="pagination"]');
 
@@ -40,8 +47,6 @@ async function initPagination(query) {
 
   function onClickPageHandler(event) {
     if (event.target.parentNode.classList.contains('paginationjs-ellipsis')) {
-      console.log(event.target.parentNode.dataset.num);
-
       return;
     }
 
@@ -63,5 +68,4 @@ async function initPagination(query) {
 
 export default initPagination;
 
-initPagination();
-// initPagination(null);
+// initPagination();
