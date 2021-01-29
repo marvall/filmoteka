@@ -15,7 +15,7 @@ export const checkNavigation = function (e) {
 
   if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
-      changeHistory('home');
+      changeHistory('filmoteka/home');
       spinner.show();
       getFilms().then(data => renderGallery(data));
       homePageMarkupUpdate();
@@ -23,7 +23,7 @@ export const checkNavigation = function (e) {
         spinner.hide();
       }, 1000);
     } else if (e.target.textContent === 'MY LIBRARY') {
-      changeHistory('mylibrary');
+      changeHistory('filmoteka/mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
       spinner.show();
