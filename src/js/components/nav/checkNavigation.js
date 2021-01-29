@@ -35,6 +35,7 @@ export const checkNavigation = function (e) {
       //this func open modal in gallery
       setModalAttribute(e.target.parentNode);
     } else if (e.target.dataset.index === 'team') {
+      //this func open modal in footer
       showTeam(e.target);
     }
   }

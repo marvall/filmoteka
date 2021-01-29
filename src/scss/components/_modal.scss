@@ -46,7 +46,7 @@
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.8em;
 }
 .movie-img {
   width: 280px;
@@ -57,7 +57,7 @@
 }
 .movie-title {
   font-size: 20px;
-  line-height: 1.172;
+  line-height: 1.172em;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -69,6 +69,8 @@
 .vote {
   display: inline-block;
   text-align: center;
+  vertical-align: middle; // fix by marvall
+  line-height: 1.16em; // fix by marvall
   width: 36px;
   height: 16px;
   text-transform: uppercase;
@@ -80,6 +82,8 @@
 
 .votes {
   display: inline-block;
+  vertical-align: middle; // fix by marvall
+  line-height: 1.16em; // fix by marvall
   width: 36px;
   height: 16px;
   padding-top: 1px;
@@ -102,6 +106,7 @@
   margin-bottom: 10px;
 }
 .movie-review {
+  line-height: 1.33em; //fix by marvall
   margin-bottom: 30px;
 }
 .btn {
@@ -153,14 +158,14 @@
     display: flex;
   }
   .movie-review {
-    line-height: 1.8;
+    line-height: 1.8em;
   }
   .btn-to-wached {
     padding: 3px;
   }
   .movie-title {
     font-size: 30px;
-    line-height: 1.172;
+    line-height: 1.172em;
     word-break: break-word;
   }
 }
