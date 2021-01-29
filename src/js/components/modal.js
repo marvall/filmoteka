@@ -1,20 +1,27 @@
+
+import MicroModal from 'micromodal';
+import modalMarkup from '../../templates/modalMarkup.hbs';
+import { getFilmInfo } from './api';
+
 MicroModal.init();
-import modalMarkup from '../../templates/modalMarkup.hbs'
-import {getFilmInfo} from './api'
-import refs from './refs'
-
-
 const updateModalMarkup = function (film) {
-    refs.modalContent.insertAdjacentHTML('beforeend', modalMarkup(film));
-    MicroModal.show('modal-1');
+  document
+    .querySelector('#modal-1')
+    .insertAdjacentHTML('beforeend', modalMarkup(film));
+  MicroModal.show('modal-1');
+};
+
+/**
+ * You need to pass the node(card of one film) of the element card to this function.
+ * @param {Node} event
+ */
+export function setModalAttribute(Node) {
+  Node.setAttribute('data-micromodal-trigger', 'modal-1');
+  getFilmInfo(Node.id).then(film => {
+    updateModalMarkup(film);
+  });
 }
 
-export function showModal(event) {
-    event.currentTarget.setAttribute("data-micromodal-trigger", "modal-1");
-    let localfilmId = event.currentTarget.id;
-    getFilmInfo(localfilmId).then(film => { updateModalMarkup(film) })
-}
-
-// refs.galleryItem.forEach(element => {
+//  document.querySelectorAll('.card').forEach(element => {
 //   element.addEventListener('click', showModal)
 // });
