@@ -7,16 +7,16 @@ async function fetchGetTrending(pageValue) {
   const { data } = await axios.get(
     `/trending/movie/week?api_key=${API_KEY}&page=${pageValue}`,
   );
-  const { results, total_pages, page } = data;
-  return { results, total_pages, page };
+  const { results, total_pages, page, total_results } = data;
+  return { results, total_pages, page, total_results };
 }
 
 async function fetchGetSearchMovie(valueSearch, pageValue) {
   const { data } = await axios.get(
     `/search/movie?api_key=${API_KEY}&page=${pageValue}&query=${valueSearch}`,
   );
-  const { results, total_pages, page } = data;
-  return { results, total_pages, page };
+  const { results, total_pages, page, total_results } = data;
+  return { results, total_pages, page, total_results };
 }
 async function fetchGetMovieById(id) {
   const { data } = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
@@ -51,7 +51,6 @@ async function getFilmInfo(filmId) {
   return data;
 }
 
-
 async function getPages(searchValue, pageValue = 1) {
   if (!searchValue) {
     const data = await fetchGetTrending(pageValue)
@@ -73,4 +72,20 @@ async function getRenres() {
   return data;
 }
 
-export { getFilms, getFilmInfo, getPages, getRenres };
+async function getFilmsPagination(searchValue, pageValue = 1) {
+  if (!searchValue) {
+    const data = await fetchGetTrending(pageValue).catch(err =>
+      console.log(err),
+    );
+    return data;
+  }
+
+  if (searchValue) {
+    const data = await fetchGetSearchMovie(searchValue, pageValue).catch(err =>
+      console.log(err),
+    );
+    return data;
+  }
+}
+
+export { getFilms, getFilmInfo, getPages, getRenres, getFilmsPagination };
