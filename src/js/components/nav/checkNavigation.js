@@ -12,7 +12,7 @@ import { spinner } from '../spinner';
 
 export const checkNavigation = function (e) {
   e.preventDefault();
-  console.log(e.target);
+
   if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
       changeHistory('home');
