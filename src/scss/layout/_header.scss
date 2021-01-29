@@ -112,6 +112,11 @@
 }
 
 .myLibraryButtons {
+  display: inline-flex;
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
