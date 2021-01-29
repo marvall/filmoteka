@@ -1,4 +1,4 @@
-const spinner = {
+export const spinner = {
   spinnerRef: document.querySelector('[data-index="spinner"]'),
 
   markup: `<div class="loading">Loading</div>
@@ -37,10 +37,13 @@ const spinner = {
 
   show() {
     this.spinnerRef.insertAdjacentHTML('beforeend', this.markup);
+    console.log('show spinner');
   },
 
   hide() {
     this.spinnerRef.innerHTML = '';
+
+    console.log('hide spinner');
   },
 };
 

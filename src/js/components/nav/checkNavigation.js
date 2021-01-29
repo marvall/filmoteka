@@ -8,19 +8,29 @@ import {
   checkClickTarget,
 } from './cpaNavLogic';
 import { setModalAttribute, showTeam } from '../modal';
+import { spinner } from '../spinner';
 
 export const checkNavigation = function (e) {
   e.preventDefault();
-  console.log(e.target);
+
   if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
-      changeHistory('home');
+      changeHistory('filmoteka/home');
+      spinner.show();
       getFilms().then(data => renderGallery(data));
       homePageMarkupUpdate();
+      setTimeout(() => {
+        spinner.hide();
+      }, 1000);
     } else if (e.target.textContent === 'MY LIBRARY') {
-      changeHistory('mylibrary');
+      changeHistory('filmoteka/mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
+      spinner.show();
+      //тут должна быть отрисовка моей библиотеки.
+      setTimeout(() => {
+        spinner.hide();
+      }, 1000);
     } else if (e.target.parentNode.dataset.index === 'card') {
       //this func open modal in gallery
       setModalAttribute(e.target.parentNode);

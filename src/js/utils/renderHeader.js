@@ -14,9 +14,9 @@ export const renderHeader = function (e) {
 
   let ref = document.querySelector("[data-index='headerDinamicContent']");
   ref.innerHTML = '';
-  if (window.location.href === path + '/home') {
+  if (window.location.href === path + '/filmoteka/home') {
     ref.insertAdjacentHTML('afterbegin', home());
-  } else if (window.location.href === path + '/mylibrary') {
+  } else if (window.location.href === path + '/filmoteka/mylibrary') {
     ref.insertAdjacentHTML('afterbegin', myLibery());
   }
 };
