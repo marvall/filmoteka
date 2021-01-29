@@ -1,17 +1,20 @@
 MicroModal.init();
-import modalMarkup from '../../templates/modalMarkup.hbs';
-import { getFilmInfo } from './api';
-import refs from './refs';
+import modalMarkup from '../../templates/modalMarkup.hbs'
+import {getFilmInfo} from './api'
+import refs from './refs'
 
-export function updateModalMarkup(film) {
-  refs.modalContent.insertAdjacentHTML('beforeend', modalMarkup(film));
-  MicroModal.show('modal-1');
+
+const updateModalMarkup = function (film) {
+    refs.modalContent.insertAdjacentHTML('beforeend', modalMarkup(film));
+    MicroModal.show('modal-1');
 }
 
-export function setModalAttribute(event) {
-  event.currentTarget.setAttribute('data-micromodal-trigger', 'modal-1');
-  let localfilmId = event.currentTarget.getElementsByClassName('card')[0].id;
-  getFilmInfo(localfilmId).then(film => {
-    updateModalMarkup(film);
-  });
+export function showModal(event) {
+    event.currentTarget.setAttribute("data-micromodal-trigger", "modal-1");
+    let localfilmId = event.currentTarget.id;
+    getFilmInfo(localfilmId).then(film => { updateModalMarkup(film) })
 }
+
+// refs.galleryItem.forEach(element => {
+//   element.addEventListener('click', showModal)
+// });
