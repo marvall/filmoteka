@@ -109,27 +109,34 @@
   line-height: 1.33em; //fix by marvall
   margin-bottom: 30px;
 }
-.btn {
+.btn-modal {
   width: 136px;
   height: 44px;
 
   text-transform: uppercase;
   border-radius: 5px;
   border-color: transparent;
-}
-.btn-to-wached {
-  background: $orange-color;
-  margin-right: 4px;
-  color: $white-color;
-  font-size: 12px;
-}
-.btn-to-queue {
+
   color: $black-color;
   background: $white-color;
-  font-size: 12px;
-  border-color: black;
+  border-color: $black-color;
+  &:focus,
+  &:hover {
+    outline: none;
+    border: none;
+    background: $orange-color;
+    color: $white-color;
+  }
 }
-.btns {
+.btn-modal-to-wached {
+  margin-right: 4px;
+
+  font-size: 12px;
+}
+.btn-modal-to-queue {
+  font-size: 12px;
+}
+.btns-modal {
   display: flex;
   margin-bottom: 40px;
 }
@@ -160,7 +167,7 @@
   .movie-review {
     line-height: 1.8em;
   }
-  .btn-to-wached {
+  .btn-modal-to-wached {
     padding: 3px;
   }
   .movie-title {
