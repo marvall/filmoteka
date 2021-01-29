@@ -24,7 +24,10 @@ export function setModalAttribute(Node) {
     })
     .then(Node.removeAttribute('data-micromodal-trigger'));
 }
-
+/**
+ * You need to pass the node(GO IT LINK) to this function.
+ * @param {Node} event
+ */
 export function showTeam(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
   document.querySelector('#modal-1').innerHTML = '';
