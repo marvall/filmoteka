@@ -56,3 +56,43 @@
     font-size: 16px;
   }
 }
+
+// ======== footer modal =======
+
+.modal__container__footer {
+  background-color: #fff;
+  padding-left: 30px;
+  max-width: 500px;
+  max-height: 100vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal__content:nth-child(2n + 1) {
+  margin-right: 5px;
+}
+
+.modal__content:nth-child(-n + 12) {
+  margin-bottom: 5px;
+}
+.footer-team-link-list {
+  margin-right: 10px;
+}
+.team-name {
+  font-family: $main-font;
+  color: #545454;
+  text-align: center;
+}
+.sosial-links {
+  display: flex;
+  justify-content: center;
+}
+.footer-team-img {
+  width: 100px;
+  height: 100px;
+}
