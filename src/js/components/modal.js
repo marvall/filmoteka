@@ -1,9 +1,11 @@
 import MicroModal from 'micromodal';
 import modalMarkup from '../../templates/modalMarkup.hbs';
+import modalFooter from '../../templates/modalFooter.hbs';
 import { getFilmInfo } from './api';
 
 MicroModal.init();
 const updateModalMarkup = function (film) {
+  document.querySelector('#modal-1').innerHTML = '';
   document
     .querySelector('#modal-1')
     .insertAdjacentHTML('beforeend', modalMarkup(film));
@@ -16,7 +18,20 @@ const updateModalMarkup = function (film) {
  */
 export function setModalAttribute(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
-  getFilmInfo(Node.id).then(film => {
-    updateModalMarkup(film);
-  });
+  getFilmInfo(Node.id)
+    .then(film => {
+      updateModalMarkup(film);
+    })
+    .then(Node.removeAttribute('data-micromodal-trigger'));
+}
+
+export function showTeam(Node) {
+  Node.setAttribute('data-micromodal-trigger', 'modal-1');
+  document.querySelector('#modal-1').innerHTML = '';
+  document
+    .querySelector('#modal-1')
+    .insertAdjacentHTML('beforeend', modalFooter());
+  MicroModal.show('modal-1').then(
+    Node.removeAttribute('data-micromodal-trigger'),
+  );
 }

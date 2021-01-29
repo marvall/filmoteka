@@ -38,10 +38,9 @@ function headerDinamicContentMarkupUpdate() {
 
 function checkClickTarget(e) {
   return (
-    e.target.parentElement.nodeName === 'A' ||
-    e.target.nodeName === 'A' ||
-    e.target.nodeName === 'use' ||
-    e.target.textContent === 'HOME'
+    // e.target.parentElement.nodeName === 'A' ||
+    // e.target.nodeName === 'A' ||
+    e.target.nodeName === 'use' || e.target.textContent === 'HOME'
   );
 }
 
