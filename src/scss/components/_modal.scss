@@ -46,10 +46,9 @@
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.172;
+  line-height: 1.8;
 }
 .movie-img {
-  height: 416px;
   width: 280px;
 
   border-radius: 5px;
@@ -111,18 +110,19 @@
 
   text-transform: uppercase;
   border-radius: 5px;
+  border-color: transparent;
 }
 .btn-to-wached {
   background: $orange-color;
   margin-right: 4px;
   color: $white-color;
   font-size: 12px;
-  border: transparent;
 }
 .btn-to-queue {
   color: $black-color;
   background: $white-color;
   font-size: 12px;
+  border-color: black;
 }
 .btns {
   display: flex;
@@ -132,17 +132,22 @@
 //**@media for modal container and modal content**/
 @media screen and (min-width: 768px) {
   .modal__container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
     max-width: 570px;
   }
+  .movie-description {
+    width: 240px;
+  }
+
   .movie-tmpl {
     display: flex;
   }
   .movie-img {
-    width: 200px;
+    width: 250px;
+    height: 416px;
   }
   .movie-card {
     display: flex;
@@ -150,23 +155,27 @@
   .movie-review {
     line-height: 1.8;
   }
+  .btn-to-wached {
+    padding: 3px;
+  }
   .movie-title {
     font-size: 30px;
     line-height: 1.172;
+    word-break: break-word;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .modal__container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
     max-width: 670px;
   }
   .movie-img {
     height: 514px;
-    width: 426px;
+    width: 350px;
   }
 
   .movie-card-about {
