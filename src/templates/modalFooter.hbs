@@ -2,14 +2,15 @@
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
         <main class="modal__content" id="modal-1-content">
             <p>
+                {{#each this}}
             <ul class="footer-team-link">
                 <li class="footer-team-link-list">
-                    <img class="footer-team-img">{{photo}}
+                    <img class="footer-team-img" src="{{photo}}">
                     <p class="team-name">{{name}}</p>
                     <ul class="sosial-links">
                         <li class="link-img">
                             <a href="{{instagram}}">
-                                <i class="material-icons">instagram</i>
+                                <i class="material-icons">facebook</i>
                             </a>
                         </li>
                         <li class="link-img">
@@ -20,7 +21,7 @@
                     </ul>
                 </li>
             </ul>
-
+            {{/each}}
             </p>
         </main>
     </div>

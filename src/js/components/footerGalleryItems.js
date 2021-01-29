@@ -1,7 +1,7 @@
 export default [
     {
         name: 'Yaroslav',
-        photo: '../../images/team-photo/Yaroslav.jpg',
+        photo: '../../images/background-mobile.jpg',
         instagram: 'https://www.instagram.com/mira.nikolaenko',
         facebook: 'https://www.facebook.com/mira.abdulaeva/',
     },
@@ -48,3 +48,5 @@ export default [
         facebook: 'https://www.facebook.com/mira.abdulaeva/',
     },    
 ];
+
+
