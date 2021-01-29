@@ -26,6 +26,11 @@ export const checkNavigation = function (e) {
       changeHistory('mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
+      spinner.show();
+      //тут должна быть отрисовка моей библиотеки.
+      setTimeout(() => {
+        spinner.hide();
+      }, 1000);
     } else if (e.target.parentNode.dataset.index === 'card') {
       //this func open modal in gallery
       setModalAttribute(e.target.parentNode);
