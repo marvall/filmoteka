@@ -14,19 +14,18 @@ import initPagination from '../pagination/paginationInit';
 const changeStartedPage = function (address) {
   changeHistory(address);
   homePageMarkupUpdate();
-  spinner.show();
+  spinner('start');
   getFilms().then(data => {
-    initPagination(data); // Подключил функцию Пагинации ТУТ!
+    initPagination(); // Подключил функцию Пагинации ТУТ!
     renderGallery(data);
   });
-  setTimeout(() => {
-    spinner.hide();
-  }, 1000);
+  spinner('stop');
 };
 
 export const checkNavigation = function (e) {
+  console.log(e.target.parentNode.dataset.index === 'card');
   e.preventDefault();
-  if (e.target === window) {
+  if (e.target === window && e !== MouseEvent) {
     //Started HOME PAGE
     changeStartedPage('home');
   } else if (e.target !== e.currentTarget) {
@@ -37,11 +36,9 @@ export const checkNavigation = function (e) {
       changeHistory('mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
-      spinner.show();
+      spinner('start');
       //тут должна быть отрисовка моей библиотеки.
-      setTimeout(() => {
-        spinner.hide();
-      }, 1000);
+      spinner('stop');
     } else if (e.target.parentNode.dataset.index === 'card') {
       //this func open modal in gallery
       setModalAttribute(e.target.parentNode);

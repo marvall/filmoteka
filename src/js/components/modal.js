@@ -19,15 +19,13 @@ const updateModalMarkup = function (film) {
  */
 export function setModalAttribute(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
-  spinner.show();
+  spinner('start');
   getFilmInfo(Node.id)
     .then(film => {
       updateModalMarkup(film);
     })
     .then(Node.removeAttribute('data-micromodal-trigger'));
-  setTimeout(() => {
-    spinner.hide();
-  }, 500);
+  spinner('stop');
 }
 /**
  * You need to pass the node(GO IT LINK) to this function.

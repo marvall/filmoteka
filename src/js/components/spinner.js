@@ -1,7 +1,8 @@
-export const spinner = {
-  spinnerRef: document.querySelector('[data-index="spinner"]'),
+export const spinner = function (value) {
+  const spinner = {
+    spinnerRef: document.querySelector('[data-index="spinner"]'),
 
-  markup: `<div class="loading">Loading</div>
+    markup: `<div class="loading">Loading</div>
       <div class="spinner-row">
         <div class="arrow up outer outer-18"></div>
         <div class="arrow down outer outer-17"></div>
@@ -35,17 +36,22 @@ export const spinner = {
         <div class="arrow down outer outer-9"></div>
       </div>`,
 
-  show() {
-    this.spinnerRef.insertAdjacentHTML('beforeend', this.markup);
-    console.log('show spinner');
-  },
+    show() {
+      this.spinnerRef.insertAdjacentHTML('beforeend', this.markup);
+      console.log('show spinner');
+    },
 
-  hide() {
-    this.spinnerRef.innerHTML = '';
+    hide() {
+      this.spinnerRef.innerHTML = '';
 
-    console.log('hide spinner');
-  },
+      console.log('hide spinner');
+    },
+  };
+  if (value === 'start') {
+    spinner.show();
+  } else if (value === 'stop') {
+    setTimeout(() => {
+      spinner.hide();
+    }, 1000);
+  }
 };
-
-export const startSpinner = () => spinner.show();
-export const stopSpinner = () => spinner.hide();
