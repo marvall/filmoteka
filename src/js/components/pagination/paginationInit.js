@@ -11,11 +11,11 @@ import { getFilmsPagination } from '../api';
  * @param {string} query
  */
 
-async function initPagination(query) {
+async function initPagination(data, query) {
   //query ключевое слово.
   const container = $('[data-index="pagination"]');
 
-  const data = await getFilmsPagination(query);
+  // const data = await getFilmsPagination(query);
   const sources = data.results;
   const totalResults = data.total_results;
 
@@ -31,7 +31,7 @@ async function initPagination(query) {
     autoHidePrevious: true,
     autoHideNext: true,
 
-    triggerPagingOnInit: false,
+    // triggerPagingOnInit: false,
 
     callback: function (response, pagination) {
       var dataHtml = ' ';
