@@ -1,9 +1,7 @@
 //  Пока закоментил, так как при динамическом рендере выдаёт ошибку
 
 // import { getFilms } from './api';
-
 // import { renderGallery } from './renderGallery';
-
 // const _ = require('lodash');
 
 // const refs = {

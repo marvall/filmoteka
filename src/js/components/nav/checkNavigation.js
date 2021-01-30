@@ -10,20 +10,27 @@ import {
 import { setModalAttribute, showTeam } from '../modal';
 import { spinner } from '../spinner';
 
+const changeStartedPage = function (address) {
+  changeHistory(address);
+  homePageMarkupUpdate();
+  spinner.show();
+  getFilms().then(data => renderGallery(data));
+  setTimeout(() => {
+    spinner.hide();
+  }, 1000);
+};
+
 export const checkNavigation = function (e) {
   e.preventDefault();
-
-  if (e.target !== e.currentTarget) {
+  if (e.currentTarget === window) {
+    //Started HOME PAGE
+    changeStartedPage('home');
+  } else if (e.target !== e.currentTarget) {
+    //Started HOME PAGE
+    changeStartedPage('home');
     if (checkClickTarget(e)) {
-      changeHistory('filmoteka/home');
-      spinner.show();
-      getFilms().then(data => renderGallery(data));
-      homePageMarkupUpdate();
-      setTimeout(() => {
-        spinner.hide();
-      }, 1000);
     } else if (e.target.textContent === 'MY LIBRARY') {
-      changeHistory('filmoteka/mylibrary');
+      changeHistory('mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
       spinner.show();
