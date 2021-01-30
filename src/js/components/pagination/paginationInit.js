@@ -12,6 +12,7 @@ import { getFilmsPagination } from '../api';
  */
 
 async function initPagination(query) {
+  //query ключевое слово.
   const container = $('[data-index="pagination"]');
 
   const data = await getFilmsPagination(query);
@@ -33,7 +34,7 @@ async function initPagination(query) {
     triggerPagingOnInit: false,
 
     callback: function (response, pagination) {
-      var dataHtml = renderGallery(response);
+      var dataHtml = ' ';
       dataHtml += '</ul>';
 
       container.prev().html(dataHtml);

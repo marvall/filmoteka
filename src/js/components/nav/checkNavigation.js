@@ -9,12 +9,16 @@ import {
 } from './cpaNavLogic';
 import { setModalAttribute, showTeam } from '../modal';
 import { spinner } from '../spinner';
+import initPagination from '../pagination/paginationInit';
 
 const changeStartedPage = function (address) {
   changeHistory(address);
   homePageMarkupUpdate();
   spinner.show();
-  getFilms().then(data => renderGallery(data));
+  getFilms().then(data => {
+    initPagination(data); // Подключил функцию Пагинации ТУТ!
+    renderGallery(data);
+  });
   setTimeout(() => {
     spinner.hide();
   }, 1000);
@@ -22,7 +26,7 @@ const changeStartedPage = function (address) {
 
 export const checkNavigation = function (e) {
   e.preventDefault();
-  if (e.currentTarget === window) {
+  if (e.target === window) {
     //Started HOME PAGE
     changeStartedPage('home');
   } else if (e.target !== e.currentTarget) {
