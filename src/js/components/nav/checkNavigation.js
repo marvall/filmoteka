@@ -1,6 +1,6 @@
 import { changeHistory } from '../../utils/changeHistory';
 import { renderGallery } from '../renderGallery';
-import { getFilms } from '../api';
+import { getFilms, getFilmsPagination } from '../api';
 import {
   homePageMarkupUpdate,
   myLibraryPageMarkupUpdate,
@@ -15,9 +15,13 @@ const changeStartedPage = function (address) {
   changeHistory(address);
   homePageMarkupUpdate();
   spinner.show();
-  getFilms().then(data => {
-    initPagination(data); // Подключил функцию Пагинации ТУТ!
-    renderGallery(data);
+  // getFilms().then(data => {
+  //   initPagination(); // Подключил функцию Пагинации ТУТ!
+  //   renderGallery(data);
+  // });
+  getFilmsPagination().then(data => {
+    renderGallery(data.results);
+    initPagination(data);
   });
   setTimeout(() => {
     spinner.hide();
