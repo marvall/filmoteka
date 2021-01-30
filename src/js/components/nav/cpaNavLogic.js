@@ -1,3 +1,5 @@
+import searchQuerryRender from '../keyWorldSearch';
+
 const refs = {
   header: document.querySelector('[data-index="header"]'),
   homeBtn: document.querySelector('[data-index="home"]'),
