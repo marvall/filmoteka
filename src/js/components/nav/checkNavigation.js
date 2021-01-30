@@ -1,6 +1,6 @@
 import { changeHistory } from '../../utils/changeHistory';
 import { renderGallery } from '../renderGallery';
-import { getFilms, getFilmsPagination } from '../api';
+import { getFilmsPagination } from '../api';
 import {
   homePageMarkupUpdate,
   myLibraryPageMarkupUpdate,
@@ -27,15 +27,14 @@ const changeStartedPage = function (address) {
 };
 
 export const checkNavigation = function (e) {
-  console.log(e.target.parentNode.dataset.index === 'card');
   e.preventDefault();
-  if (e.target === window && e !== MouseEvent) {
+  if (e.type === 'DOMContentLoaded') {
     //Started HOME PAGE
     changeStartedPage('home');
   } else if (e.target !== e.currentTarget) {
-    //Started HOME PAGE
-    changeStartedPage('home');
     if (checkClickTarget(e)) {
+      //Started HOME PAGE
+      changeStartedPage('home');
     } else if (e.target.textContent === 'MY LIBRARY') {
       changeHistory('mylibrary');
       myLibraryPageMarkupUpdate();
