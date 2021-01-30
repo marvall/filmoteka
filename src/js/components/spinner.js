@@ -38,13 +38,10 @@ export const spinner = function (value) {
 
     show() {
       this.spinnerRef.insertAdjacentHTML('beforeend', this.markup);
-      console.log('show spinner');
     },
 
     hide() {
       this.spinnerRef.innerHTML = '';
-
-      console.log('hide spinner');
     },
   };
   if (value === 'start') {

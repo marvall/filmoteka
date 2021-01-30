@@ -10,18 +10,16 @@ import {
 import { setModalAttribute, showTeam } from '../modal';
 import { spinner } from '../spinner';
 import initPagination from '../pagination/paginationInit';
+import { getSearch } from '../keyWorldSearch';
 
 const changeStartedPage = function (address) {
   changeHistory(address);
   homePageMarkupUpdate();
   spinner('start');
-  // getFilms().then(data => {
-  //   initPagination(); // Подключил функцию Пагинации ТУТ!
-  //   renderGallery(data);
-  // });
   getFilmsPagination().then(data => {
     renderGallery(data.results);
     initPagination(data);
+    getSearch();
   });
   spinner('stop');
 };

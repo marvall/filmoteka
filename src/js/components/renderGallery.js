@@ -6,7 +6,8 @@ import cardForOneMovies from '../../templates/cardForOneMovies.hbs';
  */
 export const renderGallery = function (objects) {
   document.querySelector("[data-index='gallery']").innerHTML = '';
-  if (objects.length === 1) {
+  if (objects.id) {
+    document.querySelector('[data-index="pagination"]').innerHTML = '';
     document
       .querySelector("[data-index='gallery']")
       .insertAdjacentHTML('afterbegin', cardForOneMovies(objects));
