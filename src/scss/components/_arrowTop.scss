@@ -14,11 +14,12 @@
     border: 2px solid $orange-color;
     border-radius: 50%;
     font-size: 44px;
-    @include transition(background-color);
+    @include transition(all);
   }
   .material-icons:hover,
   .material-icons:focus {
-    background-color: rgb(212, 200, 200);
+    background-color: $footer-background-color;
+    transform: scale(1.15);
   }
 }
 

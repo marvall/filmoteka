@@ -9,3 +9,7 @@ window.document
   .addEventListener('click', checkNavigation);
 // This eventListener observes the evet "changeHistoryEvent". this event is custom, and don't use anythere.
 window.addEventListener('changeHistoryEvent', renderHeader);
+
+//================arrowTop для проверки======//
+import arrowTop from './js/components/arrowTop'; // при подключении в index.js
+arrowTop(); //для проверки
