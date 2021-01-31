@@ -1,8 +1,10 @@
 import MicroModal from 'micromodal';
 import modalMarkup from '../../templates/modalMarkup.hbs';
 import modalFooter from '../../templates/modalFooter.hbs';
+import footerGalleryItem from '../../js/components/footerGalleryItems';
 import { getFilmInfo } from './api';
 import { spinner } from './spinner';
+
 
 MicroModal.init();
 const updateModalMarkup = function (film) {
@@ -36,7 +38,7 @@ export function showTeam(Node) {
   document.querySelector('#modal-1').innerHTML = '';
   document
     .querySelector('#modal-1')
-    .insertAdjacentHTML('beforeend', modalFooter());
+    .insertAdjacentHTML('beforeend', modalFooter(footerGalleryItem));
   MicroModal.show('modal-1').then(
     Node.removeAttribute('data-micromodal-trigger'),
   );

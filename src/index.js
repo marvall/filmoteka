@@ -3,6 +3,7 @@ import { renderHeader } from './js/utils/renderHeader';
 import { checkNavigation } from './js/components/nav/checkNavigation';
 import { loadStartContent } from './js/components/eventToLoad/loadStartContent';
 
+
 window.addEventListener('DOMContentLoaded', loadStartContent);
 window.document
   .querySelector('body')
