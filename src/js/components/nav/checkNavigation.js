@@ -11,6 +11,7 @@ import { setModalAttribute, showTeam } from '../modal';
 import { spinner } from '../spinner';
 import initPagination from '../pagination/paginationInit';
 import { getSearch } from '../keyWorldSearch';
+import initPaginationLS from '../pagination/paginationLS';
 
 const changeStartedPage = function (address) {
   changeHistory(address);
