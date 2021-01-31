@@ -1,6 +1,6 @@
 import { changeHistory } from '../../utils/changeHistory';
 import { renderGallery } from '../renderGallery';
-import { getFilmsPagination, getFilmInfo } from '../api';
+import { getFilmsPagination, getFilmInfo, getRenres } from '../api';
 import {
   homePageMarkupUpdate,
   myLibraryPageMarkupUpdate,
@@ -15,10 +15,11 @@ import { addToStorage } from '../addToStorage';
 import getFromStorage from '../getFromStorage';
 
 const changeStartedPage = function (address) {
+  console.log(reMapFilmsArray());
   changeHistory(address);
   homePageMarkupUpdate();
   spinner('start');
-  getFilmsPagination().then(data => {
+  reMapFilmsArray().then(data => {
     renderGallery(data.results);
     initPagination(data);
     getSearch();
