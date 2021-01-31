@@ -1,12 +1,13 @@
 // фоновое изображение хэддера
 .header {
+  position: relative;
   display: block;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   padding-top: 46px;
-  padding-bottom: 97px;
+  padding-bottom: 158px;
 }
 
 // пока закоментил пока не решим стоит ли добавлять див
@@ -16,11 +17,9 @@
 // }
 
 // кнопки навигации и лого
-
 .nav {
   display: flex;
   align-items: baseline;
-  margin-bottom: 41px;
 }
 
 .nav-logo {
@@ -52,17 +51,24 @@
 
 // инпут
 .film-search {
-  position: relative;
-  text-align: center;
-}
-
-.search-icon {
   position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .material-icons.white {
   margin: 0;
   color: $white-color;
+}
+
+.form__input-style {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0px;
 }
 
 .film-search-input {
@@ -100,12 +106,21 @@
 
   font-size: 14px;
   line-height: 1.14;
-  top: 44px;
-
-  color: $red-color;
+  top: 225%;
+  &.error {
+    color: $red-color;
+  }
+  &.success {
+    color: $green-color;
+  }
 }
 
 .myLibraryButtons {
+  display: inline-flex;
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
@@ -135,6 +150,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    padding-bottom: 148px;
+  }
+
   .nav-logo {
     margin-right: 307px;
   }
@@ -142,12 +161,12 @@
     margin-right: 10px;
   }
 
-  .film-search-input {
-    width: 330px;
+  .film-search {
+    text-align: center;
   }
 
-  .search-icon {
-    right: 143px;
+  .film-search-input {
+    width: 330px;
   }
 
   .logo-text {
@@ -159,6 +178,8 @@
 
   .film-search-input-error {
     width: 616px;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
 
@@ -166,9 +187,7 @@
   .nav-logo {
     margin-right: 573px;
   }
-  .search-icon {
-    right: 275px;
-  }
+
   .film-search-input-error {
     width: 882px;
   }

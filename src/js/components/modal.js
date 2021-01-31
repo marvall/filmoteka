@@ -3,6 +3,7 @@ import modalMarkup from '../../templates/modalMarkup.hbs';
 import modalFooter from '../../templates/modalFooter.hbs';
 import footerGalleryItem from '../../js/components/footerGalleryItems';
 import { getFilmInfo } from './api';
+import { spinner } from './spinner';
 
 
 MicroModal.init();
@@ -20,11 +21,13 @@ const updateModalMarkup = function (film) {
  */
 export function setModalAttribute(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
+  spinner('start');
   getFilmInfo(Node.id)
     .then(film => {
       updateModalMarkup(film);
     })
     .then(Node.removeAttribute('data-micromodal-trigger'));
+  spinner('stop');
 }
 /**
  * You need to pass the node(GO IT LINK) to this function.
