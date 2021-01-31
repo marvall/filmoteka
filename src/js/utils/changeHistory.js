@@ -5,7 +5,7 @@
  * @param {string} address;
  */
 export const changeHistory = function (address) {
-  history.replaceState({}, '', '/');
+  history.replaceState({}, '', '/filmoteka');
   history.replaceState({}, '', address);
   window.dispatchEvent(new Event('changeHistoryEvent'));
 };
