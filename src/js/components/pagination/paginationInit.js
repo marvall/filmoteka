@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import './paginationPlugin';
 import { renderGallery } from '../renderGallery';
 import { getFilmsPagination } from '../api';
+import { spinner } from '../spinner';
 
 /**
  * this function initializes pagination,
@@ -60,9 +61,11 @@ async function initPagination(data, query) {
     } else {
       return;
     }
+    spinner('start');
 
     getFilmsPagination(query, num).then(({ results }) => {
       renderGallery(results);
+      spinner('stop');
     });
   }
 }
