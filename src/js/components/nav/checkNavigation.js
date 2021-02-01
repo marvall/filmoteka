@@ -1,7 +1,7 @@
 import { changeHistory } from '../../utils/changeHistory';
 import { renderGallery } from '../renderGallery';
 import { getFilmsPagination, getFilmInfo, getRenres } from '../api';
-import { reMapFilmsArray } from '../reMapFilmsArray';
+// import { reMapFilmsArray } from '../reMapFilmsArray';
 import {
   homePageMarkupUpdate,
   myLibraryPageMarkupUpdate,
@@ -19,7 +19,7 @@ const changeStartedPage = function (address) {
   changeHistory(address);
   homePageMarkupUpdate();
   spinner('start');
-  reMapFilmsArray().then(data => {
+  getFilmsPagination().then(data => {
     renderGallery(data.results);
     initPagination(data);
     getSearch();
