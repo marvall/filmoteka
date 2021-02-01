@@ -1,8 +1,8 @@
 import { getFilmsPagination, getRenres } from './api';
 
-export async function reMapFilmsArray() {
+export async function reMapFilmsArray(searchValue, pageValue = 1) {
   let genres = await getRenres();
-  let massive = await getFilmsPagination();
+  let massive = await getFilmsPagination(searchValue, pageValue);
   massive.results.map(result => {
     let genresArr = [];
 

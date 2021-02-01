@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// import { reMapFilmsArray } from './reMapFilmsArray'; //
 const API_KEY = '4c4fcd40981097a4f391c61f2f249de1';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
@@ -48,7 +48,7 @@ async function getFilms(searchValue, pageValue = 1) {
 
 async function getFilmInfo(filmId) {
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
-  return data;
+  return reMapFilm(data);
 }
 
 async function getPages(searchValue, pageValue = 1) {
@@ -77,15 +77,47 @@ async function getFilmsPagination(searchValue, pageValue = 1) {
     const data = await fetchGetTrending(pageValue).catch(err =>
       console.log(err),
     );
-    return data;
+    return reMapFilmsArray(data);
   }
 
   if (searchValue) {
     const data = await fetchGetSearchMovie(searchValue, pageValue).catch(err =>
       console.log(err),
     );
-    return data;
+    return reMapFilmsArray(data);
   }
 }
+async function reMapFilmsArray(array) {
+  let genres = await getRenres();
+  array.results.map(result => {
+    let genresArr = [];
 
+    result.genre_ids.forEach(genreID => {
+      genres.forEach(genOBJ => {
+        if (genreID === genOBJ.id) {
+          genresArr.push(` ${genOBJ.name}`);
+        }
+      });
+    });
+    if (genresArr.length > 3) {
+      genresArr = genresArr.slice(0, 2);
+      genresArr.push(' other..');
+    }
+    result.genre_ids = genresArr;
+  });
+  return array;
+}
+function reMapFilm(arrayGenres) {
+  let genresArr = [];
+  arrayGenres.genres.map(genres => {
+    genresArr.push(` ${genres.name}`);
+  });
+
+  if (genresArr.length > 3) {
+    genresArr = genresArr.slice(0, 2);
+    genresArr.push(' other..');
+  }
+  arrayGenres.genres = genresArr;
+  return arrayGenres;
+}
 export { getFilms, getFilmInfo, getPages, getRenres, getFilmsPagination };

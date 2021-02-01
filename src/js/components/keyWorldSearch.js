@@ -30,7 +30,7 @@ const starSearch = function (searchString) {
       fetchStatus.classList.add('success');
       spinner('start');
       renderGallery(data.results);
-      initPagination(data);
+      initPagination(data, searchString);
       spinner('stop');
     }
     setTimeout(() => {
