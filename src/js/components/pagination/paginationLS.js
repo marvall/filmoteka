@@ -17,6 +17,8 @@ export const containerLS = $('[data-index="paginationLS"]');
  */
 
 function initPaginationLS(results) {
+  const btnShowMore = document.querySelector('[data-index="btn-show-more"]');
+  btnShowMore.style.display = 'none';
   const paginationWrapper = document.querySelector(
     '[data-index="paginationLS"]',
   );

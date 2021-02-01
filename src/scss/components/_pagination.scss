@@ -147,6 +147,8 @@ li.paginationjs-next > a {
   color: $black-color;
   background: $white-color;
   border-color: $modal-slave-color;
+
+  cursor: pointer;
   &:focus,
   &:hover {
     outline: none;

@@ -5,8 +5,10 @@ import { renderGallery } from '../renderGallery';
 import { getFilmsPagination } from '../api';
 import { spinner } from '../spinner';
 import { containerLS } from './paginationLS';
+import arrowTop from '../arrowTop';
 
 export const container = $('[data-index="pagination"]');
+arrowTop();
 
 /**
  * this function shows hidden movies when a button is pressed
