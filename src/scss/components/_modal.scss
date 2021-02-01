@@ -27,20 +27,6 @@
   box-sizing: border-box;
 }
 
-.modal__header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.modal__close {
-  background: transparent;
-  border: 0;
-}
-
-.modal__header .modal__close:before {
-  content: '\2715';
-}
 // ** modal content styles**//
 .movie-tmpl {
   font-family: $main-font;
@@ -178,6 +164,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .movie-tmpl {
+    font-size: 15px;
+  }
   .modal__container {
     padding-left: 15px;
     padding-right: 15px;
@@ -185,9 +174,17 @@
     padding-bottom: 20px;
     max-width: 670px;
   }
+
+  .movie-description {
+    width: 280px;
+  }
   .movie-img {
     height: 514px;
     width: 350px;
+  }
+
+  .movie-review {
+    margin-bottom: 40px;
   }
 
   .movie-card-about {
@@ -195,6 +192,50 @@
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .movie-tmpl {
+    font-size: 18px;
+  }
+  .modal__container {
+    max-width: 870px;
+  }
+  .movie-description {
+    width: 440px;
+  }
+  .btns-modal {
+    justify-content: center;
+  }
+  .btn-modal {
+    width: 186px;
+    height: 55px;
+    font-size: 18px;
+  }
+  .btn-modal-to-wached {
+    margin-right: 40px;
+  }
+  .movie-title {
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+  .movie-item-title {
+    margin-right: 80px;
+  }
+  .about-title {
+    margin-bottom: 20px;
+  }
+  .movie-review {
+    margin-bottom: 50px;
+  }
+  .vote,
+  .votes {
+    width: 46px;
+    height: 20px;
+  }
+
+  .movie-img {
+    margin-right: 30px;
+  }
+}
 /**************************\
   Demo Animation Style
 \**************************/
@@ -262,4 +303,3 @@
 .micromodal-slide .modal__overlay {
   will-change: transform;
 }
-
