@@ -29,23 +29,22 @@
 
 // ** modal content styles**//
 .movie-tmpl {
-  min-width: 280px;
+  min-width: 240px;
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.8em;
+  line-height: 1.8;
 }
 .movie-img {
   width: 280px;
 
   border-radius: 5px;
   margin-bottom: 30px;
-  margin-right: 20px;
 }
 
 .movie-title {
   font-size: 20px;
-  line-height: 1.172em;
+  line-height: 1.172;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -62,7 +61,7 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle; // fix by marvall
-  line-height: 1.167; // fix by marvall
+  line-height: 1.17; // fix by marvall
   width: 36px;
   height: 16px;
   text-transform: uppercase;
@@ -75,7 +74,7 @@
 .votes {
   display: inline-block;
   vertical-align: middle; // fix by marvall
-  line-height: 1.167; // fix by marvall
+  line-height: 1.17; // fix by marvall
   width: 36px;
   height: 16px;
   background: $footer-background-color;
@@ -96,8 +95,10 @@
   margin-bottom: 10px;
 }
 .movie-review {
-  line-height: 1.33em; //fix by marvall
+  line-height: 1.33; //fix by marvall
   margin-bottom: 30px;
+  height: 60px;
+  overflow: hidden;
 }
 .btn-modal {
   padding: 0;
@@ -107,6 +108,7 @@
   text-transform: uppercase;
   border-radius: 5px;
   border-color: transparent;
+  cursor: pointer;
 
   color: $black-color;
   background: $white-color;
@@ -136,7 +138,6 @@
     width: 100%;
   }
   .movie-img {
-    width: calc(100% - 40px);
     margin-bottom: 30px;
   }
   .movie-item > .value {
@@ -154,12 +155,6 @@
     font-size: 12px;
     line-height: 1.33;
     text-transform: uppercase;
-  }
-  .movie-review {
-    width: calc(100% - 40px);
-  }
-  .btn-modal {
-    width: calc((100% - 55px) / 2);
   }
 }
 @media screen and (min-width: 768px) {
@@ -179,20 +174,22 @@
   }
   .movie-img {
     width: 250px;
-    height: 416px;
+    height: 370px;
+    margin-right: 20px;
   }
   .movie-card {
     display: flex;
   }
   .movie-review {
-    line-height: 1.8em;
+    line-height: 1.8;
+    height: 80px;
   }
   .btn-modal-to-wached {
-    padding: 3px;
+    font-size: 11.5px;
   }
   .movie-title {
     font-size: 30px;
-    line-height: 1.172em;
+    line-height: 1.172;
     word-break: break-word;
   }
 }
@@ -217,8 +214,13 @@
     width: 350px;
   }
 
+  .about-title {
+    margin-bottom: 20px;
+  }
+
   .movie-review {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    height: 160px;
   }
 
   .movie-card-about {
@@ -258,7 +260,8 @@
     margin-bottom: 20px;
   }
   .movie-review {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    height: 120px;
   }
   .vote,
   .votes {

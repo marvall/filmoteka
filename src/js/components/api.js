@@ -51,6 +51,11 @@ async function getFilmInfo(filmId) {
   return reMapFilm(data);
 }
 
+async function getFilmInfoToStorage(filmId) {
+  const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
+  return reMapFilmToStorage(data);
+}
+
 async function getPages(searchValue, pageValue = 1) {
   if (!searchValue) {
     const data = await fetchGetTrending(pageValue)
@@ -87,14 +92,16 @@ async function getFilmsPagination(searchValue, pageValue = 1) {
     return reMapFilmsArray(data);
   }
 }
+
 async function reMapFilmsArray(array) {
   let genres = await getRenres();
   array.results.map(result => {
     let releaseYear = '';
-    if (result.release_date) {
+    if (!result.release_date) {
+      releaseYear = '';
+    } else {
       releaseYear = result.release_date.slice(0, 4);
     }
-
     let genresArr = [];
     result.genre_ids.forEach(genreID => {
       genres.forEach(genOBJ => {
@@ -112,20 +119,49 @@ async function reMapFilmsArray(array) {
   });
   return array;
 }
+
 function reMapFilm(arrayGenres) {
-  // let releaseYear = '';
-  // releaseYear = arrayGenres.release_date.slice(0, 4);
+  let releaseYear = '';
+  if (!arrayGenres.release_date) {
+    releaseYear = '';
+  } else {
+    releaseYear = arrayGenres.release_date.slice(0, 4);
+  }
+  let genresArr = [];
+  arrayGenres.genres.map(genres => {
+    genresArr.push(` ${genres.name}`);
+  });
+  arrayGenres.genres = genresArr;
+  arrayGenres.release_date = releaseYear;
+  return arrayGenres;
+}
+
+function reMapFilmToStorage(arrayGenres) {
+  let releaseYear = '';
+  if (!arrayGenres.release_date) {
+    releaseYear = '';
+  } else {
+    releaseYear = arrayGenres.release_date.slice(0, 4);
+  }
   let genresArr = [];
   arrayGenres.genres.map(genres => {
     genresArr.push(` ${genres.name}`);
   });
 
-  // if (genresArr.length > 3) {
-  //   genresArr = genresArr.slice(0, 2);
-  //   genresArr.push(' other..');
-  // }
+  if (genresArr.length > 3) {
+    genresArr = genresArr.slice(0, 2);
+    genresArr.push(' other..');
+  }
   arrayGenres.genres = genresArr;
-  // arrayGenres.release_date = releaseYear;
+  arrayGenres.release_date = releaseYear;
   return arrayGenres;
 }
-export { getFilms, getFilmInfo, getPages, getRenres, getFilmsPagination };
+
+export {
+  getFilms,
+  getFilmInfo,
+  getPages,
+  getRenres,
+  getFilmsPagination,
+  getFilmInfoToStorage,
+};
