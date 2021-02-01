@@ -4,7 +4,7 @@
 
   <div class="card-info">
     <h2 class="card-title"> {{title}} </h2>
-    <p class="card-genre"> {{genre_ids}} </p>
+    <p class="card-genre"> {{#if genre_ids}}{{genre_ids}}{{/if}}{{#if genres}}{{genres}}{{/if}} </p>
     <p class="card-release-year">
       {{release_date}}
     </p>
