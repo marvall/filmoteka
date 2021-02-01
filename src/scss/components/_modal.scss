@@ -106,11 +106,10 @@
   color: $black-color;
   background: $white-color;
   border-color: $modal-slave-color;
-  &:focus,
   &:hover {
     outline: none;
     border: none;
-    background: $orange-color;
+    background: $orange-slave-color;
     color: $white-color;
   }
 }

@@ -112,12 +112,11 @@
   margin-right: 4px;
   margin-bottom: 40px;
 
-  &:hover,
-  &:focus {
+  &:hover {
     outline: none;
     border: none;
-    background: #ff6b08;
-    color: #ffffff;
+    background: $orange-slave-color;
+    color: $white-color;
   }
 }
 
