@@ -90,8 +90,10 @@ async function getFilmsPagination(searchValue, pageValue = 1) {
 async function reMapFilmsArray(array) {
   let genres = await getRenres();
   array.results.map(result => {
-    let genresArr = [];
+    let releaseYear = '';
+    releaseYear = result.release_date.slice(0, 4);
 
+    let genresArr = [];
     result.genre_ids.forEach(genreID => {
       genres.forEach(genOBJ => {
         if (genreID === genOBJ.id) {
@@ -104,20 +106,24 @@ async function reMapFilmsArray(array) {
       genresArr.push(' other..');
     }
     result.genre_ids = genresArr;
+    result.release_date = releaseYear;
   });
   return array;
 }
 function reMapFilm(arrayGenres) {
+  // let releaseYear = '';
+  // releaseYear = arrayGenres.release_date.slice(0, 4);
   let genresArr = [];
   arrayGenres.genres.map(genres => {
     genresArr.push(` ${genres.name}`);
   });
 
-  if (genresArr.length > 3) {
-    genresArr = genresArr.slice(0, 2);
-    genresArr.push(' other..');
-  }
+  // if (genresArr.length > 3) {
+  //   genresArr = genresArr.slice(0, 2);
+  //   genresArr.push(' other..');
+  // }
   arrayGenres.genres = genresArr;
+  // arrayGenres.release_date = releaseYear;
   return arrayGenres;
 }
 export { getFilms, getFilmInfo, getPages, getRenres, getFilmsPagination };
