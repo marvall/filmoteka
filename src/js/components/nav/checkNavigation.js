@@ -1,6 +1,7 @@
 import { changeHistory } from '../../utils/changeHistory';
 import { renderGallery } from '../renderGallery';
-import { getFilmsPagination } from '../api';
+import { getFilmsPagination, getFilmInfo, getRenres } from '../api';
+import { reMapFilmsArray } from '../reMapFilmsArray';
 import {
   homePageMarkupUpdate,
   myLibraryPageMarkupUpdate,
@@ -12,12 +13,15 @@ import { spinner } from '../spinner';
 import initPagination from '../pagination/paginationInit';
 import { getSearch } from '../keyWorldSearch';
 import initPaginationLS from '../pagination/paginationLS';
+import { addToStorage } from '../addToStorage';
+import getFromStorage from '../getFromStorage';
+
 
 const changeStartedPage = function (address) {
   changeHistory(address);
   homePageMarkupUpdate();
   spinner('start');
-  getFilmsPagination().then(data => {
+  reMapFilmsArray().then(data => {
     renderGallery(data.results);
     initPagination(data);
     getSearch();
@@ -35,6 +39,7 @@ export const checkNavigation = function (e) {
       //Started HOME PAGE
       changeStartedPage('home');
     } else if (e.target.textContent === 'MY LIBRARY') {
+      document.querySelector("[data-index='pagination']").innerHTML = '';
       changeHistory('mylibrary');
       myLibraryPageMarkupUpdate();
       headerDinamicContentMarkupUpdate();
@@ -414,6 +419,29 @@ export const checkNavigation = function (e) {
     } else if (e.target.dataset.index === 'team') {
       //this func open modal in footer
       showTeam(e.target);
+    } else if (e.target.dataset.index === 'btn-to-wached') {
+      getFilmInfo(document.querySelector('[data-index="cardInfo"]').id).then(
+        data => {
+          addToStorage(data, 'watched');
+        },
+      );
+    } else if (e.target.dataset.index === 'btn-to-queue') {
+      getFilmInfo(document.querySelector('[data-index="cardInfo"]').id).then(
+        data => {
+          addToStorage(data, 'queue');
+        },
+      );
+    } else if (e.target.dataset.index === 'watched') {
+      // let slon = getFromStorage('watched');
+      // console.log(slon.length);
+      renderGallery(getFromStorage('watched'));
+      //initPagination({
+      //  results: slon,
+      //  total_pages: slon.length / 20 + 1,
+      //});
+    } else if (e.target.dataset.index === 'queue') {
+      renderGallery(getFromStorage('queue'));
+      //initPagination(getFromStorage('queue'));
     }
   }
 };

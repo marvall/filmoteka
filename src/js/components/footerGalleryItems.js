@@ -3,9 +3,9 @@ export default [
     name: 'Yaroslav',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Yaroslav.jpg',
-    instagram: '',
-    facebook: '',
-    linkedin: '',
+    instagram: 'https://www.instagram.com/marvalltm',
+    facebook: 'https://www.facebook.com/marvalltm',
+    linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
   },
   {
