@@ -39,6 +39,11 @@ function addToStorage(filmObj, filmType) {
 
         localStorage.setItem('watched', JSON.stringify(watched));
         localStorage.setItem('queue', JSON.stringify(filtrededQueue));
+      } else {
+        const filtrededWatched = watched.filter(film => {
+          return film.id !== filmObj.id;
+        });
+        localStorage.setItem('watched', JSON.stringify(filtrededWatched));
       }
       break;
     case 'queue':
@@ -50,6 +55,11 @@ function addToStorage(filmObj, filmType) {
 
         localStorage.setItem('watched', JSON.stringify(filtrededWatched));
         localStorage.setItem('queue', JSON.stringify(queue));
+      } else {
+        const filtrededQueue = queue.filter(film => {
+          return film.id !== filmObj.id;
+        });
+        localStorage.setItem('queue', JSON.stringify(filtrededQueue));
       }
       break;
     default:
