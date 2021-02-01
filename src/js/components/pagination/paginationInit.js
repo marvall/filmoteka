@@ -4,6 +4,7 @@ import './paginationPlugin';
 import { renderGallery } from '../renderGallery';
 import { getFilmsPagination } from '../api';
 import { spinner } from '../spinner';
+import { containerLS } from './paginationLS';
 
 /**
  * this function initializes pagination,
@@ -12,9 +13,17 @@ import { spinner } from '../spinner';
  * @param {string} query
  */
 
+export const container = $('[data-index="pagination"]');
+
 async function initPagination(data, query) {
   //query ключевое слово.
-  const container = $('[data-index="pagination"]');
+
+  const paginationWrapper = document.querySelector('[data-index="pagination"]');
+  paginationWrapper.removeEventListener('mouseup', onClickPageHandler);
+  paginationWrapper.textContent = '';
+
+  containerLS.hide();
+  container.show();
 
   // const data = await getFilmsPagination(query);
   const sources = data.results;
@@ -35,7 +44,7 @@ async function initPagination(data, query) {
     // triggerPagingOnInit: false,
 
     callback: function (response, pagination) {
-      var dataHtml = ' ';
+      var dataHtml = '';
       dataHtml += '</ul>';
 
       container.prev().html(dataHtml);
@@ -44,7 +53,6 @@ async function initPagination(data, query) {
 
   container.pagination(options);
 
-  const paginationWrapper = document.querySelector('[data-index="pagination"]');
   paginationWrapper.addEventListener('mouseup', onClickPageHandler);
 
   function onClickPageHandler(event) {
