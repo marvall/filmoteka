@@ -1,16 +1,22 @@
 {{#each this}}
 <li class="card" id="{{id}}" data-index="card">
+  {{#if poster_path}}
   <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='Film {{title}} poster' />
-
+  {{else}}
+  <img class="card-img" src='https://timescineplex.com/times/img/no-poster.png' alt='Film {{title}} poster' />
+  {{/if}}
   <div class="card-info">
     <h2 class="card-title"> {{title}} </h2>
     <p class="card-genre"> {{#if genre_ids}}{{genre_ids}}{{/if}}{{#if genres}}{{genres}}{{/if}} </p>
     <p class="card-release-year">
-      {{release_date}}
+      {{#if release_date}}
     </p>
+    {{/if}}
+    {{#if vote_average}}
     <p class="card-vote is-visible" data-hiden="true">
       {{vote_average}}
     </p>
+    {{/if}}
   </div>
 </li>
 {{/each}}
