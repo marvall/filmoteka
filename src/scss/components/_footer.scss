@@ -129,3 +129,9 @@
     }
   }
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .modal__container__footer {
+    padding: 20px;
+    max-width: 280px;
+  }
+}
