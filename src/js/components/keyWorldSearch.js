@@ -4,6 +4,7 @@ import { getFilmsPagination, getFilmInfo } from './api';
 import initPagination from './pagination/paginationInit';
 import { renderGallery } from './renderGallery';
 import { spinner } from './spinner';
+import { checkFilmInStack } from './checkFimlInStack';
 const _ = require('lodash');
 
 const starSearch = function (searchString) {
@@ -21,9 +22,11 @@ const starSearch = function (searchString) {
         'Search result are successful! Searched one result';
       fetchStatus.classList.add('success');
       spinner('start');
-      getFilmInfo(data.results[0].id).then(data => {
-        renderGallery(data);
-      });
+      getFilmInfo(data.results[0].id)
+        .then(data => {
+          renderGallery(data);
+        })
+        .then(() => checkFilmInStack());
       spinner('stop');
     } else {
       fetchStatus.textContent = `Search result are successful! Searched ${data.total_results} result`;
