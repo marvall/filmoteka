@@ -1,7 +1,7 @@
 import getFromStorage from '../getFromStorage';
 import initPaginationLS from './paginationLS';
 
-const buttonHome = document.querySelector('[data-index="home"]');
+// const buttonHome = document.querySelector('[data-index="home"]');
 const buttonLibrary = document.querySelector('[data-index="mylibrary"]');
 
 const mediaQueryList = [
@@ -27,9 +27,8 @@ export function paginationSizeChanger() {
 
 mediaQueryList.forEach(mediaQuery =>
   mediaQuery.addEventListener('change', () => {
-    if (buttonHome.classList.contains('current')) {
-      console.log(buttonHome);
-    }
+    // if (buttonHome.classList.contains('current')) {
+    // }
     if (buttonLibrary.classList.contains('current')) {
       const buttonWatched = document.querySelector('[data-index="watched"]');
       const buttonQueue = document.querySelector('[data-index="queue"]');

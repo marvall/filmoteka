@@ -10,6 +10,12 @@ import { paginationSizeChanger } from './mediaQuery';
 
 export const containerLS = $('[data-index="paginationLS"]');
 
+/**
+ * this function initializes pagination with results from Local Storage,
+ * renders the page markup when the page button is clicked.
+ * @param {array} results
+ */
+
 function initPaginationLS(results) {
   const paginationWrapper = document.querySelector(
     '[data-index="paginationLS"]',

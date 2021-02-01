@@ -129,3 +129,29 @@ li.paginationjs-next > a {
     display: none;
   }
 }
+
+// ========================================================================
+.btn-show-more {
+  display: block;
+
+  margin: 0 auto;
+  margin-top: 20px;
+
+  width: 136px;
+  height: 44px;
+
+  text-transform: uppercase;
+  border-radius: 5px;
+  border-color: transparent;
+
+  color: $black-color;
+  background: $white-color;
+  border-color: $modal-slave-color;
+  &:focus,
+  &:hover {
+    outline: none;
+    border: none;
+    background: $orange-color;
+    color: $white-color;
+  }
+}
