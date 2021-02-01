@@ -91,7 +91,9 @@ async function reMapFilmsArray(array) {
   let genres = await getRenres();
   array.results.map(result => {
     let releaseYear = '';
-    releaseYear = result.release_date.slice(0, 4);
+    if (result.release_date) {
+      releaseYear = result.release_date.slice(0, 4);
+    }
 
     let genresArr = [];
     result.genre_ids.forEach(genreID => {
