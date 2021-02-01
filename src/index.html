@@ -13,44 +13,46 @@
       href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <header class="header container">
+    <header
+      class="header header__background-home container"
+      data-index="header"
+    >
       <nav class="nav" data-index="navigation">
-        <a href="" class="nav-logo">
-          <div class="logo-style">
-            <svg class="nav-logo-icon">
-              <use href="./images/sprite.svg#icon-film"></use>
-            </svg>
-            <span class="logo-text">Filmoteka</span>
-          </div>
+        <a href="" class="nav-logo logo-style">
+          <svg class="nav-logo-icon">
+            <use href="./images/sprite.svg#icon-film"></use>
+          </svg>
+          <span class="logo-text">Filmoteka</span>
         </a>
         <button class="nav-btn current" data-index="home">HOME</button>
         <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
       </nav>
-      <form class="film-search" action="">
-        <input
-          class="film-search-input"
-          data-index="serchInfo"
-          type="text"
-          placeholder="Поиск фильмов"
-        />
-        <p class="film-search-input-error" data-index="fetchStatus">
-          Search result not successful. Enter the correct movie name and
-        </p>
-      </form>
       <div data-index="headerDinamicContent"></div>
     </header>
-    <!-- modal window -->
-    <section>
-      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
-    </section>
     <section>
       <ul data-index="gallery" class="gallery container"></ul>
-
-      <!-- wrapper for spinner -->
+      <!-- Modal -->
+      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
+      <!-- Pagination -->
+      <button
+        type="button"
+        class="btn-show-more"
+        data-index="btn-show-more"
+      ></button>
       <div class="pagination" data-index="pagination"></div>
+      <div class="pagination" data-index="paginationLS"></div>
+      <!-- wrapper for spinner -->
       <div class="loader" data-index="spinner"></div>
+      <!-- wrapper for arrowTop -->
+      <div class="arrowTop" data-index="arrowTop"></div>
     </section>
     <footer class="footer-them-color">
       <div class="footer-text section-footer">
@@ -60,12 +62,9 @@
             >Developed with
             <i class="material-icons">favorite</i>
             by
-            <a href class="footer-link">GoIT Students</a>
+            <a href class="footer-link" data-index="team">GoIT Students</a>
           </span>
         </span>
-
-        <!-- <svg>"heart"</svg> -->
-        <!-- <button data-index="students">GoIt Students</button> -->
       </div>
     </footer>
   </body>

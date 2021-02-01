@@ -1,5 +1,5 @@
 function getFromStorage(filmType) {
-  switch (filmIType) {
+  switch (filmType) {
     case 'watched':
       let watched = localStorage.getItem('watched');
       if (watched === null) {
@@ -19,6 +19,6 @@ function getFromStorage(filmType) {
     default:
       console.log('Write correct type');
   }
-};
+}
 
 export default getFromStorage;

@@ -1,9 +1,14 @@
 @import './base/variables';
 @import './base/reset';
 @import './components/container';
+@import './components/cpaStyles';
 @import './components/nav-buttons';
 @import './layout/header';
 @import './components/card';
 @import './components/spinner';
 @import './components/footer';
+@import './components/card_for_one_movie';
 @import './components/modal';
+@import './components/pagination';
+@import './components/arrowTop';
+@import './base/activeBtn';

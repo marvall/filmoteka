@@ -1,33 +1,45 @@
 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-        <header class="modal__header">
-            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-        </header>
         <main class="modal__content" id="modal-1-content">
-            <img src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt="poster of {{original_title}}">
-            <div>
-                <h2 class="movie-title">{{original_title}}</h2>
-                <p class="movie-item">
-                    <i class="movie-item-title">Vote/Votes</i>
-                    <span class="value">{{vote_average}} / {{vote_count}}</span>
-                </p>
-                <p class="movie-item">
-                    <i class="movie-item-title">Popularity</i>
-                    <span class="value">{{popularity}}</span>
-                </p>
-                <p class="movie-item">
-                    <i class="movie-item-title">Original Title</i>
-                    <span class="value">{{original_title}}</span>
-                </p>
-                <p class="movie-item">
-                    <i class="movie-item-title">Genre</i>
-                    <span class="value">{{genre_ids}}</span>
-                </p>
-                <article class="movie-review">About <br> {{overview}}</article>
-            </div>
-            <div>
-                <button class="btn" data-attribute="add-to-watched">ADD TO WATCHED</button>
-                <button class="btn" data-attribute="add-to-queue">ADD TO QUEUE</button>
+            <div class="movie-tmpl" id="{{id}}" data-index="cardInfo">
+
+                <img class="movie-img" src="https://image.tmdb.org/t/p/w300{{poster_path}}"
+                    alt="poster of {{original_title}}">
+
+                <div class="movie-description">
+
+                    <h2 class="movie-title">{{original_title}}</h2>
+                    <p class="movie-item">
+                        <i class="movie-item-title">Vote/Votes</i>
+                        <span class="value vote"> {{vote_average}} </span>
+                        <span class="value between">/</span>
+                        <span class="value votes"> {{vote_count}}</span>
+                    </p>
+
+                    <p class="movie-item">
+                        <i class="movie-item-title">Popularity</i>
+                        <span class="value">{{popularity}}</span>
+                    </p>
+
+                    <p class="movie-item">
+                        <i class="movie-item-title">Original Title</i>
+                        <span class="value">{{original_title}}</span>
+                    </p>
+
+                    <p class="movie-item" style="margin-bottom: 20px;">
+                        <i class="movie-item-title">Genre</i>
+                        <span class="value">{{genres}}</span>
+                    </p>
+
+                    <h3 class="about-title">about</h3>
+                    <article class="movie-review">{{overview}}</article>
+
+                    <div class="btns-modal">
+                        <button class="btn-modal-to-wached btn-modal" data-index="btn-to-wached">ADD TO WATCHED</button>
+                        <button class="btn-modal-to-queue btn-modal" data-index="btn-to-queue">ADD TO QUEUE</button>
+                    </div>
+
+                </div>
             </div>
         </main>
     </div>
