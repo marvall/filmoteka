@@ -6,33 +6,9 @@ import { renderGallery } from '../renderGallery';
 import { spinner } from '../spinner';
 import { container } from './paginationInit';
 
-import getFromStorage from '../getFromStorage';
-
-const mediaQueryList = [
-  window.matchMedia('(max-width: 767px)'),
-  window.matchMedia('(min-width: 768px) and (max-width: 1023px)'),
-  window.matchMedia('(min-width: 1024px)'),
-];
-
-const results = getFromStorage('queue');
+import { paginationSizeChanger } from './mediaQuery';
 
 export const containerLS = $('[data-index="paginationLS"]');
-
-function paginationSizeChanger() {
-  if (mediaQueryList[0].matches) {
-    return 4;
-  }
-  if (mediaQueryList[1].matches) {
-    return 8;
-  }
-  if (mediaQueryList[2].matches) {
-    return 9;
-  }
-}
-
-mediaQueryList.forEach(mediaQuery =>
-  mediaQuery.addEventListener('change', () => initPaginationLS(results)),
-);
 
 function initPaginationLS(results) {
   const paginationWrapper = document.querySelector(

@@ -109,3 +109,23 @@ li.paginationjs-next > a {
   font-size: 20px;
   cursor: pointer;
 }
+
+// =========================================================================
+
+@media screen and (max-width: 767px) {
+  .card:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .card:nth-child(n + 9) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card:nth-child(n + 10) {
+    display: none;
+  }
+}
