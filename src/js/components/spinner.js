@@ -37,6 +37,7 @@ export const spinner = function (value) {
       </div>`,
 
     show() {
+      this.spinnerRef.innerHTML = '';
       this.spinnerRef.insertAdjacentHTML('beforeend', this.markup);
     },
 

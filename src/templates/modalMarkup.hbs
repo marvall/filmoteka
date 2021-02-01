@@ -1,7 +1,7 @@
 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
         <main class="modal__content" id="modal-1-content">
-            <div class="movie-tmpl">
+            <div class="movie-tmpl" id="{{id}}" data-index="cardInfo">
 
                 <img class="movie-img" src="https://image.tmdb.org/t/p/w300{{poster_path}}"
                     alt="poster of {{original_title}}">
@@ -27,7 +27,7 @@
 
                     <p class="movie-item" style="margin-bottom: 20px;">
                         <i class="movie-item-title">Genre</i>
-                        <span class="value">{{genre_ids}}</span>
+                    <p class="stats-info-genre">{{genres}}</p>
                     </p>
 
                     <h3 class="about-title">about</h3>

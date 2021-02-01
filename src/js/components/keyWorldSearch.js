@@ -3,6 +3,7 @@
 import { getFilmsPagination, getFilmInfo } from './api';
 import initPagination from './pagination/paginationInit';
 import { renderGallery } from './renderGallery';
+import { spinner } from './spinner';
 const _ = require('lodash');
 
 const starSearch = function (searchString) {
@@ -19,14 +20,18 @@ const starSearch = function (searchString) {
       fetchStatus.textContent =
         'Search result are successful! Searched one result';
       fetchStatus.classList.add('success');
+      spinner('start');
       getFilmInfo(data.results[0].id).then(data => {
         renderGallery(data);
       });
+      spinner('stop');
     } else {
       fetchStatus.textContent = `Search result are successful! Searched ${data.total_results} result`;
       fetchStatus.classList.add('success');
+      spinner('start');
       renderGallery(data.results);
-      initPagination(data);
+      initPagination(data, searchString);
+      spinner('stop');
     }
     setTimeout(() => {
       fetchStatus.classList.add('hidden');
