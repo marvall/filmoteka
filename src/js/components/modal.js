@@ -4,7 +4,7 @@ import modalFooter from '../../templates/modalFooter.hbs';
 import footerGalleryItem from '../../js/components/footerGalleryItems';
 import { getFilmInfo } from './api';
 import { spinner } from './spinner';
-
+import { checkFilmInStack } from './checkFimlInStack';
 
 MicroModal.init();
 const updateModalMarkup = function (film) {
@@ -26,7 +26,10 @@ export function setModalAttribute(Node) {
     .then(film => {
       updateModalMarkup(film);
     })
-    .then(Node.removeAttribute('data-micromodal-trigger'));
+    .then(() => {
+      Node.removeAttribute('data-micromodal-trigger');
+      checkFilmInStack();
+    });
   spinner('stop');
 }
 /**

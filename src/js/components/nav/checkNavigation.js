@@ -14,6 +14,7 @@ import { getSearch } from '../keyWorldSearch';
 import initPaginationLS from '../pagination/paginationLS';
 import { addToStorage } from '../addToStorage';
 import getFromStorage from '../getFromStorage';
+import { checkFilmInStack } from '../checkFimlInStack';
 
 /**
  * This function render started-page: home.
@@ -28,41 +29,6 @@ const changeStartedPage = function () {
     getSearch();
   });
   spinner('stop');
-};
-
-const chechFilmInStack = function (e) {
-  //console.log(e.target.dataset.index);
-  //if (
-  //  e.target.dataset.index === 'btn-to-wached' ||
-  //  e.target.dataset.index === 'btn-to-queue'
-  //) {
-  //  let stackName = e.target.dataset.index;
-  //  console.log(stackName);
-  //  if (stackName === 'btn-to-wached') {
-  //    stackName = 'watched';
-  //    console.log(stackName);
-  //  }
-  //  if (stackName === 'btn-to-queue') {
-  //    stackName = 'queue';
-  //    console.log(stackName);
-  //  }
-  //
-  //  let stack = getFromStorage(stackName);
-  //
-  //  const stackId = stack.map(film => film.id);
-  //  let cardID = document.querySelector("[data-index='cardInfo']");
-  //
-  //  let BtnWatched = document.querySelector("[data-index='btn-to-wached']");
-  //  let BtnQueue = document.querySelector("[data-index='btn-to-queue']");
-  //
-  //  if (stackId.includes(Number(cardID.id))) {
-  //    e.target.classList.add('activeBtn');
-  //    e.target.textContent = 'Remove';
-  //  } else {
-  //    e.target.classList.remove('activeBtn');
-  //    e.target.textContent = `ADD TO ${stackName.toUpperCase()}`;
-  //  }
-  //}
 };
 
 /**
@@ -95,24 +61,25 @@ export const checkNavigation = function (e) {
     } else if (e.target.parentNode.dataset.index === 'card') {
       //THIS FUNC OPEN MODLA IN GALLERY
       setModalAttribute(e.target.parentNode);
-      chechFilmInStack(e);
     } else if (e.target.dataset.index === 'team') {
       //THIS FUNC OPEN MODLA IN FOOTER
       showTeam(e.target);
     } else if (e.target.dataset.index === 'btn-to-wached') {
       //ADD TO WATCHED
-      chechFilmInStack(e);
+      checkFilmInStack();
       getFilmInfo(document.querySelector('[data-index="cardInfo"]').id).then(
         data => {
           addToStorage(data, 'watched');
+          checkFilmInStack();
         },
       );
     } else if (e.target.dataset.index === 'btn-to-queue') {
       //ADD TO QUEUE
-      chechFilmInStack(e);
+      checkFilmInStack();
       getFilmInfo(document.querySelector('[data-index="cardInfo"]').id).then(
         data => {
           addToStorage(data, 'queue');
+          checkFilmInStack();
         },
       );
     } else if (e.target.dataset.index === 'watched') {
