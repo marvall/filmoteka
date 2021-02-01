@@ -29,6 +29,7 @@
 
 // ** modal content styles**//
 .movie-tmpl {
+  min-width: 280px;
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
@@ -41,11 +42,16 @@
   margin-bottom: 30px;
   margin-right: 20px;
 }
+
 .movie-title {
   font-size: 20px;
   line-height: 1.172em;
   margin-bottom: 20px;
   text-transform: uppercase;
+}
+.movie-item {
+  position: relative;
+  display: block;
 }
 .movie-item-title {
   color: $modal-slave-color;
@@ -56,27 +62,25 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle; // fix by marvall
-  line-height: 1.16em; // fix by marvall
+  line-height: 1.167; // fix by marvall
   width: 36px;
   height: 16px;
   text-transform: uppercase;
-  color: #ffffff;
-  background: #ff6b01;
+  color: $white-color;
+  background: $orange-color;
   border-radius: 5px;
-  border: 1px solid #ff6b01;
+  border: 1px solid $orange-color;
 }
 
 .votes {
   display: inline-block;
   vertical-align: middle; // fix by marvall
-  line-height: 1.16em; // fix by marvall
+  line-height: 1.167; // fix by marvall
   width: 36px;
   height: 16px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-
-  background: #f7f7f7;
+  background: $footer-background-color;
   border-radius: 5px;
+  border: 1px solid $footer-background-color;
   color: $black-color;
   text-align: center;
 }
@@ -96,9 +100,10 @@
   margin-bottom: 30px;
 }
 .btn-modal {
+  padding: 0;
   width: 136px;
   height: 44px;
-
+  font-size: 12px;
   text-transform: uppercase;
   border-radius: 5px;
   border-color: transparent;
@@ -115,19 +120,49 @@
   }
 }
 .btn-modal-to-wached {
-  margin-right: 4px;
+  margin-right: 15px;
+}
 
-  font-size: 12px;
-}
-.btn-modal-to-queue {
-  font-size: 12px;
-}
 .btns-modal {
   display: flex;
-  margin-bottom: 40px;
 }
 
 //**@media for modal container and modal content**/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .movie-tmpl {
+    width: 100%;
+  }
+  .modal__container {
+    padding: 20px;
+    width: 100%;
+  }
+  .movie-img {
+    width: calc(100% - 40px);
+    margin-bottom: 30px;
+  }
+  .movie-item > .value {
+    position: absolute;
+    left: 80px;
+    &.votes {
+      left: 130px;
+    }
+    &.between {
+      left: 120px;
+    }
+  }
+  .about-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+  .movie-review {
+    width: calc(100% - 40px);
+  }
+  .btn-modal {
+    width: calc((100% - 55px) / 2);
+  }
+}
 @media screen and (min-width: 768px) {
   .modal__container {
     padding-left: 15px;
