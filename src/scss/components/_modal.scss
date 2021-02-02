@@ -36,12 +36,9 @@
   line-height: 1.8;
 }
 .movie-img {
-  width: 280px;
-
   border-radius: 5px;
   margin-bottom: 30px;
 }
-
 .movie-title {
   font-size: 20px;
   line-height: 1.172;
@@ -55,6 +52,12 @@ ul {
 
 .movie-item-title {
   display: block;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &:last-child {
+    margin-bottom: 20px;
+  }
 }
 .movie-item-title {
   color: $modal-slave-color;
@@ -65,32 +68,29 @@ ul {
 .value {
   margin-bottom: 10px;
 }
-
-.vote {
+.vote,
+.votes {
   display: inline-block;
   text-align: center;
-  vertical-align: middle; // fix by marvall
-  line-height: 1.17; // fix by marvall
+  line-height: 1.167; // fix by marvall
   width: 36px;
-  height: 16px;
-  text-transform: uppercase;
+  border-radius: 5px;
+}
+.vote {
   color: $white-color;
   background: $orange-color;
-  border-radius: 5px;
   border: 1px solid $orange-color;
 }
-
 .votes {
+
   display: inline-block;
   vertical-align: middle; // fix by marvall
   line-height: 1.17; // fix by marvall
   width: 36px;
   height: 16px;
   background: $footer-background-color;
-  border-radius: 5px;
   border: 1px solid $footer-background-color;
   color: $black-color;
-  text-align: center;
 }
 .movie-item-container {
   display: flex;
@@ -99,18 +99,12 @@ ul {
   margin-right: 40px;
 }
 
-.movie-item:not(:last-child) {
-  margin-bottom: 10px;
-}
-.movie-item:last-child {
-  margin-bottom: 20px;
-}
 .about-title {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 .movie-review {
-  line-height: 1.7; //fix by marvall
+  line-height: 1.67; 
   margin-bottom: 30px;
   height: 60px;
   overflow: hidden;
@@ -136,26 +130,65 @@ ul {
   }
 }
 .btn-modal-to-wached {
+  padding: 0;
   margin-right: 15px;
 }
-
 .btns-modal {
   display: flex;
 }
 
 //**@media for modal container and modal content**/
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .modal__overlay {
+    padding-top: 40px;
+  }
   .movie-tmpl {
     width: 100%;
   }
   .modal__container {
     padding: 20px;
     width: 100%;
+    overflow-x: hidden;
   }
   .movie-img {
+//fix Vika
+    height: 416px;
+    width: calc(100% - 40px);
     margin-bottom: 30px;
   }
+  .about-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+  .movie-review {
+    width: calc(100% - 40px);
+  }
+  .btn-modal {
+    width: calc((100% - 55px) / 2);
+  }
 }
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .movie-item > .value {
+    position: absolute;
+    left: 80px;
+    &.vote {
+      top: 2px;
+    }
+    &.votes {
+      top: 2px;
+      left: 130px;
+    }
+    &.between {
+      left: 120px;
+    }
+  }
+}
+//
+//    margin-bottom: 30px;
+//  }
+//}
 
 @media screen and (min-width: 768px) {
   .modal__container {
@@ -168,28 +201,32 @@ ul {
   .movie-description {
     width: 240px;
   }
-
-  .movie-tmpl {
-    display: flex;
-  }
-  .movie-img {
-    width: 250px;
-    height: 370px;
-    margin-right: 20px;
-  }
+  .movie-tmpl,
   .movie-card {
     display: flex;
   }
-  .titles {
-    margin-right: 60px;
+  .movie-img {
+    height: 416px;
   }
-  .movie-review {
-    line-height: 1.8;
-    height: 80px;
-  }
-  .btn-modal-to-wached {
-    font-size: 11.5px;
-  }
+
+//    width: 250px;
+//    height: 370px;
+//    margin-right: 20px;
+ // }
+ // .movie-card {
+//    display: flex;
+//  }
+ // .titles {
+//    margin-right: 60px;
+//  }
+//  .movie-review {
+//    line-height: 1.8;
+//    height: 80px;
+//  }
+//  .btn-modal-to-wached {
+//    font-size: 11.5px;
+//  }
+
   .movie-title {
     font-size: 30px;
     line-height: 1.172;
@@ -202,20 +239,15 @@ ul {
     font-size: 15px;
   }
   .modal__container {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     max-width: 670px;
   }
-
   .movie-description {
     width: 280px;
   }
   .movie-img {
     height: 514px;
-    width: 350px;
   }
+//Было
   .titles {
     margin-right: 50px;
   }
@@ -227,14 +259,28 @@ ul {
     margin-bottom: 20px;
   }
 
+//было
   .movie-review {
     margin-bottom: 30px;
     height: 160px;
   }
-
   .movie-card-about {
     margin-bottom: 20px;
     font-size: inherit;
+  }
+  .movie-item > .value {
+    position: absolute;
+    left: 100px;
+    &.vote {
+      top: 4px;
+    }
+    &.votes {
+      top: 4px;
+      left: 150px;
+    }
+    &.between {
+      left: 140px;
+    }
   }
 }
 
@@ -276,14 +322,24 @@ ul {
     margin-bottom: 30px;
     height: 120px;
   }
-  .vote,
-  .votes {
-    width: 46px;
-    height: 20px;
-  }
-
   .movie-img {
     margin-right: 30px;
+  }
+  .movie-item > .value {
+    position: absolute;
+    left: 110px;
+    &.vote {
+      width: 46px;
+      top: 4px;
+    }
+    &.votes {
+      width: 46px;
+      top: 4px;
+      left: 170px;
+    }
+    &.between {
+      left: 160px;
+    }
   }
 }
 /**************************\
