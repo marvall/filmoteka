@@ -48,13 +48,22 @@
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-.movie-item {
-  position: relative;
+
+ul {
+  list-style: none;
+}
+
+.movie-item-title {
   display: block;
 }
 .movie-item-title {
   color: $modal-slave-color;
-  margin-right: 40px;
+  margin-bottom: 10px;
+  width: 70px;
+}
+
+.value {
+  margin-bottom: 10px;
 }
 
 .vote {
@@ -83,6 +92,12 @@
   color: $black-color;
   text-align: center;
 }
+.movie-item-container {
+  display: flex;
+}
+.titles {
+  margin-right: 40px;
+}
 
 .movie-item:not(:last-child) {
   margin-bottom: 10px;
@@ -95,7 +110,7 @@
   margin-bottom: 10px;
 }
 .movie-review {
-  line-height: 1.33; //fix by marvall
+  line-height: 1.7; //fix by marvall
   margin-bottom: 30px;
   height: 60px;
   overflow: hidden;
@@ -140,23 +155,8 @@
   .movie-img {
     margin-bottom: 30px;
   }
-  .movie-item > .value {
-    position: absolute;
-    left: 80px;
-    &.votes {
-      left: 130px;
-    }
-    &.between {
-      left: 120px;
-    }
-  }
-  .about-title {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: uppercase;
-  }
 }
+
 @media screen and (min-width: 768px) {
   .modal__container {
     padding-left: 15px;
@@ -179,6 +179,9 @@
   }
   .movie-card {
     display: flex;
+  }
+  .titles {
+    margin-right: 60px;
   }
   .movie-review {
     line-height: 1.8;
@@ -213,6 +216,12 @@
     height: 514px;
     width: 350px;
   }
+  .titles {
+    margin-right: 50px;
+  }
+  .movie-item-title {
+    width: 90px;
+  }
 
   .about-title {
     margin-bottom: 20px;
@@ -225,6 +234,7 @@
 
   .movie-card-about {
     margin-bottom: 20px;
+    font-size: inherit;
   }
 }
 
@@ -237,6 +247,9 @@
   }
   .movie-description {
     width: 440px;
+  }
+  .movie-item-title {
+    width: 120px;
   }
   .btns-modal {
     justify-content: center;
