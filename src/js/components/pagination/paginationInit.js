@@ -22,6 +22,7 @@ export function showMoreCards(totalRes = 20) {
 
   if (totalRes <= paginationSizeChanger()) {
     btnShowMore.style.display = 'none';
+    // container.hide();
   } else {
     show();
   }
@@ -99,6 +100,9 @@ async function initPagination(data, query) {
 
   container.pagination(options);
   showMoreCards(sources.length);
+  if (data.total_results <= 20) {
+    container.hide();
+  }
 }
 
 export default initPagination;
