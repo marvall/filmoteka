@@ -7,6 +7,8 @@ import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
 const _ = require('lodash');
 
+import { showMoreCards } from './pagination/paginationInit';
+
 const starSearch = function (searchString) {
   let fetchStatus = document.querySelector('[data-index="fetchStatus"]');
   fetchStatus.classList.remove('error');
@@ -25,6 +27,7 @@ const starSearch = function (searchString) {
       getFilmInfo(data.results[0].id)
         .then(data => {
           renderGallery(data);
+          showMoreCards(1); // при 1 значении убрать кнопку 'показать еще'
         })
         .then(() => checkFilmInStack());
       spinner('stop');
@@ -34,6 +37,7 @@ const starSearch = function (searchString) {
       spinner('start');
       renderGallery(data.results);
       initPagination(data, searchString);
+      showMoreCards(data.total_results); // убрать кнопку в зависимости от количества
       spinner('stop');
     }
     setTimeout(() => {

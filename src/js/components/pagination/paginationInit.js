@@ -7,6 +7,8 @@ import { spinner } from '../spinner';
 import { containerLS } from './paginationLS';
 import arrowTop from '../arrowTop';
 
+import { paginationSizeChanger } from './mediaQuery';
+
 export const container = $('[data-index="pagination"]');
 arrowTop();
 
@@ -14,23 +16,32 @@ arrowTop();
  * this function shows hidden movies when a button is pressed
  */
 
-function showMoreCards() {
+export function showMoreCards(totalRes = 20) {
   const btnShowMore = document.querySelector('[data-index="btn-show-more"]');
+  const cards = document.querySelectorAll('[data-index="card"]');
 
-  btnShowMore.style.display = 'block';
-  btnShowMore.innerHTML = `<p>Show all this page movies (20)</p>`;
-
-  btnShowMore.addEventListener('click', btnShowMoreHandler);
-
-  function btnShowMoreHandler() {
-    const cards = document.querySelectorAll('[data-index="card"]');
-
-    cards.forEach(card => {
-      spinner('start');
-      card.style.display = 'block';
-      spinner('stop');
-    });
+  if (totalRes <= paginationSizeChanger()) {
     btnShowMore.style.display = 'none';
+  } else {
+    show();
+  }
+
+  function show() {
+    btnShowMore.style.display = 'block';
+    btnShowMore.innerHTML = `<p>Show all this page movies</p>`;
+
+    btnShowMore.addEventListener('click', btnShowMoreHandler);
+
+    function btnShowMoreHandler(e) {
+      cards.forEach(card => {
+        spinner('start');
+        card.style.display = 'block';
+        spinner('stop');
+      });
+
+      btnShowMore.style.display = 'none';
+      btnShowMore.removeEventListener('click', btnShowMoreHandler);
+    }
   }
 }
 
@@ -44,71 +55,50 @@ function showMoreCards() {
  */
 
 async function initPagination(data, query) {
-  //query ключевое слово.
-
   const paginationWrapper = document.querySelector('[data-index="pagination"]');
-  paginationWrapper.removeEventListener('mouseup', onClickPageHandler);
-  paginationWrapper.textContent = '';
+
+  paginationWrapper.innerHTML = '';
 
   containerLS.hide();
   container.show();
 
-  // const data = await getFilmsPagination(query);
   const sources = data.results;
-  const totalResults = data.total_results;
+  const totalResults = data.total_pages * paginationSizeChanger();
 
-  const arrayCountElem = new Array(totalResults - data.results.length);
-  const dataArray = sources.concat(arrayCountElem);
+  const dataArray = new Array(totalResults);
 
   const options = {
     dataSource: dataArray,
 
-    pageSize: 20,
+    pageSize: paginationSizeChanger(),
     pageRange: 2,
 
     autoHidePrevious: true,
     autoHideNext: true,
 
-    // triggerPagingOnInit: false,
+    triggerPagingOnInit: false,
 
     callback: function (response, pagination) {
+      console.log('pagination', pagination);
+      console.log('page number', pagination.pageNumber);
       var dataHtml = '';
       dataHtml += '</ul>';
 
       container.prev().html(dataHtml);
+
+      const num = pagination.pageNumber;
+      getFilmsPagination(query, num).then(({ results }) => {
+        spinner('start');
+        renderGallery(results);
+        spinner('stop');
+        showMoreCards(results.length);
+        console.log('results', results.length);
+      });
     },
   };
 
   container.pagination(options);
-  showMoreCards();
-
-  paginationWrapper.addEventListener('mouseup', onClickPageHandler);
-
-  function onClickPageHandler(event) {
-    if (event.target.parentNode.classList.contains('paginationjs-ellipsis')) {
-      return;
-    }
-
-    let num = 0;
-
-    if (event.target.nodeName === 'A') {
-      num = +event.target.parentNode.dataset.num;
-    } else if (event.target.nodeName === 'LI') {
-      num = +event.target.dataset.num;
-    } else {
-      return;
-    }
-
-    spinner('start');
-
-    getFilmsPagination(query, num).then(({ results }) => {
-      renderGallery(results);
-      spinner('stop');
-      showMoreCards();
-    });
-  }
+  showMoreCards(sources.length);
 }
 
 export default initPagination;
-
-// initPagination();
