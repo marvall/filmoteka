@@ -73,7 +73,8 @@ export default [
   },
   {
     name: 'AntonK',
-    photo: '../../images/team-photo/antonk.jpg',
+    photo:
+      'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/No-photo.png',
     instagram: '',
     facebook: '',
     linkedin: '',
