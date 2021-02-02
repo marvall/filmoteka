@@ -70,7 +70,15 @@
       border-radius: 5px;
       outline-color: $orange-color;
     }
+    &.paginationjs-page > a {
+      &:hover,
+      &:focus {
+        background-color: $footer-background-color;
+        transform: scale(1.15);
+      }
+    }
   }
+
   .paginationjs-first,
   .paginationjs-last {
     @media screen and (max-width: 450px) {
@@ -81,12 +89,17 @@
   li.active > a {
     background-color: $orange-color;
     color: $white-color;
+
+    &:hover,
+    &:focus {
+      background-color: $orange-slave-color;
+    }
   }
 }
 
 li.paginationjs-prev > a,
 li.paginationjs-next > a {
-  background-color: #f7f7f7;
+  background-color: $footer-background-color;
   color: transparent;
 }
 
