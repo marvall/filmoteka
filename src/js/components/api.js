@@ -47,6 +47,7 @@ async function getFilms(searchValue, pageValue = 1) {
 }
 
 async function getFilmInfo(filmId) {
+  console.log('getFilmInfo was started');
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilm(data);
 }

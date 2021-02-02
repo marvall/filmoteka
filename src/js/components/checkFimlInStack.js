@@ -1,5 +1,8 @@
 import getFromStorage from './getFromStorage';
-
+/**
+ * This function draws the status on button:
+ * added to the movie in some queue or not?
+ */
 export const checkFilmInStack = function () {
   const check = function (param) {
     let cardID = document.querySelector("[data-index='cardInfo']").id;
