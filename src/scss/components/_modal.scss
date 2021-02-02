@@ -36,13 +36,10 @@
   line-height: 1.8em;
 }
 .movie-img {
-  width: 280px;
-
   border-radius: 5px;
   margin-bottom: 30px;
   margin-right: 20px;
 }
-
 .movie-title {
   font-size: 20px;
   line-height: 1.172em;
@@ -52,51 +49,42 @@
 .movie-item {
   position: relative;
   display: block;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &:last-child {
+    margin-bottom: 20px;
+  }
 }
 .movie-item-title {
   color: $modal-slave-color;
   margin-right: 40px;
 }
-
-.vote {
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle; // fix by marvall
-  line-height: 1.167; // fix by marvall
-  width: 36px;
-  height: 16px;
-  text-transform: uppercase;
-  color: $white-color;
-  background: $orange-color;
-  border-radius: 5px;
-  border: 1px solid $orange-color;
-}
-
+.vote,
 .votes {
   display: inline-block;
-  vertical-align: middle; // fix by marvall
+  text-align: center;
   line-height: 1.167; // fix by marvall
   width: 36px;
-  height: 16px;
-  background: $footer-background-color;
   border-radius: 5px;
+}
+.vote {
+  color: $white-color;
+  background: $orange-color;
+  border: 1px solid $orange-color;
+}
+.votes {
+  background: $footer-background-color;
   border: 1px solid $footer-background-color;
   color: $black-color;
-  text-align: center;
 }
 
-.movie-item:not(:last-child) {
-  margin-bottom: 10px;
-}
-.movie-item:last-child {
-  margin-bottom: 20px;
-}
 .about-title {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 .movie-review {
-  line-height: 1.33em; //fix by marvall
+  line-height: 1.67; //fix by marvall
   margin-bottom: 30px;
 }
 .btn-modal {
@@ -119,35 +107,30 @@
   }
 }
 .btn-modal-to-wached {
+  padding: 0;
   margin-right: 15px;
 }
-
 .btns-modal {
   display: flex;
 }
 
 //**@media for modal container and modal content**/
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .modal__overlay {
+    padding-top: 40px;
+  }
   .movie-tmpl {
     width: 100%;
   }
   .modal__container {
     padding: 20px;
     width: 100%;
+    overflow-x: hidden;
   }
   .movie-img {
+    height: 416px;
     width: calc(100% - 40px);
     margin-bottom: 30px;
-  }
-  .movie-item > .value {
-    position: absolute;
-    left: 80px;
-    &.votes {
-      left: 130px;
-    }
-    &.between {
-      left: 120px;
-    }
   }
   .about-title {
     font-weight: 500;
@@ -162,6 +145,22 @@
     width: calc((100% - 55px) / 2);
   }
 }
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .movie-item > .value {
+    position: absolute;
+    left: 80px;
+    &.vote {
+      top: 2px;
+    }
+    &.votes {
+      top: 2px;
+      left: 130px;
+    }
+    &.between {
+      left: 120px;
+    }
+  }
+}
 @media screen and (min-width: 768px) {
   .modal__container {
     padding-left: 15px;
@@ -173,22 +172,12 @@
   .movie-description {
     width: 240px;
   }
-
-  .movie-tmpl {
-    display: flex;
-  }
-  .movie-img {
-    width: 250px;
-    height: 416px;
-  }
+  .movie-tmpl,
   .movie-card {
     display: flex;
   }
-  .movie-review {
-    line-height: 1.8em;
-  }
-  .btn-modal-to-wached {
-    padding: 3px;
+  .movie-img {
+    height: 416px;
   }
   .movie-title {
     font-size: 30px;
@@ -202,27 +191,33 @@
     font-size: 15px;
   }
   .modal__container {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     max-width: 670px;
   }
-
   .movie-description {
     width: 280px;
   }
   .movie-img {
     height: 514px;
-    width: 350px;
   }
-
   .movie-review {
     margin-bottom: 40px;
   }
-
   .movie-card-about {
     margin-bottom: 20px;
+  }
+  .movie-item > .value {
+    position: absolute;
+    left: 100px;
+    &.vote {
+      top: 4px;
+    }
+    &.votes {
+      top: 4px;
+      left: 150px;
+    }
+    &.between {
+      left: 140px;
+    }
   }
 }
 
@@ -260,14 +255,24 @@
   .movie-review {
     margin-bottom: 50px;
   }
-  .vote,
-  .votes {
-    width: 46px;
-    height: 20px;
-  }
-
   .movie-img {
     margin-right: 30px;
+  }
+  .movie-item > .value {
+    position: absolute;
+    left: 110px;
+    &.vote {
+      width: 46px;
+      top: 4px;
+    }
+    &.votes {
+      width: 46px;
+      top: 4px;
+      left: 170px;
+    }
+    &.between {
+      left: 160px;
+    }
   }
 }
 /**************************\
