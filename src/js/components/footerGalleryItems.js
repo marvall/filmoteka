@@ -1,14 +1,13 @@
 export default [
   {
     name: 'Yaroslav Bezugly',
-    surname: 'Bezugly',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Yaroslav.jpg',
     instagram: 'https://www.instagram.com/marvalltm',
     facebook: 'https://www.facebook.com/marvalltm',
     linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
-    doing: 'функция renderGallery()',
+    doing: 'team-lead, функция renderGallery()',
   },
   {
     name: 'Anton Tkachenko',
@@ -18,7 +17,7 @@ export default [
     facebook: '',
     linkedin: '',
     github: 'https://github.com/TkachenkoAnton',
-    doing: 'хедер библиотеки(HTML+CSS)',
+    doing: 'scrum master, хедер библиотеки(HTML+CSS)',
   },
   {
     name: 'Alex Deviatov',
