@@ -1,6 +1,6 @@
 import { changeHistory } from '../../utils/changeHistory';
 import { renderGallery } from '../renderGallery';
-import { getFilmsPagination, getFilmInfo } from '../api';
+import { getFilmsPagination, getFilmInfoToStorage } from '../api';
 import {
   homePageMarkupUpdate,
   myLibraryPageMarkupUpdate,
@@ -38,6 +38,11 @@ const changeStartedPage = function () {
  */
 export const checkNavigation = function (e) {
   e.preventDefault();
+  if (e.target.localName === 'a') {
+    if (e.target.parentNode.dataset.num) {
+      return;
+    }
+  }
   if (e.type === 'DOMContentLoaded') {
     //Started HOME PAGE
     changeStartedPage();
@@ -67,21 +72,21 @@ export const checkNavigation = function (e) {
     } else if (e.target.dataset.index === 'btn-to-wached') {
       //ADD TO WATCHED
       checkFilmInStack();
-      getFilmInfo(document.querySelector('[data-index="cardInfo"]').id).then(
-        data => {
-          addToStorage(data, 'watched');
-          checkFilmInStack();
-        },
-      );
+      getFilmInfoToStorage(
+        document.querySelector('[data-index="cardInfo"]').id,
+      ).then(data => {
+        addToStorage(data, 'watched');
+        checkFilmInStack();
+      });
     } else if (e.target.dataset.index === 'btn-to-queue') {
       //ADD TO QUEUE
       checkFilmInStack();
-      getFilmInfo(document.querySelector('[data-index="cardInfo"]').id).then(
-        data => {
-          addToStorage(data, 'queue');
-          checkFilmInStack();
-        },
-      );
+      getFilmInfoToStorage(
+        document.querySelector('[data-index="cardInfo"]').id,
+      ).then(data => {
+        addToStorage(data, 'queue');
+        checkFilmInStack();
+      });
     } else if (e.target.dataset.index === 'watched') {
       //RENDER STACK WATCHED
       initPaginationLS(getFromStorage('watched'));

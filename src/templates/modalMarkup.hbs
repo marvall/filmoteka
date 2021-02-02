@@ -3,33 +3,37 @@
         <main class="modal__content" id="modal-1-content">
             <div class="movie-tmpl" id="{{id}}" data-index="cardInfo">
 
+                {{#if poster_path}}
                 <img class="movie-img" src="https://image.tmdb.org/t/p/w300{{poster_path}}"
                     alt="poster of {{original_title}}">
+                {{else}}
+                <img class="movie-img"
+                    src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png"
+                    alt="poster of {{original_title}}" />
+                {{/if}}
 
                 <div class="movie-description">
 
                     <h2 class="movie-title">{{original_title}}</h2>
-                    <p class="movie-item">
-                        <i class="movie-item-title">Vote/Votes</i>
-                        <span class="value vote"> {{vote_average}} </span>
-                        <span class="value between">/</span>
-                        <span class="value votes"> {{vote_count}}</span>
-                    </p>
+                    <div class="movie-item-container">
+                        <div class="movie-item titles">
+                            <i class="movie-item-title">Vote/Votes</i>
+                            <i class="movie-item-title">Popularity</i>
+                            <i class="movie-item-title">Original Title</i>
+                            <i class="movie-item-title">Genre</i>
+                        </div>
 
-                    <p class="movie-item">
-                        <i class="movie-item-title">Popularity</i>
-                        <span class="value">{{popularity}}</span>
-                    </p>
-
-                    <p class="movie-item">
-                        <i class="movie-item-title">Original Title</i>
-                        <span class="value">{{original_title}}</span>
-                    </p>
-
-                    <p class="movie-item" style="margin-bottom: 20px;">
-                        <i class="movie-item-title">Genre</i>
-                        <span class="value">{{genres}}</span>
-                    </p>
+                        <ul class="movie-item stats">
+                            <li class="value">
+                                <span class="vote"> {{vote_average}} </span>
+                                <span class="between">/</span>
+                                <span class="votes"> {{vote_count}}</span>
+                            </li>
+                            <li class="value">{{popularity}}</li>
+                            <li class="value">{{original_title}}</li>
+                            <li class="value">{{genres}}</li>
+                        </ul>
+                    </div>
 
                     <h3 class="about-title">about</h3>
                     <article class="movie-review">{{overview}}</article>

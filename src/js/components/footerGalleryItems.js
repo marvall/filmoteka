@@ -28,7 +28,8 @@ export default [
     facebook: 'https://www.facebook.com/lewyk9',
     linkedin: 'https://www.linkedin.com/in/lewyk',
     github: 'https://github.com/lewyk',
-    doing: 'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей+кроссбраузерность',
+    doing:
+      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей+кроссбраузерность',
   },
   {
     name: 'Artem Sergeev',
@@ -38,7 +39,8 @@ export default [
     facebook: 'https://www.facebook.com/artem.sergeev.31/',
     linkedin: 'https://www.linkedin.com/in/artem-sergieiev-447084180/',
     github: 'https://github.com/ArtemS83',
-    doing: 'пагинация для галлереи (HTML+CSS+JS); всплывающая строка с подказками к строке поиска',
+    doing:
+      'пагинация для галлереи (HTML+CSS+JS); всплывающая строка с подказками к строке поиска',
   },
   {
     name: 'Andrii Stanislav',
@@ -48,7 +50,8 @@ export default [
     facebook: '',
     linkedin: 'https://www.linkedin.com/mwlite/in/andrii-stanislav-7ba669201',
     github: 'https://github.com/Andrii-Stanislav',
-    doing: 'функция addToStorage, проверка на наличие фильма в localStorage; функция getFromStorage ()',
+    doing:
+      'функция addToStorage, проверка на наличие фильма в localStorage; функция getFromStorage ()',
   },
   {
     name: 'Ihor Prokopets',
@@ -78,11 +81,13 @@ export default [
     facebook: 'https://www.facebook.com/profile.php?id=100011308903028',
     linkedin: 'https://www.linkedin.com/in/viktoriia-ksenofontova/',
     github: 'https://github.com/Viktoriia-Ksenofontova',
-    doing: 'шаблон карточки фильма+CSS; function toggleHiden(); проверка стилей+кроссбраузерность',
+    doing:
+      'шаблон карточки фильма+CSS; function toggleHiden(); проверка стилей+кроссбраузерность',
   },
   {
     name: 'Anton Korotenko',
-    photo: 'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/antonk.jpg',
+    photo:
+      'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/antonk.jpg',
     instagram: 'https://instagram.com/anton_korotenko?r=nametag',
     facebook: '',
     linkedin: '',
@@ -107,7 +112,8 @@ export default [
     facebook: 'https://www.facebook.com/profile.php?id=100024449762426',
     linkedin: 'https://www.linkedin.com/in/evhenya-krot-5837b28/',
     github: 'https://gist.github.com/yevheniia-petrychenko',
-    doing: 'модальное окно для карточки фильма (HTML+CSS); проверка стилей+кроссбраузерность',
+    doing:
+      'модальное окно для карточки фильма (HTML+CSS); проверка стилей+кроссбраузерность',
   },
   {
     name: 'Myroslava Nikolaenko',

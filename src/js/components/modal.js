@@ -42,7 +42,7 @@ export function showTeam(Node) {
   document
     .querySelector('#modal-1')
     .insertAdjacentHTML('beforeend', modalFooter(footerGalleryItem));
-  MicroModal.show('modal-1').then(
-    Node.removeAttribute('data-micromodal-trigger'),
-  );
+  MicroModal.show('modal-1');
+    Node.removeAttribute('data-micromodal-trigger')
+  
 }
