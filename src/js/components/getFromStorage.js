@@ -16,6 +16,14 @@ function getFromStorage(filmType) {
         queue = JSON.parse(queue);
       }
       return queue;
+    case 'state':
+      let state = localStorage.getItem('state');
+      if (state === null) {
+        state = {};
+      } else {
+        state = JSON.parse(state);
+      }
+      return state;
     default:
       console.log('Write correct type');
   }

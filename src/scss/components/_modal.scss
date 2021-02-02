@@ -29,25 +29,28 @@
 
 // ** modal content styles**//
 .movie-tmpl {
-  min-width: 280px;
+  min-width: 240px;
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.8em;
+  line-height: 1.8;
 }
 .movie-img {
   border-radius: 5px;
   margin-bottom: 30px;
-  margin-right: 20px;
 }
 .movie-title {
   font-size: 20px;
-  line-height: 1.172em;
+  line-height: 1.172;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-.movie-item {
-  position: relative;
+
+ul {
+  list-style: none;
+}
+
+.movie-item-title {
   display: block;
   &:not(:last-child) {
     margin-bottom: 10px;
@@ -58,7 +61,12 @@
 }
 .movie-item-title {
   color: $modal-slave-color;
-  margin-right: 40px;
+  margin-bottom: 10px;
+  width: 70px;
+}
+
+.value {
+  margin-bottom: 10px;
 }
 .vote,
 .votes {
@@ -74,9 +82,21 @@
   border: 1px solid $orange-color;
 }
 .votes {
+
+  display: inline-block;
+  vertical-align: middle; // fix by marvall
+  line-height: 1.17; // fix by marvall
+  width: 36px;
+  height: 16px;
   background: $footer-background-color;
   border: 1px solid $footer-background-color;
   color: $black-color;
+}
+.movie-item-container {
+  display: flex;
+}
+.titles {
+  margin-right: 40px;
 }
 
 .about-title {
@@ -84,8 +104,10 @@
   margin-bottom: 10px;
 }
 .movie-review {
-  line-height: 1.67; //fix by marvall
+  line-height: 1.67; 
   margin-bottom: 30px;
+  height: 60px;
+  overflow: hidden;
 }
 .btn-modal {
   padding: 0;
@@ -95,6 +117,7 @@
   text-transform: uppercase;
   border-radius: 5px;
   border-color: transparent;
+  cursor: pointer;
 
   color: $black-color;
   background: $white-color;
@@ -128,6 +151,7 @@
     overflow-x: hidden;
   }
   .movie-img {
+//fix Vika
     height: 416px;
     width: calc(100% - 40px);
     margin-bottom: 30px;
@@ -161,6 +185,11 @@
     }
   }
 }
+//
+//    margin-bottom: 30px;
+//  }
+//}
+
 @media screen and (min-width: 768px) {
   .modal__container {
     padding-left: 15px;
@@ -179,9 +208,28 @@
   .movie-img {
     height: 416px;
   }
+
+//    width: 250px;
+//    height: 370px;
+//    margin-right: 20px;
+ // }
+ // .movie-card {
+//    display: flex;
+//  }
+ // .titles {
+//    margin-right: 60px;
+//  }
+//  .movie-review {
+//    line-height: 1.8;
+//    height: 80px;
+//  }
+//  .btn-modal-to-wached {
+//    font-size: 11.5px;
+//  }
+
   .movie-title {
     font-size: 30px;
-    line-height: 1.172em;
+    line-height: 1.172;
     word-break: break-word;
   }
 }
@@ -199,11 +247,26 @@
   .movie-img {
     height: 514px;
   }
+//Было
+  .titles {
+    margin-right: 50px;
+  }
+  .movie-item-title {
+    width: 90px;
+  }
+
+  .about-title {
+    margin-bottom: 20px;
+  }
+
+//было
   .movie-review {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    height: 160px;
   }
   .movie-card-about {
     margin-bottom: 20px;
+    font-size: inherit;
   }
   .movie-item > .value {
     position: absolute;
@@ -231,6 +294,9 @@
   .movie-description {
     width: 440px;
   }
+  .movie-item-title {
+    width: 120px;
+  }
   .btns-modal {
     justify-content: center;
   }
@@ -253,7 +319,8 @@
     margin-bottom: 20px;
   }
   .movie-review {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    height: 120px;
   }
   .movie-img {
     margin-right: 30px;
