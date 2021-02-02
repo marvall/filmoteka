@@ -29,40 +29,48 @@
 
 // ** modal content styles**//
 .movie-tmpl {
-  min-width: 280px;
+  min-width: 240px;
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.8em;
+  line-height: 1.8;
 }
 .movie-img {
   width: 280px;
 
   border-radius: 5px;
   margin-bottom: 30px;
-  margin-right: 20px;
 }
 
 .movie-title {
   font-size: 20px;
-  line-height: 1.172em;
+  line-height: 1.172;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-.movie-item {
-  position: relative;
+
+ul {
+  list-style: none;
+}
+
+.movie-item-title {
   display: block;
 }
 .movie-item-title {
   color: $modal-slave-color;
-  margin-right: 40px;
+  margin-bottom: 10px;
+  width: 70px;
+}
+
+.value {
+  margin-bottom: 10px;
 }
 
 .vote {
   display: inline-block;
   text-align: center;
   vertical-align: middle; // fix by marvall
-  line-height: 1.167; // fix by marvall
+  line-height: 1.17; // fix by marvall
   width: 36px;
   height: 16px;
   text-transform: uppercase;
@@ -75,7 +83,7 @@
 .votes {
   display: inline-block;
   vertical-align: middle; // fix by marvall
-  line-height: 1.167; // fix by marvall
+  line-height: 1.17; // fix by marvall
   width: 36px;
   height: 16px;
   background: $footer-background-color;
@@ -83,6 +91,12 @@
   border: 1px solid $footer-background-color;
   color: $black-color;
   text-align: center;
+}
+.movie-item-container {
+  display: flex;
+}
+.titles {
+  margin-right: 40px;
 }
 
 .movie-item:not(:last-child) {
@@ -96,8 +110,10 @@
   margin-bottom: 10px;
 }
 .movie-review {
-  line-height: 1.33em; //fix by marvall
+  line-height: 1.7; //fix by marvall
   margin-bottom: 30px;
+  height: 60px;
+  overflow: hidden;
 }
 .btn-modal {
   padding: 0;
@@ -107,6 +123,7 @@
   text-transform: uppercase;
   border-radius: 5px;
   border-color: transparent;
+  cursor: pointer;
 
   color: $black-color;
   background: $white-color;
@@ -136,32 +153,10 @@
     width: 100%;
   }
   .movie-img {
-    width: calc(100% - 40px);
     margin-bottom: 30px;
   }
-  .movie-item > .value {
-    position: absolute;
-    left: 80px;
-    &.votes {
-      left: 130px;
-    }
-    &.between {
-      left: 120px;
-    }
-  }
-  .about-title {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: uppercase;
-  }
-  .movie-review {
-    width: calc(100% - 40px);
-  }
-  .btn-modal {
-    width: calc((100% - 55px) / 2);
-  }
 }
+
 @media screen and (min-width: 768px) {
   .modal__container {
     padding-left: 15px;
@@ -179,20 +174,25 @@
   }
   .movie-img {
     width: 250px;
-    height: 416px;
+    height: 370px;
+    margin-right: 20px;
   }
   .movie-card {
     display: flex;
   }
+  .titles {
+    margin-right: 60px;
+  }
   .movie-review {
-    line-height: 1.8em;
+    line-height: 1.8;
+    height: 80px;
   }
   .btn-modal-to-wached {
-    padding: 3px;
+    font-size: 11.5px;
   }
   .movie-title {
     font-size: 30px;
-    line-height: 1.172em;
+    line-height: 1.172;
     word-break: break-word;
   }
 }
@@ -216,13 +216,25 @@
     height: 514px;
     width: 350px;
   }
+  .titles {
+    margin-right: 50px;
+  }
+  .movie-item-title {
+    width: 90px;
+  }
+
+  .about-title {
+    margin-bottom: 20px;
+  }
 
   .movie-review {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    height: 160px;
   }
 
   .movie-card-about {
     margin-bottom: 20px;
+    font-size: inherit;
   }
 }
 
@@ -235,6 +247,9 @@
   }
   .movie-description {
     width: 440px;
+  }
+  .movie-item-title {
+    width: 120px;
   }
   .btns-modal {
     justify-content: center;
@@ -258,7 +273,8 @@
     margin-bottom: 20px;
   }
   .movie-review {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    height: 120px;
   }
   .vote,
   .votes {

@@ -10,6 +10,7 @@ export const renderHeader = function (e) {
   let ref = document.querySelector("[data-index='headerDinamicContent']");
   ref.innerHTML = '';
   if (window.location.href === path + '/home') {
+    //window.location.href === path + '/filmoteka/home' -пример
     ref.insertAdjacentHTML('afterbegin', home());
   } else if (window.location.href === path + '/mylibrary') {
     ref.insertAdjacentHTML('afterbegin', myLibery());

@@ -1,5 +1,10 @@
 <div class="movie-card" id="{{id}}" data-index="cardInfo">
+    {{#if poster_path}}
     <img class="movie-card-img" src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt="Film {{title}} poster" />
+    {{else}}
+    <img class="movie-card-img" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png"
+        alt="poster of {{original_title}}" />
+    {{/if}}
 
     <div class="card-description-wrapper">
         <h2 class="movie-card-title">{{title}}</h2>
