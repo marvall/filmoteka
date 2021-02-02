@@ -1,7 +1,6 @@
 export default [
   {
     name: 'Yaroslav Bezugly',
-    surname: 'Bezugly',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Yaroslav.jpg',
     instagram: 'https://www.instagram.com/marvalltm',
