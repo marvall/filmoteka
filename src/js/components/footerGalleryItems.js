@@ -71,7 +71,8 @@ export default [
     facebook: 'https://www.facebook.com/lena.hlihan/',
     linkedin: 'https://www.linkedin.com/in/elena-tsemko/',
     github: 'https://github.com/OlenaTsemko',
-    doing: 'spiner (HTML+CSS); пагинация для галлереи (HTML+CSS+JS)',
+    doing:
+      'spiner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS)',
   },
   {
     name: 'Viktoriia Ksenofontova',
