@@ -16,7 +16,3 @@ export default function arrowTop() {
       : arrowTopRef.classList.add('show');
   });
 }
-
-//================arrowTop для проверки======//
-// import arrowTop from './js/components/arrowTop'; // при подключении в index.js
-// arrowTop(); //для проверки

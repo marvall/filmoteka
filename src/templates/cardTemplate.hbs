@@ -1,10 +1,11 @@
 {{#each this}}
 <li class="card" id="{{id}}" data-index="card">
   {{#if poster_path}}
-  <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='Film {{title}} poster' />
+  <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' loading="lazy"
+    alt='Film {{title}} poster' />
   {{else}}
   <img class="card-img" src='https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png'
-    alt='Film {{title}} poster' />
+    loading="lazy" alt='Film {{title}} poster' />
   {{/if}}
   <div class="card-info">
     <h2 class="card-title"> {{title}} </h2>
