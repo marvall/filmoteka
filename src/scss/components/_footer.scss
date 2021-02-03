@@ -61,7 +61,7 @@
 // ======== footer modal =======
 
 .modal__container__footer {
-  max-width: 760px;
+  // max-width: 760px;
   max-height: 100vh;
   border-radius: 4px;
   overflow-y: auto;
@@ -176,10 +176,21 @@
 }
 
 @media screen and (min-width: 768px) {
-  // .footer-team-link:nth-child(6n - 1) {
-  //   margin-right: 20px;
-  // }
   .footer-team-link {
     margin-right: 20px;
+  }
+  .modal__container__footer {
+    max-width: 740px;
+  }
+  .modal__content {
+    padding: 5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal__container__footer {
+    max-width: 800px;
+  }
+  .modal__content {
+    padding: 20px;
   }
 }
