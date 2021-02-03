@@ -5,10 +5,9 @@ import initPagination from './pagination/paginationInit';
 import { renderGallery } from './renderGallery';
 import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
-import { addSearchList } from './searchList';
+import { renderListSearch } from './searchList';
 const _ = require('lodash');
 import { showMoreCards } from './pagination/paginationInit';
-
 
 /**
  * This function search query in search-line.
@@ -21,6 +20,7 @@ const starSearch = function (searchString) {
   fetchStatus.classList.remove('error');
   fetchStatus.classList.remove('success');
   if (searchString.trim() === '') {
+    document.querySelector("[data-index='card-list']").innerHTML = '';
     fetchStatus.classList.remove('hidden');
     fetchStatus.textContent =
       'Search result not successful! Enter the correct movie name and genre!';
@@ -33,6 +33,7 @@ const starSearch = function (searchString) {
   getFilmsPagination(searchString).then(data => {
     fetchStatus.classList.remove('hidden');
     if (data.total_results === 0) {
+      document.querySelector("[data-index='card-list']").innerHTML = '';
       fetchStatus.textContent =
         'Search result not successful! Enter the correct movie name and genre!';
       fetchStatus.classList.add('error');
@@ -50,10 +51,10 @@ const starSearch = function (searchString) {
         .then(() => checkFilmInStack());
       spinner('stop');
     } else {
-      document.querySelector("[data-index='card-list']").innerHTML = '';
       fetchStatus.textContent = `Search result are successful! Searched ${data.total_results} result`;
       fetchStatus.classList.add('success');
       spinner('start');
+      renderListSearch(data.results);
       renderGallery(data.results);
       initPagination(data, searchString);
       showMoreCards(data.total_results); // убрать кнопку в зависимости от количества
@@ -70,7 +71,7 @@ export const getSearch = function () {
     'input',
     _.debounce(e => {
       e.preventDefault();
-      addSearchList(e.target.value);
+      starSearch(e.target.value);
     }, 500),
   );
   document
@@ -78,8 +79,6 @@ export const getSearch = function () {
     .addEventListener('keydown', e => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        starSearch(e.target.value);
-        // e.target.value = ''; // очищает поле поиска при сабмите,можно и не очисщать
       }
     });
 };

@@ -32,15 +32,15 @@ export default [
       'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей+кроссбраузерность',
   },
   {
-    name: 'Artem Sergeev',
+    name: 'Artem Sergieiev',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Artem.jpg',
-    instagram: '',
+    instagram: 'https://instagram.com',
     facebook: 'https://www.facebook.com/artem.sergeev.31/',
     linkedin: 'https://www.linkedin.com/in/artem-sergieiev-447084180/',
     github: 'https://github.com/ArtemS83',
     doing:
-      'пагинация для галлереи (HTML+CSS+JS); всплывающая строка с подказками к строке поиска',
+      'функции для работы с API, всплывающая строка с подсказками при поиске, стрелка возврата на начало страницы',
   },
   {
     name: 'Andrii Stanislav',
