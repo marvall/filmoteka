@@ -70,7 +70,7 @@ ul {
   display: inline-block;
   text-align: center;
   vertical-align: middle; // fix by marvall
-  line-height: 1.17; // fix by marvall
+  line-height: 1.11; // fix by marvall
   width: 36px;
   height: 16px;
   text-transform: uppercase;
@@ -83,7 +83,7 @@ ul {
 .votes {
   display: inline-block;
   vertical-align: middle; // fix by marvall
-  line-height: 1.17; // fix by marvall
+  line-height: 1.11; // fix by marvall
   width: 36px;
   height: 16px;
   background: $footer-background-color;
@@ -113,8 +113,19 @@ ul {
   line-height: 1.7; //fix by marvall
   margin-bottom: 30px;
   height: 60px;
-  overflow: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
 }
+
 .btn-modal {
   padding: 0;
   width: 136px;
