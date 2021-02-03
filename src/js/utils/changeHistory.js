@@ -1,11 +1,10 @@
+import { State } from './state';
 /**
- * this function changes URL to "originURL" + address
- * final result, example: "http://localhost/address"
- * address takes values: "home" or "mylibery"
+ * this function changes current page in State,
+ * address takes values: "home" or "mylibrary"
  * @param {string} address;
  */
 export const changeHistory = function (address) {
-  history.replaceState({}, '', '/');
-  history.replaceState({}, '', address);
+  State.saveState(address);
   window.dispatchEvent(new Event('changeHistoryEvent'));
 };

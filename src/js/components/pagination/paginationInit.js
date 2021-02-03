@@ -13,7 +13,6 @@ arrowTop();
 /**
  * this function shows hidden movies, when a button is pressed
  */
-
 function showMoreCards() {
   const btnShowMore = document.querySelector('[data-index="btn-show-more"]');
 
@@ -42,7 +41,6 @@ function showMoreCards() {
  * @param {object} data
  * @param {string} query
  */
-
 async function initPagination(data, query) {
   //query is a key word.
 

@@ -1,3 +1,7 @@
+/**
+ * This function manage spinner, takes on values: start or stop
+ * @param {string} value
+ */
 export const spinner = function (value) {
   const spinner = {
     spinnerRef: document.querySelector('[data-index="spinner"]'),

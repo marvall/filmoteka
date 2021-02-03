@@ -7,7 +7,12 @@ import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
 import { addSearchList } from './searchList';
 const _ = require('lodash');
-
+/**
+ * This function search query in search-line.
+ * It have 3 state: not found, one request searched,
+ * more that one request searched. If request not null start render gallery.
+ * @param {string} searchString
+ */
 const starSearch = function (searchString) {
   let fetchStatus = document.querySelector('[data-index="fetchStatus"]');
   fetchStatus.classList.remove('error');
