@@ -4,6 +4,8 @@ import 'firebase/auth';
 const firebaseConfig = {
   apiKey: 'AIzaSyCplrPyEZsVNUOOq6dDBimn9JLqurX2GUE',
   authDomain: 'first-team-filmoteka.firebaseapp.com',
+  databaseURL:
+    'https://first-team-filmoteka-default-rtdb.europe-west1.firebasedatabase.app',
   projectId: 'first-team-filmoteka',
   storageBucket: 'first-team-filmoteka.appspot.com',
   messagingSenderId: '352377668166',

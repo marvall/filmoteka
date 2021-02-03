@@ -3,6 +3,12 @@ import { renderHeader } from './js/utils/renderHeader';
 import { checkNavigation } from './js/components/nav/checkNavigation';
 import { loadStartContent } from './js/components/eventToLoad/loadStartContent';
 
+//=======================================
+import db from './js/components/firebase/firebaseUtils';
+console.log(db);
+
+//========================================
+
 window.addEventListener('DOMContentLoaded', loadStartContent);
 window.document
   .querySelector('body')
