@@ -3,7 +3,6 @@
   width: 280px;
 
   border-radius: 5px;
-  margin-bottom: 30px;
 }
 
 .movie-card-title {
@@ -40,7 +39,7 @@
   font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.166;
+  line-height: 1.125;
   color: #8c8c8c;
   margin-bottom: 10px;
 }
@@ -97,9 +96,8 @@
 
 .btn-to-wached,
 .btn-to-queue {
-  width: 136px;
   height: 44px;
-
+  width: 136px;
   font-family: $main-font;
   font-weight: 500;
   font-size: 12px;
@@ -109,8 +107,6 @@
   color: $black-color;
   background: $white-color;
   border-radius: 5px;
-  margin-right: 4px;
-  margin-bottom: 40px;
 
   cursor: pointer;
 
@@ -122,8 +118,18 @@
   }
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 767px) {
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-to-wached,
+  .btn-to-queue {
+    width: calc(50% - 5px);
+  }
 }
+
 @media screen and (min-width: 768px) {
   .movie-card {
     display: flex;
@@ -137,6 +143,10 @@
     font-size: 30px;
     line-height: 1.172;
   }
+
+  .btn-to-wached {
+    margin-right: 15px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .movie-card-img {
@@ -149,9 +159,6 @@
   }
 
   .btn-to-wached {
-    margin: 0;
-  }
-  .btn-to-queue {
-    margin: 0;
+    margin-right: 15px;
   }
 }

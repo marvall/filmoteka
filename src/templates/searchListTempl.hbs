@@ -15,5 +15,10 @@
     <p class="card-release-year"> {{release_date}} </p>
     {{/if}}
 </div>
+{{#if vote_average}}
+<p class="card-vote small is-visible" data-hiden="true">
+    {{vote_average}}
+</p>
+{{/if}}
 </li>
 {{/each}}

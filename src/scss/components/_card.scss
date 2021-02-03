@@ -18,6 +18,7 @@
   &:hover {
     transform: scale(1.03);
   }
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
@@ -83,6 +84,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
+  line-height: 1.167;
 }
 .card-title {
   line-height: 1.167;
@@ -119,7 +121,7 @@
     display: inline-block;
     text-align: center;
     width: 36px;
-    height: 16px;
+    height: 15px;
     text-transform: uppercase;
     color: $white-color;
     background: $orange-color;
