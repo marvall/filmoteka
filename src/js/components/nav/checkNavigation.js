@@ -38,6 +38,11 @@ const changeStartedPage = function () {
  */
 export const checkNavigation = function (e) {
   e.preventDefault();
+  if (e.target.localName === 'a') {
+    if (e.target.parentNode.dataset.num) {
+      return;
+    }
+  }
   if (e.type === 'DOMContentLoaded') {
     //Started HOME PAGE
     changeStartedPage();

@@ -1,0 +1,28 @@
+.card-list {
+  position: absolute;
+  background-color: $white-color;
+  z-index: 1;
+}
+.card_small {
+  display: flex;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #000;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    background-color: $footer-background-color;
+    transform: scale(1.05);
+  }
+}
+.card-img_small {
+  margin-right: 10px;
+  width: 40px;
+}
+.card-info.small {
+  text-align: start;
+  .card-title {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}

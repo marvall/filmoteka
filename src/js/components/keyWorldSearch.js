@@ -5,12 +5,23 @@ import initPagination from './pagination/paginationInit';
 import { renderGallery } from './renderGallery';
 import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
+import { addSearchList } from './searchList';
 const _ = require('lodash');
 
 const starSearch = function (searchString) {
   let fetchStatus = document.querySelector('[data-index="fetchStatus"]');
   fetchStatus.classList.remove('error');
   fetchStatus.classList.remove('success');
+  if (searchString.trim() === '') {
+    fetchStatus.classList.remove('hidden');
+    fetchStatus.textContent =
+      'Search result not successful! Enter the correct movie name and genre!';
+    fetchStatus.classList.add('error');
+    setTimeout(() => {
+      fetchStatus.classList.add('hidden');
+    }, 2000);
+    return;
+  }
   getFilmsPagination(searchString).then(data => {
     fetchStatus.classList.remove('hidden');
     if (data.total_results === 0) {
@@ -18,6 +29,7 @@ const starSearch = function (searchString) {
         'Search result not successful! Enter the correct movie name and genre!';
       fetchStatus.classList.add('error');
     } else if (data.total_results === 1) {
+      document.querySelector("[data-index='card-list']").innerHTML = '';
       fetchStatus.textContent =
         'Search result are successful! Searched one result';
       fetchStatus.classList.add('success');
@@ -29,6 +41,7 @@ const starSearch = function (searchString) {
         .then(() => checkFilmInStack());
       spinner('stop');
     } else {
+      document.querySelector("[data-index='card-list']").innerHTML = '';
       fetchStatus.textContent = `Search result are successful! Searched ${data.total_results} result`;
       fetchStatus.classList.add('success');
       spinner('start');
@@ -41,19 +54,22 @@ const starSearch = function (searchString) {
     }, 2000);
   });
 };
+
 export const getSearch = function () {
   document.querySelector('[data-index="serchInfo"]').addEventListener(
     'input',
     _.debounce(e => {
       e.preventDefault();
-      starSearch(e.target.value);
-    }, 1250),
+      addSearchList(e.target.value);
+    }, 500),
   );
   document
     .querySelector('[data-index="form"]')
     .addEventListener('keydown', e => {
-      if (e.code === 'Enter') {
+      if (e.key === 'Enter') {
         e.preventDefault();
+        starSearch(e.target.value);
+        // e.target.value = ''; // очищает поле поиска при сабмите,можно и не очисщать
       }
     });
 };
