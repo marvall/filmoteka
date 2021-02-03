@@ -2,7 +2,11 @@
   background-color: $footer-background-color;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
+
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    width: auto;
+  }
+
 }
 
 .section-footer {
@@ -32,6 +36,7 @@
   margin-left: 5px;
 }
 
+// @media for footer
 @media screen and (min-width: 320px) {
   .section-footer-text {
     display: grid;

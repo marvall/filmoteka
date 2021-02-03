@@ -30,7 +30,7 @@ export function showMoreCards(totalRes = 20) {
 
   function show() {
     btnShowMore.style.display = 'block';
-    btnShowMore.innerHTML = `<p>Show all this page movies</p>`;
+    btnShowMore.innerHTML = `<p>Show all the movies</p>`;
 
     btnShowMore.addEventListener('click', btnShowMoreHandler);
 
