@@ -1,5 +1,5 @@
 /*
-  Допоміжна функція. Не експортується.
+  Auxiliary function. Is not exported.
 */
 function getCurrentStorage() {
   let watched = localStorage.getItem('watched');
@@ -18,8 +18,8 @@ function getCurrentStorage() {
 }
 
 /**
-  Функція приймає два параметра filmObj - обєкт із властивостями фільму
-   і filmType - тип фільму (Тільки 2 варіанти: 'watched' або 'queue')
+  The function accepts only 2 parameters filmObj - object with movie properties
+   and filmType - movie type (Only 2 options: 'watched' або 'queue')
   
   @param {objects} filmObj;
   @param {string} filmType;
@@ -68,7 +68,7 @@ function addToStorage(filmObj, filmType) {
 }
 
 /**
-  Функція приймає inputText із необхідним 
+  The function accepts inputText with required 
   @param {text} inputText;
  */
 function saveQueryOnStorage(inputText) {

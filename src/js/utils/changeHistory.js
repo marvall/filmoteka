@@ -1,6 +1,6 @@
 /**
  * this function changes URL to "originURL" + address
- * end result, example: "http://localhost/address"
+ * final result, example: "http://localhost/address"
  * address takes values: "home" or "mylibery"
  * @param {string} address;
  */

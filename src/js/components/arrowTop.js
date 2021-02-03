@@ -4,7 +4,7 @@ export default function arrowTop() {
   arrowTopRef.insertAdjacentHTML('beforeend', markup);
   arrowTopRef.addEventListener('click', () => {
     window.scrollTo(pageXOffset, 0);
-    // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
+    // after scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
   });
 
   window.addEventListener('scroll', () => {
@@ -14,6 +14,6 @@ export default function arrowTop() {
   });
 }
 
-//================arrowTop для проверки======//
-// import arrowTop from './js/components/arrowTop'; // при подключении в index.js
-// arrowTop(); //для проверки
+//================arrowTop for validating (checking)======//
+// import arrowTop from './js/components/arrowTop'; // for import into в index.js
+// arrowTop(); //for validation

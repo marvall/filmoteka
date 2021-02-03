@@ -7,6 +7,8 @@ import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
 
 MicroModal.init();
+// * This function removes markup of the previous modal window, 
+// *and updates markup for a new one.
 const updateModalMarkup = function (film) {
   document.querySelector('#modal-1').innerHTML = '';
   document

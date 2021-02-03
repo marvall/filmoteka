@@ -1,4 +1,4 @@
-// фоновое изображение хэддера
+// background image of header
 .header {
   position: relative;
   display: block;
@@ -16,7 +16,7 @@
 //   background-color: $black-color;
 // }
 
-// кнопки навигации и лого
+// navigation and logo buttons
 .nav {
   display: flex;
   align-items: baseline;
@@ -44,12 +44,12 @@
   display: none;
 }
 
-// утил классы что бы прятать варнинz
+// util classes to hide warning
 .hidden {
   display: none;
 }
 
-// инпут
+// input
 .film-search {
   position: absolute;
   top: 53%;
@@ -100,7 +100,7 @@
   }
 }
 
-// варнинг для запроса
+// warning for request
 .film-search-input-error {
   position: absolute;
 

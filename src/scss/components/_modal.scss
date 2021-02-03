@@ -33,7 +33,7 @@
   font-family: $main-font;
   font-size: 12px;
   font-weight: 500;
-  line-height: 1.8;
+  line-height: 1.3;
 }
 .movie-img {
   width: 280px;
@@ -200,12 +200,9 @@ ul {
 @media screen and (min-width: 1024px) {
   .movie-tmpl {
     font-size: 15px;
+    line-height: 1.8;
   }
   .modal__container {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     max-width: 670px;
   }
 
@@ -266,9 +263,9 @@ ul {
     font-size: 35px;
     margin-bottom: 40px;
   }
-  .movie-item-title {
-    margin-right: 80px;
-  }
+  // .movie-item-title {
+  //   margin-right: 80px;
+  // }
   .about-title {
     margin-bottom: 20px;
   }

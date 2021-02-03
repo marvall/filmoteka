@@ -1,3 +1,4 @@
+// styles for the card of one movie
 .movie-card-img {
   height: 416px;
   width: 280px;
@@ -94,6 +95,12 @@
 
   margin-bottom: 40px;
 }
+.btns {
+  display: flex;
+}
+.btn-to-wached {
+  margin-right: 15px;
+}
 
 .btn-to-wached,
 .btn-to-queue {
@@ -109,8 +116,7 @@
   color: $black-color;
   background: $white-color;
   border-radius: 5px;
-  margin-right: 4px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   cursor: pointer;
 
@@ -122,8 +128,6 @@
   }
 }
 
-@media screen and (min-width: 320px) {
-}
 @media screen and (min-width: 768px) {
   .movie-card {
     display: flex;
@@ -140,18 +144,60 @@
 }
 @media screen and (min-width: 1024px) {
   .movie-card-img {
-    height: 514px;
-    width: 426px;
+    height: 554px;
+    width: 476px;
+  }
+  .stats-info-rating,
+  .stats-info-votes {
+    height: 20px;
+    width: 46px;
+  }
+  .stats-info,
+  .stats-titles,
+  .stats-info-vote {
+    font-size: 15px;
+    line-height: 1.67;
+  }
+
+  .stats-info-vote {
+    line-height: 1.2;
   }
 
   .movie-card-about {
     margin-bottom: 20px;
   }
 
+  .movie-card-about-title {
+    font-size: 15px;
+    line-height: 1.2;
+  }
   .btn-to-wached {
-    margin: 0;
+    margin-right: 50px;
   }
   .btn-to-queue {
     margin: 0;
   }
+}
+@media screen and (min-width: 1280px) {
+  .movie-card-img {
+    height: 514px;
+    width: 426px;
+  }
+  .card-description-wrapper {
+    font-size: 18px;
+  }
+
+  .movie-card-about-title {
+    font-size: 18px;
+  }
+  // .movie-card-about {
+  //   margin-bottom: 20px;
+  // }
+
+  // .btn-to-wached {
+  //   margin: 0;
+  // }
+  // .btn-to-queue {
+  //   margin: 0;
+  // }
 }

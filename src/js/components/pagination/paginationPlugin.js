@@ -64,13 +64,13 @@ window.$ = window.jQuery = jQuery;
 
         // dataSource`s type is unknown, parse it to find true data
         self.parseDataSource(attributes.dataSource, function (dataSource) {
-          // Currently in asynchronous mode
+          // Currently is in asynchronous mode
           self.isAsync = Helpers.isString(dataSource);
           if (Helpers.isArray(dataSource)) {
             model.totalNumber = attributes.totalNumber = dataSource.length;
           }
 
-          // Currently in asynchronous mode and a totalNumberLocator is specified
+          // Currently is in asynchronous mode, and a totalNumberLocator is specified
           self.isDynamicTotalNumber =
             self.isAsync && attributes.totalNumberLocator;
 

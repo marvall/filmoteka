@@ -11,14 +11,14 @@ export const container = $('[data-index="pagination"]');
 arrowTop();
 
 /**
- * this function shows hidden movies when a button is pressed
+ * this function shows hidden movies, when a button is pressed
  */
 
 function showMoreCards() {
   const btnShowMore = document.querySelector('[data-index="btn-show-more"]');
 
   btnShowMore.style.display = 'block';
-  btnShowMore.innerHTML = `<p>Show all this page movies (20)</p>`;
+  btnShowMore.innerHTML = `<p>Show all the movies (20)</p>`;
 
   btnShowMore.addEventListener('click', btnShowMoreHandler);
 
@@ -44,7 +44,7 @@ function showMoreCards() {
  */
 
 async function initPagination(data, query) {
-  //query ключевое слово.
+  //query is a key word.
 
   const paginationWrapper = document.querySelector('[data-index="pagination"]');
   paginationWrapper.removeEventListener('mouseup', onClickPageHandler);
