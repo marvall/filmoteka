@@ -1,0 +1,52 @@
+.nav__style-container {
+  cursor: pointer;
+  margin-right: 28px;
+  &:nth-child() {
+    &:hover {
+      border-color: $orange-color;
+    }
+  }
+}
+
+.nav__auth-btn {
+  cursor: pointer;
+  padding-top: 9px;
+  padding-right: 10px;
+  padding-bottom: 9px;
+  padding-left: 10px;
+  border-radius: 50%;
+  border: 1px solid $white-color;
+  background-color: transparent;
+  //   &:hover {
+  //     border-color: $orange-color;
+  //   }
+}
+
+.nav__auth-text {
+  font-size: 14px;
+  line-height: 1.17;
+  text-align: center;
+  color: $white-color;
+  //   &:hover {
+  //     color: $orange-color;
+  //   }
+}
+
+.material-icons.auth__icon {
+  display: block;
+  margin: 0;
+  font-size: 30px;
+  color: $white-color;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__style-container {
+    margin-right: 140px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav__style-container {
+    margin-right: 272px;
+  }
+}
