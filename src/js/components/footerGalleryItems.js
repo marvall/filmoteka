@@ -7,7 +7,8 @@ export default [
     facebook: 'https://www.facebook.com/marvalltm',
     linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
-    doing: 'team-lead, функция renderGallery()',
+    doing:
+      'Team-lead, Page-navigation, Status queue button, render gallery, page-state',
   },
   {
     name: 'Anton Tkachenko',
@@ -17,7 +18,7 @@ export default [
     facebook: '',
     linkedin: '',
     github: 'https://github.com/TkachenkoAnton',
-    doing: 'scrum master, хедер библиотеки(HTML+CSS)',
+    doing: 'Scrum master, Header myLibrary(HTML+CSS), navigation in myLibrary',
   },
   {
     name: 'Alex Deviatov',

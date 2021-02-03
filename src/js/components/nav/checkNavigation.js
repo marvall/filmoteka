@@ -1,4 +1,5 @@
 import { changeHistory } from '../../utils/changeHistory';
+import { State } from '../../utils/state';
 import { renderGallery } from '../renderGallery';
 import { getFilmsPagination, getFilmInfoToStorage } from '../api';
 import {
@@ -17,17 +18,45 @@ import getFromStorage from '../getFromStorage';
 import { checkFilmInStack } from '../checkFimlInStack';
 
 /**
- * This function render started-page: home.
+ * This function render started-page from localStorage or localState (class State);
  */
 const changeStartedPage = function () {
-  changeHistory('home');
+  if (State.Page === 'home') {
+    startHome();
+  } else if (State.Page === 'mylibrary') {
+    startMyLibrary();
+  }
+};
+
+/**
+ * This function render page: Home
+ */
+const startHome = function () {
   homePageMarkupUpdate();
+  changeHistory('home');
   spinner('start');
   getFilmsPagination().then(data => {
     renderGallery(data.results);
     initPagination(data);
     getSearch();
   });
+  spinner('stop');
+};
+
+/**
+ * This function render page: myLibrary
+ */
+const startMyLibrary = function () {
+  document.querySelector("[data-index='pagination']").innerHTML = '';
+  changeHistory('mylibrary');
+  myLibraryPageMarkupUpdate();
+  headerDinamicContentMarkupUpdate();
+  document
+    .querySelector('[data-index="watched"]')
+    .classList.add('current__myLibraryBtn');
+  spinner('start');
+  //RENDER STACK WATCHED
+  initPaginationLS(getFromStorage('watched'));
   spinner('stop');
 };
 
@@ -44,25 +73,15 @@ export const checkNavigation = function (e) {
     }
   }
   if (e.type === 'DOMContentLoaded') {
-    //Started HOME PAGE
+    //Started LAST PAGE
     changeStartedPage();
   } else if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
       //Started HOME PAGE
-      changeStartedPage();
+      startHome();
     } else if (e.target.textContent === 'MY LIBRARY') {
-      document.querySelector("[data-index='pagination']").innerHTML = '';
       //Started MYLIBRARY PAGE
-      changeHistory('mylibrary');
-      myLibraryPageMarkupUpdate();
-      headerDinamicContentMarkupUpdate();
-      document
-        .querySelector('[data-index="watched"]')
-        .classList.add('current__myLibraryBtn');
-      spinner('start');
-      //RENDER STACK WATCHED
-      initPaginationLS(getFromStorage('watched'));
-      spinner('stop');
+      startMyLibrary();
     } else if (e.target.parentNode.dataset.index === 'card') {
       //THIS FUNC OPEN MODLA IN GALLERY
       setModalAttribute(e.target.parentNode);

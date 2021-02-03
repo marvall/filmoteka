@@ -1,3 +1,6 @@
+/**
+ * The Function add scroll-button in bottom of gallery
+ */
 export default function arrowTop() {
   const arrowTopRef = document.querySelector("[data-index='arrowTop']");
   const markup = `<i class="material-icons">keyboard_arrow_up</i>`;
