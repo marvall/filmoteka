@@ -12,6 +12,7 @@ async  function getVideoUrl(movie_id) {
     .then(({ results }) => results.map(item => {
       if (item.site === "YouTube") {
         return `https://www.youtube.com/embed/${item.key}`;
+        // return `https://www.youtube.com/watch?v=${item.key}`;
       };
     }))
     .catch(err => console.log(err));
