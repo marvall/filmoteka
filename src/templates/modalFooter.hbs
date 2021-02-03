@@ -1,13 +1,14 @@
 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
     <div class="modal__container__footer" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
         <h2 class="team-name-header">Наша команда</h2>
-        <main class="modal__content" id="modal-1-content">
+        <main class="modal__content modal__content__footer" id="modal-1-content">
             <p>
                 {{#each this}}
             <ul class="footer-team-link">
                 <li class="footer-team-link-list">
                     <img class="footer-team-img" src="{{photo}}">
                     <p class="team-name">{{name}}</p>
+                    {{!-- <p class="team-name">{{surname}}</p> --}}
                     <ul class="sosial-links">
                         <li class="link-img">
                             <a href="{{facebook}}" onclick="window.open(href +'')" target="_blank" class="sosial-link">
@@ -30,10 +31,23 @@
                             </a>
                         </li>
                     </ul>
+                    <p class="team-doing">{{doing}}</p>
                 </li>
             </ul>
             {{/each}}
-            </p>
+            <ul>
+                <li class="modal-footer-list">
+                    <a class="modal-footer modal-footer-link"
+                        href="https://docs.google.com/spreadsheets/d/1sDdV9yzTj1FfEUERLm5xYBetz36jbPxiSa403J5QIP4/edit#gid=0"
+                        onclick="window.open(href +'')">
+                        Test Case List</a>
+                    <a class="modal-footer"
+                        href="https://docs.google.com/spreadsheets/d/1sn7c79wx4wYchimYHlfpFM8Ar7VOeySVnYtKzq2lMTc/edit#gid=0"
+                        onclick="window.open(href +'')">
+                        Backlog</a>
+
+                </li>
+            </ul>
         </main>
     </div>
 </div>

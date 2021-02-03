@@ -56,7 +56,6 @@ export function showMoreCards(totalRes = 20) {
  * @param {object} data
  * @param {string} query
  */
-
 async function initPagination(data, query) {
   const paginationWrapper = document.querySelector('[data-index="pagination"]');
 

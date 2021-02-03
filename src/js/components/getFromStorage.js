@@ -1,3 +1,7 @@
+/**
+ * This function returns the values by keywords ​​from localStarage
+ * @param {string} filmType
+ */
 function getFromStorage(filmType) {
   switch (filmType) {
     case 'watched':
@@ -16,6 +20,13 @@ function getFromStorage(filmType) {
         queue = JSON.parse(queue);
       }
       return queue;
+    case 'state':
+      let state = localStorage.getItem('state');
+      if (state === null) {
+        state = '';
+      } else {
+        return state;
+      }
     default:
       console.log('Write correct type');
   }

@@ -1,5 +1,3 @@
-import searchQuerryRender from '../keyWorldSearch';
-
 const refs = {
   header: document.querySelector('[data-index="header"]'),
   homeBtn: document.querySelector('[data-index="home"]'),
@@ -9,13 +7,18 @@ const refs = {
     "[data-index='headerDinamicContent']",
   ),
 };
-
+/**
+ * This function change background for page: home
+ */
 function homePageMarkupUpdate() {
   refs.header.classList.remove('header__background-myLibrary');
   refs.header.classList.add('header__background-home');
   refs.mylibraryBtn.classList.remove('current');
   refs.homeBtn.classList.add('current');
 }
+/**
+ * This function change background for page: myLibrary
+ */
 function myLibraryPageMarkupUpdate() {
   refs.header.classList.remove('header__background-home');
   refs.header.classList.add('header__background-myLibrary');
@@ -23,7 +26,9 @@ function myLibraryPageMarkupUpdate() {
   refs.homeBtn.classList.remove('current');
   refs.mylibraryBtn.classList.add('current');
 }
-
+/**
+ * This function render current button in myLibrary
+ */
 function headerDinamicContentMarkupUpdate() {
   refs.headerDinamicContent.addEventListener('click', e => {
     const watchedBtn = document.querySelector('[data-index="watched"]');
@@ -37,7 +42,10 @@ function headerDinamicContentMarkupUpdate() {
     }
   });
 }
-
+/**
+ * This function check click target in nav menu
+ * @param {event} e
+ */
 function checkClickTarget(e) {
   return (
     e.target.innerText === 'Filmoteka' ||

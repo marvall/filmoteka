@@ -15,7 +15,6 @@ export const containerLS = $('[data-index="paginationLS"]');
  * renders the page markup when the page button is clicked.
  * @param {array} results
  */
-
 function initPaginationLS(results) {
   const btnShowMore = document.querySelector('[data-index="btn-show-more"]');
   btnShowMore.style.display = 'none';
