@@ -44,9 +44,11 @@ function initPaginationLS(results) {
       spinner('start');
       containerLS.prev().html(dataHtml);
       spinner('stop');
+      window.scrollTo(pageXOffset, 0);
     },
   };
 
+  window.scrollTo(pageXOffset, 0);
   containerLS.pagination(options);
   if (results.length <= paginationSizeChanger()) {
     containerLS.hide();

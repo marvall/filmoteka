@@ -14,6 +14,8 @@ arrowTop();
 
 /**
  * this function shows hidden movies when a button is pressed
+ * totalRes takes the number of total results
+ * @param {number} totalRes
  */
 
 export function showMoreCards(totalRes = 20) {
@@ -87,6 +89,7 @@ async function initPagination(data, query) {
 
       container.prev().html(dataHtml);
 
+      window.scrollTo(pageXOffset, 0);
       const num = pagination.pageNumber;
       getFilmsPagination(query, num).then(({ results }) => {
         spinner('start');
