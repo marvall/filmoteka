@@ -17,7 +17,6 @@ arrowTop();
  * totalRes takes the number of total results
  * @param {number} totalRes
  */
-
 export function showMoreCards(totalRes = 20) {
   const btnShowMore = document.querySelector('[data-index="btn-show-more"]');
   const cards = document.querySelectorAll('[data-index="card"]');
@@ -81,8 +80,6 @@ async function initPagination(data, query) {
     triggerPagingOnInit: false,
 
     callback: function (response, pagination) {
-      console.log('pagination', pagination);
-      console.log('page number', pagination.pageNumber);
       var dataHtml = '';
       dataHtml += '</ul>';
 
@@ -95,7 +92,6 @@ async function initPagination(data, query) {
         renderGallery(results);
         spinner('stop');
         showMoreCards(results.length);
-        console.log('results', results.length);
       });
     },
   };
