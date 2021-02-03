@@ -21,7 +21,7 @@ function initPaginationLS(results) {
   const paginationWrapper = document.querySelector(
     '[data-index="paginationLS"]',
   );
-  paginationWrapper.removeEventListener('mouseup', onClickPageHandler);
+  paginationWrapper.innerHTML = '';
 
   container.hide();
   containerLS.show();
@@ -40,21 +40,17 @@ function initPaginationLS(results) {
       var dataHtml = renderGallery(response);
       dataHtml += '</ul>';
 
+      spinner('start');
       containerLS.prev().html(dataHtml);
+      spinner('stop');
+      window.scrollTo(pageXOffset, 0);
     },
   };
 
+  window.scrollTo(pageXOffset, 0);
   containerLS.pagination(options);
-  paginationWrapper.addEventListener('mouseup', onClickPageHandler);
-
-  function onClickPageHandler(event) {
-    if (event.target.parentNode.classList.contains('paginationjs-ellipsis')) {
-      return;
-    }
-
-    spinner('start');
-    renderGallery(results);
-    spinner('stop');
+  if (results.length <= paginationSizeChanger()) {
+    containerLS.hide();
   }
 }
 

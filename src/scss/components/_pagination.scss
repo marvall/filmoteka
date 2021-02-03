@@ -4,7 +4,7 @@
   align-items: center;
 
   margin-top: 46px;
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 
   background-color: inherit;
 }
@@ -70,7 +70,15 @@
       border-radius: 5px;
       outline-color: $orange-color;
     }
+    &.paginationjs-page > a {
+      &:hover,
+      &:focus {
+        background-color: $footer-background-color;
+        transform: scale(1.15);
+      }
+    }
   }
+
   .paginationjs-first,
   .paginationjs-last {
     @media screen and (max-width: 450px) {
@@ -81,12 +89,17 @@
   li.active > a {
     background-color: $orange-color;
     color: $white-color;
+
+    &:hover,
+    &:focus {
+      background-color: $orange-slave-color;
+    }
   }
 }
 
 li.paginationjs-prev > a,
 li.paginationjs-next > a {
-  background-color: #f7f7f7;
+  background-color: $footer-background-color;
   color: transparent;
 }
 
@@ -155,5 +168,14 @@ li.paginationjs-next > a {
     border: none;
     background: $orange-color;
     color: $white-color;
+  }
+}
+
+// ================================================================
+.main-section {
+  padding-bottom: 60px;
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 40px;
   }
 }

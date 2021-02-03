@@ -7,6 +7,9 @@ import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
 import { addSearchList } from './searchList';
 const _ = require('lodash');
+import { showMoreCards } from './pagination/paginationInit';
+
+
 /**
  * This function search query in search-line.
  * It have 3 state: not found, one request searched,
@@ -42,6 +45,7 @@ const starSearch = function (searchString) {
       getFilmInfo(data.results[0].id)
         .then(data => {
           renderGallery(data);
+          showMoreCards(1); // при 1 значении убрать кнопку 'показать еще'
         })
         .then(() => checkFilmInStack());
       spinner('stop');
@@ -52,6 +56,7 @@ const starSearch = function (searchString) {
       spinner('start');
       renderGallery(data.results);
       initPagination(data, searchString);
+      showMoreCards(data.total_results); // убрать кнопку в зависимости от количества
       spinner('stop');
     }
     setTimeout(() => {
