@@ -1,24 +1,22 @@
 {{#each this}}
-<li class="card_small" id="{{id}}" data-index="card">
-    {{!--
-<li class="card_small" id="{{id}}" data-index="card_small"></li> --}}
-{{#if poster_path}}
-<img class="card-img_small" src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='Film {{title}} poster' />
-{{else}}
-<img class="card-img_small" src='https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png'
-    alt='Film {{title}} poster' />
-{{/if}}
-<div class="card-info small">
-    <h2 class="card-title"> {{title}} </h2>
-    <p class="card-genre"> {{#if genre_ids}}{{genre_ids}}{{/if}}{{#if genres}}{{genres}}{{/if}} </p>
-    {{#if release_date}}
-    <p class="card-release-year"> {{release_date}} </p>
+<li class="card_small" id="{{id}}" data-index="card-small">
+    {{#if poster_path}}
+    <img class="card-img_small" src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='Film {{title}} poster' />
+    {{else}}
+    <img class="card-img_small" src='https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png'
+        alt='Film {{title}} poster' />
     {{/if}}
-</div>
-{{#if vote_average}}
-<p class="card-vote small is-visible" data-hiden="true">
-    {{vote_average}}
-</p>
-{{/if}}
+    <div class="card-info small">
+        <h2 class="card-title"> {{title}} </h2>
+        <p class="card-genre"> {{#if genre_ids}}{{genre_ids}}{{/if}}{{#if genres}}{{genres}}{{/if}} </p>
+        {{#if release_date}}
+        <p class="card-release-year"> {{release_date}} </p>
+        {{/if}}
+    </div>
+    {{#if vote_average}}
+    <p class="card-vote small is-visible" data-hiden="true">
+        {{vote_average}}
+    </p>
+    {{/if}}
 </li>
 {{/each}}
