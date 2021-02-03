@@ -4,7 +4,7 @@
   align-items: center;
 
   margin-top: 46px;
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
 
   background-color: inherit;
 }
@@ -168,5 +168,14 @@ li.paginationjs-next > a {
     border: none;
     background: $orange-color;
     color: $white-color;
+  }
+}
+
+// ================================================================
+.main-section {
+  padding-bottom: 60px;
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 40px;
   }
 }
