@@ -14,9 +14,9 @@ export default [
     name: 'Anton Tkachenko',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Anton.jpg',
-    instagram: '',
-    facebook: '',
-    linkedin: '',
+    instagram: 'https://www.instagram.com/tkachenkotony/',
+    facebook: 'https://www.facebook.com/Mr.TonyTkachenko',
+    linkedin: 'http://linkedin.com/in/tony-tkachenko',
     github: 'https://github.com/TkachenkoAnton',
     doing: 'Scrum master, Header myLibrary(HTML+CSS), navigation in myLibrary',
   },
@@ -46,8 +46,8 @@ export default [
     name: 'Andrii Stanislav',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Andrii.jpg',
-    instagram: '',
-    facebook: '',
+    instagram: 'https://www.instagram.com/andriy_stanislav/',
+    facebook: 'https://www.facebook.com/profile.php?id=100017351130809',
     linkedin: 'https://www.linkedin.com/mwlite/in/andrii-stanislav-7ba669201',
     github: 'https://github.com/Andrii-Stanislav',
     doing:

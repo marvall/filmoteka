@@ -6,48 +6,63 @@
                 {{#each this}}
             <ul class="footer-team-link">
                 <li class="footer-team-link-list">
-                    <img class="footer-team-img" src="{{photo}}">
+                    <div class="footer-photo-links">
+                        <img class="footer-team-img" src="{{photo}}">
+                        <ul class="sosial-links">
+                            {{#if facebook}}
+                            <li class="link-img">
+                                <a href="{{facebook}}" onclick="window.open(href +'')" target="_blank"
+                                    class="sosial-link">
+                                    <i class="fab fa-facebook-f i-link"></i>
+                                </a>
+                            </li>
+                            {{/if}}
+                            {{#if instagram}}
+                            <li class="link-img">
+                                <a href="{{instagram}}" onclick="window.open(href +'')" target="_blank"
+                                    class="sosial-link">
+                                    <i class="fab fa-instagram i-link"></i>
+                                </a>
+                            </li>
+                            {{/if}}
+                            {{#if linkedin}}
+                            <li class="link-img">
+                                <a href="{{linkedin}}" onclick="window.open(href +'')" target="_blank"
+                                    class="sosial-link">
+                                    <i class="fab fa-linkedin-in i-link"></i>
+                                </a>
+                            </li>
+                            {{/if}}
+                            {{#if github}}
+                            <li class="link-img">
+                                <a href="{{github}}" onclick="window.open(href +'')" target="_blank"
+                                    class="sosial-link">
+                                    <i class="fab fa-github i-link"></i>
+                                </a>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </div>
                     <p class="team-name">{{name}}</p>
-                    {{!-- <p class="team-name">{{surname}}</p> --}}
-                    <ul class="sosial-links">
-                        <li class="link-img">
-                            <a href="{{facebook}}" onclick="window.open(href +'')" target="_blank" class="sosial-link">
-                                <i class="fab fa-facebook-f i-link"></i>
-                            </a>
-                        </li>
-                        <li class="link-img">
-                            <a href="{{instagram}}" onclick="window.open(href +'')" target="_blank" class="sosial-link">
-                                <i class="fab fa-instagram i-link"></i>
-                            </a>
-                        </li>
-                        <li class="link-img">
-                            <a href="{{linkedin}}" onclick="window.open(href +'')" target="_blank" class="sosial-link">
-                                <i class="fab fa-linkedin-in i-link"></i>
-                            </a>
-                        </li>
-                        <li class="link-img">
-                            <a href="{{github}}" onclick="window.open(href +'')" target="_blank" class="sosial-link">
-                                <i class="fab fa-github i-link"></i>
-                            </a>
-                        </li>
-                    </ul>
                     <p class="team-doing">{{doing}}</p>
                 </li>
             </ul>
             {{/each}}
-            <ul>
-                <li class="modal-footer-list">
-                    <a class="modal-footer modal-footer-link"
-                        href="https://docs.google.com/spreadsheets/d/1sDdV9yzTj1FfEUERLm5xYBetz36jbPxiSa403J5QIP4/edit#gid=0"
-                        onclick="window.open(href +'')">
-                        Test Case List</a>
-                    <a class="modal-footer"
-                        href="https://docs.google.com/spreadsheets/d/1sn7c79wx4wYchimYHlfpFM8Ar7VOeySVnYtKzq2lMTc/edit#gid=0"
-                        onclick="window.open(href +'')">
-                        Backlog</a>
-
-                </li>
-            </ul>
         </main>
+        <ul>
+            <li class="modal-footer-list">
+                <a class="modal-footer modal-footer-link"
+                    href="https://docs.google.com/spreadsheets/d/1sDdV9yzTj1FfEUERLm5xYBetz36jbPxiSa403J5QIP4/edit#gid=0"
+                    onclick="window.open(href +'')">
+                    Test Case List</a>
+                <a class="modal-footer modal-footer-link"
+                    href="https://docs.google.com/spreadsheets/d/1sn7c79wx4wYchimYHlfpFM8Ar7VOeySVnYtKzq2lMTc/edit#gid=0"
+                    onclick="window.open(href +'')">
+                    Backlog</a>
+                <a class="modal-footer" href="https://github.com/marvall/filmoteka/edit/main/README.md"
+                    onclick="window.open(href +'')">
+                    Read.me</a>
+            </li>
+        </ul>
     </div>
 </div>
