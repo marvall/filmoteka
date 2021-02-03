@@ -1,4 +1,4 @@
-// фоновое изображение хэддера
+// background image of header
 .header {
   position: relative;
   display: block;
@@ -8,6 +8,12 @@
 
   padding-top: 46px;
   padding-bottom: 158px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    width: auto;
+  }
+
 }
 
 // пока закоментил пока не решим стоит ли добавлять див
@@ -16,10 +22,12 @@
 //   background-color: $black-color;
 // }
 
-// кнопки навигации и лого
+//  navigation and logo buttons
 .nav {
   display: flex;
   align-items: baseline;
+  width: 100%;
+  justify-content: center;
 }
 
 .nav-logo {
@@ -44,12 +52,12 @@
   display: none;
 }
 
-// утил классы что бы прятать варнинz
+// util classes to hide warning
 .hidden {
   display: none;
 }
 
-// инпут
+// input
 .film-search {
   position: absolute;
   top: 53%;
@@ -100,7 +108,7 @@
   }
 }
 
-// варнинг для запроса
+// warning for request
 .film-search-input-error {
   position: absolute;
 

@@ -52,6 +52,7 @@
     "axios": "^0.21.1",
     "basiclightbox": "^5.0.4",
     "core-js": "^3.8.3",
+    "firebase": "^8.2.5",
     "handlebars": "^4.7.6",
     "jquery": "^3.5.1",
     "material-icons": "^0.5.2",
