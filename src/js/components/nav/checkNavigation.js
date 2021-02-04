@@ -117,7 +117,7 @@ export const checkNavigation = function (e) {
       //RENDER STACK QUEUE
       initPaginationLS(getFromStorage('queue'));
     } else if (e.target.dataset.index === 'btn-youtube') {
-      console.log('click');
+      // OPEN MODAL with official trailer 
     showVideo(e.target);}
   } 
 };

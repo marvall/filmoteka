@@ -52,33 +52,24 @@ export function showTeam(Node) {
 }
 
 /**
- * You need to pass the node(button Youtube on the card of one film) to this function.
+ * You need to pass the Node(button Youtube on the card) to this function.
  * @param {Node} event
  */
 export function showVideo(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
-  getVideoUrl(Node.id).then(url => {
-    const markup = `<div class="modal__overlay" tabindex="-1"
-                   data-micromodal-close>
-                  <div class="modal__container" role="dialog" 
-                  aria-modal="true" aria-labelledby="modal-1-title">
-                    <main class="modal__content">
-                      <div class="movie-tmpl" data-index="modal-video">
-                        <iframe width="560" height="315" src=${url} 
-                        frameborder="0"
-                         allow="accelerometer; autoplay; clipboard-write;
-                          encrypted-media; gyroscope; picture-in-picture"
-                         allowfullscreen>
+  document.querySelector('#modal-1').innerHTML = '';
+  getVideoUrl(Node.dataset.id).then(url => {
+    const markup = `<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                  <div class="modal__container video" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                  <div class="movie-tmpl" data-index="modal-video">
+                        <iframe src=${url} frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                          encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         </iframe>
                       </div>
-                    </main>
-                  </div>
+                 </div>
                 </div >`;
-    document.querySelector('#modal-1').innerHTML = '';
     document.querySelector('#modal-1').insertAdjacentHTML('beforeend', markup);
     });
-    MicroModal.show('modal-1');
-    Node.removeAttribute('data-micromodal-trigger');
-  
-  
+  MicroModal.show('modal-1');
+  Node.removeAttribute('data-micromodal-trigger');
 }

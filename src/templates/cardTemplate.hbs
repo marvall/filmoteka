@@ -1,8 +1,8 @@
 {{#each this}}
 <li class="card" id="{{id}}" data-index="card">
-  <button data-id="{{id}}" data-index="btn-youtube" class="btn-youtube">
-    <i class="material-icons youtube"> smart_display </i> </button>
-
+  <button class="btn-youtube">
+    <i data-id="{{id}}" data-index="btn-youtube" class="material-icons youtube"> smart_display</i>
+  </button>
   {{#if poster_path}} <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' loading="lazy"
     alt='Film {{title}} poster' />
   {{else}}
