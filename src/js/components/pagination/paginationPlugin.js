@@ -414,7 +414,8 @@ window.$ = window.jQuery = jQuery;
                 '" title="Previous page"><a href="' +
                 pageLink +
                 '">' +
-                prevText +
+                ' <i class="material-icons arrow">arrow_back</i>' +
+                // prevText +
                 '</a></li>';
             }
           }
@@ -446,7 +447,8 @@ window.$ = window.jQuery = jQuery;
                 '" title="Next page"><a href="' +
                 pageLink +
                 '">' +
-                nextText +
+                ' <i class="material-icons arrow">arrow_forward</i>' +
+                // nextText +
                 '</a></li>';
             }
           }
