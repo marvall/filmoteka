@@ -74,7 +74,7 @@
     &.paginationjs-page > a {
       &:hover,
       &:focus {
-        background-color: $footer-background-color;
+        background-color: rgb(238, 233, 222);
         transform: scale(1.15);
       }
     }
@@ -159,7 +159,7 @@ li.paginationjs-next > a {
   text-transform: uppercase;
 
   color: $black-color;
-  background: $footer-background-color;
+  background-color: $footer-background-color;
 
   border-radius: 5px;
   border: 1px solid $modal-slave-color;
