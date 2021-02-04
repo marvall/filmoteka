@@ -100,7 +100,7 @@ export const checkNavigation = function (e) {
       ).then(data => {
         addToStorage(data, 'watched');
         checkFilmInStack();
-        //  setToDB(State.Auth);
+        setToDB(State.Auth);
       });
     } else if (e.target.dataset.index === 'btn-to-queue') {
       //ADD TO QUEUE

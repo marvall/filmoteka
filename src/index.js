@@ -8,7 +8,7 @@ import { State } from './js/utils/state';
 import { getFromDB, setToDB } from './js/components/firebase/firebaseUtils';
 
 renderLoginBtnAfterGetAuthState();
-//setTimeout(() => getFromDB(State.Auth), 3000);
+setTimeout(() => getFromDB(State.Auth), 3000);
 
 window.addEventListener('DOMContentLoaded', loadStartContent);
 window.document

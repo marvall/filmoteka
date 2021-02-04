@@ -95,4 +95,4 @@ const logout = function () {
     .catch(error => console.log(error));
 };
 
-//export { getFromDB, setToDB };
+export { getFromDB, setToDB };

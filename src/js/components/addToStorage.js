@@ -86,8 +86,12 @@ const resetStorage = function () {
 const addToStorageFromBase = function (data) {
   console.log(data);
   if (data) {
-    localStorage.setItem('watched', JSON.stringify(data.watchad));
-    localStorage.setItem('queue', JSON.stringify(data.queue));
+    if (data.watchad !== undefined) {
+      localStorage.setItem('watched', JSON.stringify(data.watchad));
+    }
+    if (data.watchad !== undefined) {
+      localStorage.setItem('queue', JSON.stringify(data.queue));
+    }
   }
 };
 
