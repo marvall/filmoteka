@@ -114,15 +114,22 @@
   padding: 0;
   width: 136px;
   height: 44px;
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   border-radius: 5px;
-  border-color: transparent;
-  cursor: pointer;
+  // border-color: transparent;
 
   color: $black-color;
-  background: $white-color;
-  border-color: $modal-slave-color;
+  background-color: $white-color;
+
+  border: 1px solid $modal-slave-color;
+  // border-color: $modal-slave-color;
+
+  @include transition(all);
+  outline: none;
+
+  cursor: pointer;
+
   &:hover {
     outline: none;
     border: none;
@@ -243,7 +250,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1400px) {
   .movie-tmpl {
     font-size: 18px;
     width: 780px;
