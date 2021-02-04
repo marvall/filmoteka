@@ -80,6 +80,7 @@ async function getFilmInfoToStorage(filmId) {
 //       .catch(err => console.log(err));
 //     return data;
 //   }
+
 //   if (searchValue) {
 //     const data = await fetchGetSearchMovie(searchValue, pageValue)
 //       .then(({ total_pages }) => total_pages)
@@ -87,6 +88,7 @@ async function getFilmInfoToStorage(filmId) {
 //     return data;
 //   }
 // }
+
 /**
  * This function get the information about renres a movie from API,
  * filmId takes current id movie

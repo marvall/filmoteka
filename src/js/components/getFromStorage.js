@@ -23,7 +23,7 @@ function getFromStorage(filmType) {
     case 'state':
       let state = localStorage.getItem('state');
       if (state === null) {
-        state = '';
+        return state;
       } else {
         return state;
       }
@@ -31,5 +31,12 @@ function getFromStorage(filmType) {
       console.log('Write correct type');
   }
 }
+export const getAuthStateFromStorage = function () {
+  let authState = localStorage.getItem('authState');
+  if (authState === null) {
+    authState = [];
+  }
+  return authState;
+};
 
 export default getFromStorage;

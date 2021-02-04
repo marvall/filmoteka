@@ -68,11 +68,11 @@ function addToStorage(filmObj, filmType) {
 }
 
 /**
-  The function accepts inputText with required 
-  @param {text} inputText;
+  The function accepts value with required 
+  @param {boolean} value;
  */
-function saveQueryOnStorage(inputText) {
-  localStorage.setItem('searchQuery', inputText);
+function saveAuthStateOnStorage(value) {
+  localStorage.setItem('authState', value);
 }
 
-export { addToStorage, saveQueryOnStorage };
+export { addToStorage, saveAuthStateOnStorage };
