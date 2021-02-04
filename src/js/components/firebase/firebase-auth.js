@@ -40,10 +40,11 @@ function logout() {
         'beforeend',
         `<i class="material-icons auth__icon">person_outline</i>`,
       ),
-      (navAuthText.textContent = 'Sign In').catch(error => {
+      (navAuthText.textContent = 'Sign In'),
+    )
+    .catch(error => {
         throw error;
-      }),
-    );
+    })
 }
 
 function app(user) {
