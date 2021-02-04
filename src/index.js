@@ -37,6 +37,7 @@ magic();
 */
 //========================================
 
+//=======================================
 window.addEventListener('DOMContentLoaded', loadStartContent);
 window.document
   .querySelector('body')
