@@ -99,8 +99,8 @@ export default [
     name: 'Yehor Rudzinskiy',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/yehor.jpg',
-    instagram: '',
-    facebook: '',
+    instagram: 'https://instagram.com/yehor_rudz?igshid=1irfeqp5nhl9n',
+    facebook: 'https://www.facebook.com/IehorRudzinskiy/',
     linkedin: '',
     github: 'https://github.com/Yehor-Rudzinskyi',
     doing: 'функции для работы с API',
