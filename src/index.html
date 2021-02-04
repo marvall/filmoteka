@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Filmoteka</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <header
-      class="header header__background-home container"
-      data-index="header"
-    >
-      <nav class="nav" data-index="navigation">
-        <a href="" class="nav-logo logo-style">
-          <svg class="nav-logo-icon">
-            <use href="./images/sprite.svg#icon-film"></use>
-          </svg>
-          <span class="logo-text">Filmoteka</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filmoteka</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <header class="header header__background-home container" data-index="header">
+    <nav class="nav" data-index="navigation">
+      <a href="" class="nav-logo logo-style">
+        <svg class="nav-logo-icon">
+          <use href="./images/sprite.svg#icon-film"></use>
+        </svg>
+        <span class="logo-text">Filmoteka</span>
+      </a>
+      <div class="nav__style-container selected" data-index="nav__style-container">
+        <a href="#" class="nav__auth-link" data-index="nav__auth-link"><i
+            class="material-icons auth__icon">person_outline</i>
         </a>
-        <button class="nav-btn current" data-index="home">HOME</button>
-        <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
-      </nav>
-      <div data-index="headerDinamicContent"></div>
-    </header>
-    <section class="main-section">
-      <ul data-index="gallery" class="gallery container"></ul>
-      <!-- Modal -->
-      <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
-      <!-- Pagination -->
-      <button
-        type="button"
-        class="btn-show-more"
-        data-index="btn-show-more"
-      ></button>
-      <div class="pagination" data-index="pagination"></div>
-      <div class="pagination" data-index="paginationLS"></div>
-      <!-- wrapper for spinner -->
-      <div class="loader" data-index="spinner"></div>
-      <!-- wrapper for arrowTop -->
-      <div class="arrowTop" data-index="arrowTop"></div>
-    </section>
-    <footer class="footer-them-color container">
-      <div class="footer-text section-footer">
-        <span class="section-footer-text">
-          <span>© 2021 | All Rights Reserved |</span>
-          <span class="footer-span"
-            >Developed with
-            <i class="material-icons">favorite</i>
-            by
-            <a href class="footer-link" data-index="team">GoIT Students</a>
-          </span>
-        </span>
+        <p class="nav__auth-text" data-index="nav__auth-text">Sign In</p>
       </div>
-    </footer>
-  </body>
+      <button class="nav-btn current" data-index="home">HOME</button>
+      <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
+    </nav>
+    <div data-index="headerDinamicContent"></div>
+  </header>
+  <section class="main-section">
+    <ul data-index="gallery" class="gallery container"></ul>
+    <!-- Modal -->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true"></div>
+    <!-- Pagination -->
+    <button type="button" class="btn-show-more" data-index="btn-show-more"></button>
+    <div class="pagination" data-index="pagination"></div>
+    <div class="pagination" data-index="paginationLS"></div>
+    <!-- wrapper for spinner -->
+    <div class="loader" data-index="spinner"></div>
+    <!-- wrapper for arrowTop -->
+    <div class="arrowTop" data-index="arrowTop"></div>
+  </section>
+  <footer class="footer-them-color container">
+    <div class="footer-text section-footer">
+      <span class="section-footer-text">
+        <span>© 2021 | All Rights Reserved |</span>
+        <span class="footer-span">Developed with
+          <i class="material-icons">favorite</i>
+          by
+          <a href class="footer-link" data-index="team">GoIT Students</a>
+        </span>
+      </span>
+    </div>
+  </footer>
+</body>
+
 </html>
