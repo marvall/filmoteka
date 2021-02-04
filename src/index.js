@@ -1,8 +1,8 @@
 import './scss/main.scss';
-import './js/components/nav/firebase-auth';
 import { renderHeader } from './js/utils/renderHeader';
 import { checkNavigation } from './js/components/nav/checkNavigation';
 import { loadStartContent } from './js/components/eventToLoad/loadStartContent';
+import { renderLoginBtnAfterGetAuthState } from './js/components/firebase/firebase-auth';
 
 //==============TEST FOR FIREBASE BY MARVALL=================
 /*
@@ -38,7 +38,14 @@ magic();
 */
 //========================================
 
+// window.addEventListener(
+//   'DOMContentLoaded',
+//   renderLoginBtnAfterGetAuthState(),
+//   loadStartContent,
+// );
+
 window.addEventListener('DOMContentLoaded', loadStartContent);
+
 window.document
   .querySelector('body')
   .addEventListener('click', checkNavigation);
