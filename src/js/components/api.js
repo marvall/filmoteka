@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { reMapFilmsArray } from './reMapFilmsArray'; //
+
 const API_KEY = '4c4fcd40981097a4f391c61f2f249de1';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
@@ -29,24 +29,25 @@ async function fetchGetMovieGenres() {
   const { genres } = data;
   return genres;
 }
-//===========================================//
-async function getFilms(searchValue, pageValue = 1) {
-  if (!searchValue) {
-    const data = await fetchGetTrending(pageValue)
-      .then(({ results }) => results)
-      .catch(err => console.log(err));
-    return data;
-  }
 
-  if (searchValue) {
-    const data = await fetchGetSearchMovie(searchValue, pageValue)
-      .then(({ results }) => results)
-      .catch(err => console.log(err));
-    return data;
-  }
-}
+// async function getFilms(searchValue, pageValue = 1) {
+//   if (!searchValue) {
+//     const data = await fetchGetTrending(pageValue)
+//       .then(({ results }) => results)
+//       .catch(err => console.log(err));
+//     return data;
+//   }
+
+//   if (searchValue) {
+//     const data = await fetchGetSearchMovie(searchValue, pageValue)
+//       .then(({ results }) => results)
+//       .catch(err => console.log(err));
+//     return data;
+//   }
+// }
 
 async function getFilmInfo(filmId) {
+  console.log(filmId);
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilm(data);
 }
@@ -56,21 +57,21 @@ async function getFilmInfoToStorage(filmId) {
   return reMapFilmToStorage(data);
 }
 
-async function getPages(searchValue, pageValue = 1) {
-  if (!searchValue) {
-    const data = await fetchGetTrending(pageValue)
-      .then(({ total_pages }) => total_pages)
-      .catch(err => console.log(err));
-    return data;
-  }
+// async function getPages(searchValue, pageValue = 1) {
+//   if (!searchValue) {
+//     const data = await fetchGetTrending(pageValue)
+//       .then(({ total_pages }) => total_pages)
+//       .catch(err => console.log(err));
+//     return data;
+//   }
 
-  if (searchValue) {
-    const data = await fetchGetSearchMovie(searchValue, pageValue)
-      .then(({ total_pages }) => total_pages)
-      .catch(err => console.log(err));
-    return data;
-  }
-}
+//   if (searchValue) {
+//     const data = await fetchGetSearchMovie(searchValue, pageValue)
+//       .then(({ total_pages }) => total_pages)
+//       .catch(err => console.log(err));
+//     return data;
+//   }
+// }
 
 async function getRenres() {
   const data = await fetchGetMovieGenres().catch(err => console.log(err));
@@ -158,9 +159,9 @@ function reMapFilmToStorage(arrayGenres) {
 }
 
 export {
-  getFilms,
+  // getFilms,
   getFilmInfo,
-  getPages,
+  // getPages,
   getRenres,
   getFilmsPagination,
   getFilmInfoToStorage,
