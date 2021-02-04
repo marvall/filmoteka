@@ -1,4 +1,4 @@
-// фоновое изображение хэддера
+// background image of header
 .header {
   position: relative;
   display: block;
@@ -10,10 +10,11 @@
   padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    width: auto;
+  }
 }
 
-// кнопки навигации и лого
 .nav {
   display: flex;
   align-items: center;
@@ -43,12 +44,12 @@
   display: none;
 }
 
-// утил классы что бы прятать варнинz
+// util classes to hide warning
 .hidden {
   display: none;
 }
 
-// инпут
+// input
 .film-search {
   position: absolute;
   top: 67%;
@@ -93,7 +94,7 @@
   }
 }
 
-// варнинг для запроса
+// warning for request
 .film-search-input-error {
   position: absolute;
 

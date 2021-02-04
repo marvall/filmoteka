@@ -9,7 +9,7 @@ $footer-background-color: #f7f7f7;
 $modal-slave-color: #8c8c8c;
 $green-color: #1baa1b;
 
-// миксин для транзишена
+// mixin for transition
 
 @mixin transition(
   $property,

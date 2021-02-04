@@ -18,8 +18,11 @@ export class State {
     this.Page = value;
   }
   static checkState() {
-    if (getFromStorage('state') !== '') {
+    let status = getFromStorage('state');
+    if (status !== null) {
       this.Page = getFromStorage('state');
+    } else {
+      this.Page = 'home';
     }
   }
 }
