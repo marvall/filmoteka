@@ -29,7 +29,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/lewyk',
     github: 'https://github.com/lewyk',
     doing:
-      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей+кроссбраузерность',
+      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей + кроссбраузерность',
   },
   {
     name: 'Artem Sergieiev',
@@ -114,7 +114,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/evhenya-krot-5837b28/',
     github: 'https://gist.github.com/yevheniia-petrychenko',
     doing:
-      'модальное окно для карточки фильма (HTML+CSS); проверка стилей+кроссбраузерность',
+      'модальное окно для карточки фильма (HTML+CSS); проверка стилей + кроссбраузерность',
   },
   {
     name: 'Myroslava Nikolaenko',
