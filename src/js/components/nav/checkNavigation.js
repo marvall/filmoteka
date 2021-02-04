@@ -111,6 +111,7 @@ export const checkNavigation = function (e) {
         addToStorage(data, 'queue');
         checkFilmInStack();
       });
+      setToDB(State.Auth);
     } else if (e.target.dataset.index === 'watched') {
       //RENDER STACK WATCHED
       initPaginationLS(getFromStorage('watched'));

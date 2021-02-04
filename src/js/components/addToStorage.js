@@ -85,11 +85,14 @@ const resetStorage = function () {
 
 const addToStorageFromBase = function (data) {
   console.log(data);
+  console.log(data.watched);
   if (data) {
-    if (data.watchad !== undefined) {
-      localStorage.setItem('watched', JSON.stringify(data.watchad));
+    if (data.watched !== undefined) {
+      console.log("i'm in queue");
+      localStorage.setItem('watched', JSON.stringify(data.watched));
     }
-    if (data.watchad !== undefined) {
+    if (data.queue !== undefined) {
+      console.log("i'm in watched");
       localStorage.setItem('queue', JSON.stringify(data.queue));
     }
   }
