@@ -44,6 +44,8 @@ magic();
 //   loadStartContent,
 // );
 
+renderLoginBtnAfterGetAuthState()
+
 window.addEventListener('DOMContentLoaded', loadStartContent);
 
 window.document
