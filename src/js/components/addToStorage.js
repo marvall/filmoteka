@@ -78,9 +78,8 @@ function saveAuthStateOnStorage(value) {
 //func refactored by marvall
 
 const resetStorage = function () {
-  const [watched, queue] = getCurrentStorage();
-  localStorage.removeItem(watched);
-  localStorage.removeItem(queue);
+  localStorage.removeItem('watched');
+  localStorage.removeItem('queue');
 };
 
 const addToStorageFromBase = function (data) {

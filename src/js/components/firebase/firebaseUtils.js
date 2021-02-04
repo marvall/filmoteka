@@ -2,11 +2,8 @@ import firebase from 'firebase/app';
 //import 'firebase/auth';
 import 'firebase/database';
 //import 'firebase/storage';
-import { firebaseConfig } from './firebaseConfig';
 import getFromStorage from '../getFromStorage';
 import { resetStorage, addToStorageFromBase } from '../addToStorage';
-
-//firebase.initializeApp(firebaseConfig);
 
 //============= DATABASE ====================
 
@@ -20,9 +17,9 @@ const getFromDB = function (authKey) {
     const user = db.ref(authKey);
     user.on('value', elem => {
       let data = elem.val();
+      resetStorage();
       console.log(data);
       if (data) {
-        resetStorage();
         addToStorageFromBase(data);
       }
     });
@@ -34,6 +31,8 @@ const setToDB = function (authKey) {
   const db = firebase.database();
   db.ref(authKey).set({
     watched: getFromStorage('watched'),
+  });
+  db.ref(authKey).set({
     queue: getFromStorage('queue'),
   });
 };
