@@ -1,6 +1,6 @@
 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-        <main class="modal__content" id="modal-1-content">
+    <div class="modal_container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <main class="modal_content" id="modal-1-content">
             <div class="movie-tmpl" id="{{id}}" data-index="cardInfo">
 
                 {{#if poster_path}}
@@ -13,38 +13,48 @@
                 {{/if}}
 
                 <div class="movie-description">
-
                     <h2 class="movie-title">{{original_title}}</h2>
-                    <div class="movie-item-container">
-                        <div class="movie-item titles">
-                            <i class="movie-item-title">Vote/Votes</i>
-                            <i class="movie-item-title">Popularity</i>
-                            <i class="movie-item-title">Original Title</i>
-                            <i class="movie-item-title">Genre</i>
-                        </div>
 
-                        <ul class="movie-item stats">
-                            <li class="value">
-                                <span class="vote"> {{vote_average}} </span>
-                                <span class="between">/</span>
-                                <span class="votes"> {{vote_count}}</span>
-                            </li>
-                            <li class="value">{{popularity}}</li>
-                            <li class="value">{{original_title}}</li>
-                            <li class="value">{{genres}}</li>
-                        </ul>
+                    <div class="grid-container">
+                        {{!-- <p class="movie-item"> --}}
+                            <i class="movie-item-title">Vote/Votes</i>
+                        <div class="value">
+                            <span class="vote"> {{vote_average}} </span>
+                            /
+                            <span class="votes"> {{vote_count}}</span>
+                        </div>
+                        {{!--
+                        </p> --}}
+
+                        {{!-- <p class="movie-item"> --}}
+                            <i class="movie-item-title">Popularity</i>
+                            <span class="value">{{popularity}}</span>
+                            {{!--
+                        </p> --}}
+
+                        {{!-- <p class="movie-item"> --}}
+                            <i class="movie-item-title">Original Title</i>
+                            <span class="value">{{original_title}}</span>
+                            {{!--
+                        </p> --}}
+
+                        {{!-- <p class="movie-item" style="margin-bottom: 20px;"> --}}
+                            <i class=" movie-item-title">Genre</i>
+                            <span class="value">{{genres}}</span>
+
+                            {{!--
+                        </p> --}}
                     </div>
 
                     <h3 class="about-title">about</h3>
                     <article class="movie-review">{{overview}}</article>
 
                     <div class="btns-modal">
-                        <button class="btn-modal-to-wached btn-modal" data-index="btn-to-wached">ADD TO WATCHED</button>
+                        <button class="btn-modal-to-wached btn-modal" data-index="btn-to-wached">ADD TO
+                            WATCHED</button>
                         <button class="btn-modal-to-queue btn-modal" data-index="btn-to-queue">ADD TO QUEUE</button>
                     </div>
-
                 </div>
-            </div>
         </main>
     </div>
 </div>

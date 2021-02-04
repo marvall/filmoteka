@@ -4,7 +4,6 @@
   align-items: center;
 
   margin-top: 46px;
-  // margin-bottom: 60px;
 
   background-color: inherit;
 }
@@ -69,11 +68,13 @@
 
       border-radius: 5px;
       outline-color: $orange-color;
+
+      @include transition(all);
     }
     &.paginationjs-page > a {
       &:hover,
       &:focus {
-        background-color: $footer-background-color;
+        background-color: rgb(238, 233, 222);
         transform: scale(1.15);
       }
     }
@@ -89,6 +90,8 @@
   li.active > a {
     background-color: $orange-color;
     color: $white-color;
+
+    @include transition(all);
 
     &:hover,
     &:focus {
@@ -154,20 +157,23 @@ li.paginationjs-next > a {
   height: 44px;
 
   text-transform: uppercase;
-  border-radius: 5px;
-  border-color: transparent;
 
   color: $black-color;
-  background: $white-color;
-  border-color: $modal-slave-color;
+  background-color: $footer-background-color;
+
+  border-radius: 5px;
+  border: 1px solid $modal-slave-color;
+
+  @include transition(all);
 
   cursor: pointer;
+
   &:focus,
   &:hover {
     outline: none;
     border: none;
-    background: $orange-color;
     color: $white-color;
+    background: $orange-color;
   }
 }
 

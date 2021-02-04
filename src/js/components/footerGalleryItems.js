@@ -35,12 +35,12 @@ export default [
     name: 'Artem Sergieiev',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/Artem.jpg',
-    instagram: 'https://instagram.com',
+    instagram: '',
     facebook: 'https://www.facebook.com/artem.sergeev.31/',
     linkedin: 'https://www.linkedin.com/in/artem-sergieiev-447084180/',
     github: 'https://github.com/ArtemS83',
     doing:
-      'функции для работы с API, всплывающая строка с подсказками при поиске, стрелка возврата на начало страницы',
+      'functions for working with API; pop-up bar search input; arrow for returning to the top of the page',
   },
   {
     name: 'Andrii Stanislav',

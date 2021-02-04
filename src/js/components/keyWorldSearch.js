@@ -5,7 +5,11 @@ import initPagination from './pagination/paginationInit';
 import { renderGallery } from './renderGallery';
 import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
-import { renderListSearch, deleteListSearch } from './searchList';
+import {
+  renderListSearch,
+  deleteListSearch,
+  makeCardsNotActive,
+} from './searchList';
 const _ = require('lodash');
 import { showMoreCards } from './pagination/paginationInit';
 
@@ -56,6 +60,7 @@ const starSearch = function (searchString) {
       spinner('start');
       renderListSearch(searchString, data.results);
       renderGallery(data.results);
+      makeCardsNotActive();
       initPagination(data, searchString);
       showMoreCards(data.total_results);
       spinner('stop');

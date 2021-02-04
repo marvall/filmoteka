@@ -16,6 +16,7 @@ import initPaginationLS from '../pagination/paginationLS';
 import { addToStorage } from '../addToStorage';
 import getFromStorage from '../getFromStorage';
 import { checkFilmInStack } from '../checkFimlInStack';
+import { setToDB } from '../firebase/firebaseUtils';
 
 /**
  * This function render started-page from localStorage or localState (class State);
@@ -100,6 +101,7 @@ export const checkNavigation = function (e) {
       ).then(data => {
         addToStorage(data, 'watched');
         checkFilmInStack();
+        setToDB(State.Auth);
       });
     } else if (e.target.dataset.index === 'btn-to-queue') {
       //ADD TO QUEUE
@@ -110,6 +112,7 @@ export const checkNavigation = function (e) {
         addToStorage(data, 'queue');
         checkFilmInStack();
       });
+      setToDB(State.Auth);
     } else if (e.target.dataset.index === 'watched') {
       //RENDER STACK WATCHED
       initPaginationLS(getFromStorage('watched'));

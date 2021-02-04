@@ -17,7 +17,7 @@
   z-index: 999;
 }
 
-.modal__container {
+.modal_container {
   background-color: #fff;
   padding: 10px;
   max-width: 280px;
@@ -42,15 +42,21 @@
   margin-bottom: 30px;
 }
 
+.grid-container {
+  display: grid;
+  grid-row-gap: 5px;
+  grid-column-gap: 20px;
+  grid-template-columns: auto auto;
+}
+.grid-container > p > .movie-item-title .value {
+  text-align: left;
+}
+
 .movie-title {
   font-size: 20px;
   line-height: 1.172;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
-}
-
-ul {
-  list-style: none;
 }
 
 .movie-item-title {
@@ -58,12 +64,6 @@ ul {
 }
 .movie-item-title {
   color: $modal-slave-color;
-  margin-bottom: 10px;
-  width: 70px;
-}
-
-.value {
-  margin-bottom: 10px;
 }
 
 .vote {
@@ -92,28 +92,39 @@ ul {
   color: $black-color;
   text-align: center;
 }
-.movie-item-container {
-  display: flex;
-}
-.titles {
-  margin-right: 40px;
-}
 
-.movie-item:not(:last-child) {
-  margin-bottom: 10px;
-}
 .movie-item:last-child {
   margin-bottom: 20px;
 }
 .about-title {
   text-transform: uppercase;
+  margin-top: 10px;
   margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
 }
 .movie-review {
   line-height: 1.7; //fix by marvall
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   height: 60px;
   overflow: hidden;
+  &:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+  }
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 .btn-modal {
   padding: 0;
@@ -122,12 +133,19 @@ ul {
   font-size: 12px;
   text-transform: uppercase;
   border-radius: 5px;
-  border-color: transparent;
-  cursor: pointer;
+  // border-color: transparent;
 
   color: $black-color;
-  background: $white-color;
-  border-color: $modal-slave-color;
+  background-color: $white-color;
+
+  border: 1px solid $modal-slave-color;
+  // border-color: $modal-slave-color;
+
+  @include transition(all);
+  outline: none;
+
+  cursor: pointer;
+
   &:hover {
     outline: none;
     border: none;
@@ -148,25 +166,28 @@ ul {
   .movie-tmpl {
     width: 100%;
   }
-  .modal__container {
-    padding: 20px;
+  .modal_container {
+    padding: 15px;
     width: 100%;
   }
   .movie-img {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .modal__container {
+  .grid-container {
+    grid-row-gap: 10px;
+  }
+  .modal_container {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
-    max-width: 570px;
+    max-width: 580px;
   }
   .movie-description {
-    width: 240px;
+    width: 280px;
   }
 
   .movie-tmpl {
@@ -180,56 +201,63 @@ ul {
   .movie-card {
     display: flex;
   }
-  .titles {
-    margin-right: 60px;
-  }
   .movie-review {
     line-height: 1.8;
     height: 80px;
+    margin-bottom: 20px;
   }
   .btn-modal-to-wached {
     font-size: 11.5px;
   }
   .movie-title {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 1.172;
     word-break: break-word;
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .movie-tmpl {
     font-size: 15px;
+    line-height: 1.7;
+    width: 700px;
   }
-  .modal__container {
+  .modal_container {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 20px;
     padding-bottom: 20px;
-    max-width: 670px;
+    max-width: 870px;
+  }
+
+  .movie-title {
+    margin-bottom: 30px;
   }
 
   .movie-description {
-    width: 280px;
+    width: 340px;
+  }
+  .vote,
+  .votes {
+    width: 46px;
+    height: 18px;
   }
   .movie-img {
     height: 514px;
     width: 350px;
   }
-  .titles {
-    margin-right: 50px;
-  }
-  .movie-item-title {
-    width: 90px;
-  }
 
   .about-title {
     margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 15px;
   }
 
   .movie-review {
     margin-bottom: 30px;
-    height: 160px;
+    line-height: 1.7;
+    height: 100px;
   }
 
   .movie-card-about {
@@ -238,19 +266,18 @@ ul {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1400px) {
   .movie-tmpl {
     font-size: 18px;
+    width: 780px;
   }
-  .modal__container {
+  .modal_container {
     max-width: 870px;
   }
   .movie-description {
-    width: 440px;
+    width: 390px;
   }
-  .movie-item-title {
-    width: 120px;
-  }
+
   .btns-modal {
     justify-content: center;
   }
@@ -262,13 +289,7 @@ ul {
   .btn-modal-to-wached {
     margin-right: 40px;
   }
-  .movie-title {
-    font-size: 35px;
-    margin-bottom: 40px;
-  }
-  .movie-item-title {
-    margin-right: 80px;
-  }
+
   .about-title {
     margin-bottom: 20px;
   }
@@ -337,7 +358,7 @@ ul {
   animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.micromodal-slide[aria-hidden='false'] .modal__container {
+.micromodal-slide[aria-hidden='false'] .modal_container {
   animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
@@ -345,11 +366,11 @@ ul {
   animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.micromodal-slide[aria-hidden='true'] .modal__container {
+.micromodal-slide[aria-hidden='true'] .modal_container {
   animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
-.micromodal-slide .modal__container,
+.micromodal-slide .modal_container,
 .micromodal-slide .modal__overlay {
   will-change: transform;
 }

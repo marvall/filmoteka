@@ -1,65 +1,98 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { firebaseConfig } from './firebaseConfig';
+import { saveAuthStateOnStorage } from '../addToStorage';
+import getAuthStateFromStorage from '../getFromStorage';
+import { State } from '../../utils/state';
+import { getFromDB } from './firebaseUtils';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyCplrPyEZsVNUOOq6dDBimn9JLqurX2GUE',
-  authDomain: 'first-team-filmoteka.firebaseapp.com',
-  databaseURL:
-    'https://first-team-filmoteka-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'first-team-filmoteka',
-  storageBucket: 'first-team-filmoteka.appspot.com',
-  messagingSenderId: '352377668166',
-  appId: '1:352377668166:web:1a7459d75b0745ef1cc047',
-};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-function app(user) {
-  // user.displayName
-  // user.email
-  // user.photoURL
-  // user.uid  // The user's ID, unique to the Firebase project. Do NOT use
-  // this value to authenticate with your backend server, if
-  // you have one. Use User.getToken() instead.
-  return console.log(user.displayName);
-}
-
-function getToken(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  const token = result.credential.accessToken;
-  return token;
-}
+const navStyleContainer = document.querySelector(
+  '[data-index="nav__style-container"]',
+);
+const navAuthLink = document.querySelector('[data-index="nav__auth-link"]');
+const navAuthText = document.querySelector('[data-index="nav__auth-text"]');
 
 function login() {
   function newLoginHappend(user) {
     if (user) {
-      app(user);
-      signInBtn.disabled = true;
-      signOutBtn.disabled = false;
+      //app(user);
+      obFromIndexedDB();
     } else {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then(result => {
-          getToken(result);
-        })
-        .catch(() => {});
+        .then(() => saveAuthStateOnStorage(true))
+        .catch();
     }
   }
   firebase.auth().onAuthStateChanged(newLoginHappend);
 }
 
-function loginOut() {
-  if (firebase.auth().signOut()) {
-    signInBtn.disabled = false;
-    signOutBtn.disabled = true;
-  }
-  firebase.auth().signOut();
+function logout() {
+  firebase
+    .auth()
+    .signOut()
+    .then(
+      saveAuthStateOnStorage(false),
+      (navAuthLink.innerHTML = ''),
+      navAuthLink.insertAdjacentHTML(
+        'beforeend',
+        `<i class="material-icons auth__icon">person_outline</i>`,
+      ),
+      (navAuthText.textContent = 'Sign In'),
+    )
+    .catch(error => {
+      throw error;
+    });
 }
 
-const signInBtn = document.querySelector('.sing-in');
-const signOutBtn = document.querySelector('.sing-out');
+function app(user) {
+  navAuthLink.innerHTML = '';
+  navAuthLink.insertAdjacentHTML(
+    'beforeend',
+    `<img class="nav__auth-img"src="${user.photoURL}" alt="${user.displayName}"></img>`,
+  );
+  navAuthText.textContent = 'Sign Out';
+}
 
-signInBtn.addEventListener('click', login);
-signOutBtn.addEventListener('click', loginOut);
+function obFromIndexedDB() {
+  const dump = {};
+  const dbRequest = window.indexedDB.open('firebaseLocalStorageDb');
+  dbRequest.onsuccess = () => {
+    const localdb = dbRequest.result;
+    const stores = ['firebaseLocalStorage'];
+    const tx = localdb.transaction(stores);
+    const req = tx.objectStore(stores).getAll();
+    req.onsuccess = () => {
+      dump[stores] = req.result;
+      dump[stores].forEach(elem => {
+        app(elem.value);
+        console.log(elem.value.uid);
+        State.Auth = elem.value.uid;
+        console.log(State.Auth);
+        getFromDB(State.Auth);
+      });
+    };
+  };
+}
+
+function renderLoginBtnAfterGetAuthState() {
+  if (getAuthStateFromStorage) {
+    obFromIndexedDB();
+  }
+}
+
+navStyleContainer.addEventListener('mouseup', e => {
+  if (e.currentTarget.lastElementChild.textContent === 'Sign In') {
+    login();
+  }
+  if (e.target.nodeName === 'IMG' || e.target.textContent === 'Sign Out') {
+    logout();
+  }
+});
+
+export { renderLoginBtnAfterGetAuthState };

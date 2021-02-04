@@ -1,5 +1,11 @@
 import searchListTempl from '../../templates/searchListTempl.hbs';
-
+/**
+ * This function render a pop-up bar with hits during search,
+ * objects takes the array of objects from api
+ * searchValue takes dynamic search value
+ * @param {string} searchValue
+ * @param {array} objects
+ */
 function renderListSearch(searchValue, objects) {
   if (!searchValue) {
     deleteListSearch();
@@ -15,29 +21,69 @@ function renderListSearch(searchValue, objects) {
   const markup = searchListTempl(arrRender);
   searchListRef.innerHTML = markup;
 
-  // searchListRef.addEventListener('click', handlerOpenFilm);
+  document.addEventListener('click', handlerCloseList);
 }
-
-function sortByRating(array) {
-  return array.sort((a, b) => b.vote_average - a.vote_average);
-}
-
+/**
+  This function delete a pop-up bar
+ */
 function deleteListSearch() {
   const searchListRef = document.querySelector("[data-index='card-list']");
   searchListRef.innerHTML = '';
   searchListRef.classList.remove('open');
-  // searchListRef.removeEventListener('click', handlerOpenFilm);
+  document.removeEventListener('click', handlerCloseList);
+  makeCardsActive();
+}
+/**
+ * Auxiliary function. Is not exported.
+ * This function sorted  objects of array descending by vote_average
+ * @param {array} array
+ *
+ */
+function sortByRating(array) {
+  return array.sort((a, b) => b.vote_average - a.vote_average);
+}
+/**
+ * Auxiliary function. Is not exported.
+ * This function close a pop-up bar when clicked outside the element
+ * @param {event} event
+ *
+ */
+function handlerCloseList(event) {
+  event.preventDefault();
+  const searchListRef = document.querySelector("[data-index='card-list']");
+  if (!searchListRef.contains(event.target)) {
+    deleteListSearch();
+  }
 }
 
-// function handlerOpenFilm(e) {
-//   e.preventDefault();
-//   console.log('click list item', e.target);
-//   // deleteListSearch();
-//   if (!e.target.parentNode) {
-//     console.log('close');
-//     // deleteListSearch();
-//     // return;
-//   }
-// }
+/**
+ * this function makes cards under the pop-up bar insensitive to hover
+ * when the pop-up bar is opened
+ */
+function makeCardsNotActive() {
+  const searchListRef = document.querySelector("[data-index='card-list']");
+  const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  if (searchListRef.classList.contains('open')) {
+    cardImgs.forEach((cardImg, index) => {
+      if (index <= 2) {
+        cardImg.classList.remove('card-img');
+        cardImg.classList.add('not-active');
+      }
+    });
+  }
+}
+/**
+ * this function makes cards sensitive to hover when the pop-up bar is closed
+ */
+function makeCardsActive() {
+  const searchListRef = document.querySelector("[data-index='card-list']");
+  const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  cardImgs.forEach((cardImg, index) => {
+    if (index <= 2) {
+      cardImg.classList.remove('not-active');
+      cardImg.classList.add('card-img');
+    }
+  });
+}
 
-export { renderListSearch, deleteListSearch };
+export { renderListSearch, deleteListSearch, makeCardsNotActive };
