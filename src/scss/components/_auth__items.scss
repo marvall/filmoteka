@@ -1,25 +1,23 @@
 .nav__style-container {
   cursor: pointer;
   margin-right: 28px;
-  &:nth-child() {
-    &:hover {
-      border-color: $orange-color;
-    }
-  }
+  font-size: 14px;
+  line-height: 1.17;
+  text-align: center;
+  color: $white-color;
 }
 
-.nav__auth-btn {
-  cursor: pointer;
-  padding-top: 9px;
-  padding-right: 10px;
-  padding-bottom: 9px;
-  padding-left: 10px;
+.nav__auth-link {
+  position: relative;
+  outline: transparent;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 1px solid $white-color;
   background-color: transparent;
-  //   &:hover {
-  //     border-color: $orange-color;
-  //   }
+  &:hover {
+    border-color: $orange-color;
+  }
 }
 
 .nav__auth-text {
@@ -27,16 +25,31 @@
   line-height: 1.17;
   text-align: center;
   color: $white-color;
-  //   &:hover {
-  //     color: $orange-color;
-  //   }
+  &:hover {
+    color: $orange-color;
+  }
 }
 
 .material-icons.auth__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: block;
-  margin: 0;
+  margin: auto;
   font-size: 30px;
   color: $white-color;
+  &:hover {
+    color: $orange-color;
+  }
+}
+
+.nav__auth-img {
+  border-radius: 50%;
+}
+
+.selected {
+  align-self: center;
 }
 
 @media screen and (min-width: 768px) {
