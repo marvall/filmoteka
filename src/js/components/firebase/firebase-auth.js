@@ -3,6 +3,7 @@ import 'firebase/auth';
 import { firebaseConfig } from './firebaseConfig';
 import { saveAuthStateOnStorage } from '../addToStorage';
 import getAuthStateFromStorage from '../getFromStorage';
+import { State } from '../../utils/state';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -43,8 +44,8 @@ function logout() {
       (navAuthText.textContent = 'Sign In'),
     )
     .catch(error => {
-        throw error;
-    })
+      throw error;
+    });
 }
 
 function app(user) {
@@ -68,6 +69,8 @@ function obFromIndexedDB() {
       dump[stores] = req.result;
       dump[stores].forEach(elem => {
         app(elem.value);
+        State.Auth = elem.value.uid;
+        console.log(State.Auth);
       });
     };
   };
@@ -79,7 +82,7 @@ function renderLoginBtnAfterGetAuthState() {
   }
 }
 
-navStyleContainer.addEventListener('click', e => {
+navStyleContainer.addEventListener('mouseup', e => {
   if (e.currentTarget.lastElementChild.textContent === 'Sign In') {
     login();
   }
