@@ -162,7 +162,7 @@ li.paginationjs-next > a {
   background: $footer-background-color;
 
   border-radius: 5px;
-  border: $modal-slave-color solid 1px;
+  border: 1px solid $modal-slave-color;
 
   @include transition(all);
 

@@ -7,8 +7,8 @@ $dark-choko-color: rgb(41, 32, 25);
 
   background-image: linear-gradient(
     120deg,
-    rgb(133, 59, 10) 0%,
-    rgb(240, 213, 195) 100%
+    rgb(115, 99, 87) 0%,
+    $dark-choko-color 100%
   );
 
   z-index: 100;
@@ -21,7 +21,7 @@ $dark-choko-color: rgb(41, 32, 25);
   flex-basis: 70%;
   text-align: start;
 
-  color: $dark-choko-color;
+  color: $orange-slave-color;
 }
 
 .card_small {
@@ -43,8 +43,8 @@ $dark-choko-color: rgb(41, 32, 25);
 
     background-image: linear-gradient(
       120deg,
-      rgb(235, 99, 8) 0%,
-      rgb(240, 213, 195) 100%
+      rgb(209, 179, 154) 0%,
+      rgb(70, 57, 48) 100%
     );
   }
 }
