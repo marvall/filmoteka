@@ -7,29 +7,24 @@
   background-size: cover;
 
   padding-top: 46px;
-  padding-bottom: 158px;
+  padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    width: auto;
+  }
 }
 
-// пока закоментил пока не решим стоит ли добавлять див
-
-// .infinity-bg-color {
-//   background-color: $black-color;
-// }
-
-//  navigation and logo buttons
 .nav {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   width: 100%;
   justify-content: center;
 }
 
 .nav-logo {
   display: block;
-  margin-right: 112px;
+  margin-right: 31px;
   font-weight: 500;
   font-size: 30px;
   color: $white-color;
@@ -57,7 +52,7 @@
 // input
 .film-search {
   position: absolute;
-  top: 53%;
+  top: 67%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -91,17 +86,11 @@
 
   &::placeholder {
     color: $white-color;
-
-    // @include transition(color);
   }
 
   &:focus {
     outline: none;
     border-bottom: 1px solid $orange-color;
-
-    // &::placeholder {
-    //   color: $orange-color;
-    // }
   }
 }
 
@@ -123,7 +112,7 @@
 .myLibraryButtons {
   display: inline-flex;
   position: absolute;
-  top: 63%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -159,11 +148,11 @@
 
 @media screen and (min-width: 768px) {
   .header {
-    padding-bottom: 148px;
+    padding-bottom: 118px;
   }
 
   .nav-logo {
-    margin-right: 307px;
+    margin-right: 114px;
   }
   .nav-logo-icon {
     margin-right: 10px;
@@ -193,7 +182,7 @@
 
 @media screen and (min-width: 1024px) {
   .nav-logo {
-    margin-right: 573px;
+    margin-right: 243px;
   }
 
   .film-search-input-error {

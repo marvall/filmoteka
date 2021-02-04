@@ -6,6 +6,7 @@ import getFromStorage from '../components/getFromStorage';
 export class State {
   constructor() {
     this._page = 'home';
+    this._auth = undefined;
   }
   get Page() {
     return this._page;
@@ -18,8 +19,19 @@ export class State {
     this.Page = value;
   }
   static checkState() {
-    if (getFromStorage('state') !== '') {
+    let status = getFromStorage('state');
+    if (status !== null) {
       this.Page = getFromStorage('state');
+    } else {
+      this.Page = 'home';
     }
+  }
+  set Auth(value) {
+    if (value !== undefined) {
+      this._auth = value;
+    }
+  }
+  get Auth() {
+    return this._auth;
   }
 }

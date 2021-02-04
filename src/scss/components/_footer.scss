@@ -2,7 +2,10 @@
   background-color: $footer-background-color;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
+
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    width: auto;
+  }
 }
 
 .section-footer {
@@ -65,8 +68,7 @@
 // ======== footer modal =======
 
 .modal__container__footer {
-  // padding-left: 30px;
-  max-width: 500px;
+  // max-width: 760px;
   max-height: 100vh;
   border-radius: 4px;
   overflow-y: auto;
@@ -81,23 +83,16 @@
   justify-content: center;
   align-content: space-between;
   align-items: center;
-
-  // justify-content: space-between;
 }
-
-// .modal__content__footer {
-//   justify-content: space-around;
-// }
 
 .footer-team-link-list {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 10px;
-  width: 150px;
-  height: 215px;
+  width: 100px;
+  height: 150px;
   margin-left: auto;
   margin-right: auto;
-  // border: 2px solid grey;
 }
 .team-name-header {
   margin-top: 10px;
@@ -107,7 +102,7 @@
 }
 .team-name {
   font-family: $main-font;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
   color: #545454;
   text-align: center;
@@ -115,27 +110,39 @@
 .team-doing {
   font-family: $main-font;
   font-style: italic;
-  font-size: 12px;
+  font-size: 8px;
   color: #545454;
   text-align: center;
 }
+.footer-photo-links {
+  display: flex;
+}
 .sosial-links {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column;
 }
 .footer-team-img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: inline;
 }
 .fab {
   color: #545454;
-  font-size: 13px;
+  font-size: 9px;
 }
 .modal-footer-list {
   display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+.modal-footer-list:before {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  border-top: 1px solid #545454;
+  content: '';
 }
 .modal-footer-link {
   margin-right: 15px;
@@ -143,7 +150,8 @@
 .modal-footer {
   font-family: $main-font;
   font-style: italic;
-  font-size: 15px;
+  font-size: 13px;
+  margin-top: 5px;
   color: #545454;
   &:hover {
     color: rgb(255, 107, 8);
@@ -175,7 +183,27 @@
 }
 
 @media screen and (min-width: 768px) {
-  .footer-team-link:nth-child(2n + 2) {
-    margin-right: 50px;
+  .footer-team-link {
+    margin-right: 20px;
+  }
+  .modal__container__footer {
+    max-width: 740px;
+  }
+  .modal__content {
+    padding: 5px;
+  }
+  .footer-team-link-list {
+    &:hover {
+      transform: scale(1.15);
+      z-index: 100;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal__container__footer {
+    max-width: 800px;
+  }
+  .modal__content {
+    padding: 20px;
   }
 }

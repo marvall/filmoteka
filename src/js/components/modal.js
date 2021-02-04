@@ -28,6 +28,11 @@ export function setModalAttribute(Node) {
   getFilmInfo(Node.id)
     .then(film => {
       updateModalMarkup(film);
+
+      let title = document.querySelector('.movie-title');
+      if (title.textContent.length > 40) {
+        title.setAttribute('style', 'font-size: 20px');
+      }
     })
     .then(() => {
       Node.removeAttribute('data-micromodal-trigger');
@@ -46,6 +51,5 @@ export function showTeam(Node) {
     .querySelector('#modal-1')
     .insertAdjacentHTML('beforeend', modalFooter(footerGalleryItem));
   MicroModal.show('modal-1');
-    Node.removeAttribute('data-micromodal-trigger')
-  
+  Node.removeAttribute('data-micromodal-trigger');
 }
