@@ -5,7 +5,7 @@ import initPagination from './pagination/paginationInit';
 import { renderGallery } from './renderGallery';
 import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
-import { renderListSearch } from './searchList';
+import { renderListSearch, deleteListSearch } from './searchList';
 const _ = require('lodash');
 import { showMoreCards } from './pagination/paginationInit';
 
@@ -19,8 +19,8 @@ const starSearch = function (searchString) {
   let fetchStatus = document.querySelector('[data-index="fetchStatus"]');
   fetchStatus.classList.remove('error');
   fetchStatus.classList.remove('success');
-  if (searchString.trim() === '') {
-    document.querySelector("[data-index='card-list']").innerHTML = '';
+  if (searchString.length > 0 && searchString.trim().length === 0) {
+    deleteListSearch();
     fetchStatus.classList.remove('hidden');
     fetchStatus.textContent =
       'Search result not successful! Enter the correct movie name and genre!';
@@ -33,12 +33,12 @@ const starSearch = function (searchString) {
   getFilmsPagination(searchString).then(data => {
     fetchStatus.classList.remove('hidden');
     if (data.total_results === 0) {
-      document.querySelector("[data-index='card-list']").innerHTML = '';
+      deleteListSearch();
       fetchStatus.textContent =
         'Search result not successful! Enter the correct movie name and genre!';
       fetchStatus.classList.add('error');
     } else if (data.total_results === 1) {
-      document.querySelector("[data-index='card-list']").innerHTML = '';
+      deleteListSearch();
       fetchStatus.textContent =
         'Search result are successful! Searched one result';
       fetchStatus.classList.add('success');
@@ -54,7 +54,7 @@ const starSearch = function (searchString) {
       fetchStatus.textContent = `Search result are successful! Searched ${data.total_results} result`;
       fetchStatus.classList.add('success');
       spinner('start');
-      renderListSearch(data.results);
+      renderListSearch(searchString, data.results);
       renderGallery(data.results);
       initPagination(data, searchString);
       showMoreCards(data.total_results);

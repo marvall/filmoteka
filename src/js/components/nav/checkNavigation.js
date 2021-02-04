@@ -81,8 +81,11 @@ export const checkNavigation = function (e) {
       startHome();
     } else if (e.target.textContent === 'MY LIBRARY') {
       //Started MYLIBRARY PAGE
-      startMyLibrary();
-    } else if (e.target.parentNode.dataset.index === 'card') {
+      startMyLibrary(); //-small
+    } else if (
+      e.target.parentNode.dataset.index === 'card' ||
+      e.target.parentNode.dataset.index === 'card-small'
+    ) {
       //THIS FUNC OPEN MODLA IN GALLERY
       setModalAttribute(e.target.parentNode);
     } else if (e.target.dataset.index === 'team') {
