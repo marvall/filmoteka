@@ -197,6 +197,7 @@
 @media screen and (min-width: 1024px) {
   .movie-tmpl {
     font-size: 15px;
+    line-height: 1.7;
     width: 700px;
   }
   .modal_container {
@@ -232,6 +233,7 @@
 
   .movie-review {
     margin-bottom: 30px;
+    line-height: 1.7;
     height: 100px;
   }
 
@@ -263,9 +265,6 @@
   }
   .btn-modal-to-wached {
     margin-right: 40px;
-  }
-  .movie-title {
-    font-size: 35px;
   }
 
   .about-title {
