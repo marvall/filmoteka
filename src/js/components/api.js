@@ -56,7 +56,7 @@ async function fetchGetMovieGenres() {
 // }
 /**
  * This function get the primary information about a movie from API,
- * filmId takes current id movie
+ * filmId accepts current movie id 
  * @param {number} filmId
  */
 async function getFilmInfo(filmId) {
@@ -65,7 +65,7 @@ async function getFilmInfo(filmId) {
 }
 /**
  * This function get the primary information about a movie from Local Storage,
- * filmId takes current id movie
+ * filmId accepts current movie id 
  * @param {number} filmId
  */
 async function getFilmInfoToStorage(filmId) {
@@ -91,7 +91,7 @@ async function getFilmInfoToStorage(filmId) {
 
 /**
  * This function get the information about renres a movie from API,
- * filmId takes current id movie
+ * filmId accepts current movie id 
  */
 async function getRenres() {
   const data = await fetchGetMovieGenres().catch(err => console.log(err));
@@ -99,8 +99,8 @@ async function getRenres() {
 }
 /**
  * This function get movie (trending or query search),
- * searchValue takes dynamic search value
- * pageValue takes dynamic page value
+ * searchValue accepts dynamic search value
+ * pageValue accepts dynamic page value
  * @param {string} searchValue
  * @param {number} pageValue
  */

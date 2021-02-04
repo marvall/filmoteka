@@ -26,7 +26,7 @@ export function paginationSizeChanger() {
 }
 
 /**
- * this function checks which tab the user is on
+ * this function checks on which tab the user is 
  * when changing the viewport
  * and initializes markup pagination for it
  */
