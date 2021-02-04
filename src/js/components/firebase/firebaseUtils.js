@@ -31,8 +31,6 @@ const setToDB = function (authKey) {
   const db = firebase.database();
   db.ref(authKey).set({
     watched: getFromStorage('watched'),
-  });
-  db.ref(authKey).set({
     queue: getFromStorage('queue'),
   });
 };

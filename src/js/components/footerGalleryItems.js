@@ -29,7 +29,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/lewyk',
     github: 'https://github.com/lewyk',
     doing:
-      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей+кроссбраузерность',
+      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей + кроссбраузерность',
   },
   {
     name: 'Artem Sergieiev',
@@ -99,8 +99,8 @@ export default [
     name: 'Yehor Rudzinskiy',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/yehor.jpg',
-    instagram: '',
-    facebook: '',
+    instagram: 'https://instagram.com/yehor_rudz?igshid=1irfeqp5nhl9n',
+    facebook: 'https://www.facebook.com/IehorRudzinskiy/',
     linkedin: '',
     github: 'https://github.com/Yehor-Rudzinskyi',
     doing: 'функции для работы с API',
@@ -114,7 +114,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/evhenya-krot-5837b28/',
     github: 'https://gist.github.com/yevheniia-petrychenko',
     doing:
-      'модальное окно для карточки фильма (HTML+CSS); проверка стилей+кроссбраузерность',
+      'модальное окно для карточки фильма (HTML+CSS); проверка стилей + кроссбраузерность',
   },
   {
     name: 'Myroslava Nikolaenko',

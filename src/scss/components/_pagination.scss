@@ -1,3 +1,5 @@
+$hover-color: rgb(238, 233, 222);
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -74,7 +76,7 @@
     &.paginationjs-page > a {
       &:hover,
       &:focus {
-        background-color: rgb(238, 233, 222);
+        background-color: $hover-color;
         transform: scale(1.15);
       }
     }
@@ -102,28 +104,25 @@
 
 li.paginationjs-prev > a,
 li.paginationjs-next > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $footer-background-color;
   color: transparent;
+  @include transition(transform);
+
+  &:hover,
+  &:focus {
+    background-color: $hover-color;
+    transform: scale(1.15);
+  }
 }
 
-.paginationjs-prev:before {
-  content: 'arrow_back';
-  font-family: 'Material Icons';
-  display: block;
-  position: absolute;
-
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.paginationjs-next:before {
-  content: 'arrow_forward';
-  font-family: 'Material Icons';
-  display: block;
-  position: absolute;
-
-  font-size: 20px;
-  cursor: pointer;
+.paginationjs-prev .arrow,
+.paginationjs-next .arrow {
+  margin: 0;
+  color: $black-color;
+  font-size: 18px;
 }
 
 // =========================================================================

@@ -38,22 +38,6 @@ async function fetchGetMovieGenres() {
   const { genres } = data;
   return genres;
 }
-
-// async function getFilms(searchValue, pageValue = 1) {
-//   if (!searchValue) {
-//     const data = await fetchGetTrending(pageValue)
-//       .then(({ results }) => results)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-
-//   if (searchValue) {
-//     const data = await fetchGetSearchMovie(searchValue, pageValue)
-//       .then(({ results }) => results)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-// }
 /**
  * This function get the primary information about a movie from API,
  * filmId accepts current movie id 
@@ -72,23 +56,6 @@ async function getFilmInfoToStorage(filmId) {
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilmToStorage(data);
 }
-
-// async function getPages(searchValue, pageValue = 1) {
-//   if (!searchValue) {
-//     const data = await fetchGetTrending(pageValue)
-//       .then(({ total_pages }) => total_pages)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-
-//   if (searchValue) {
-//     const data = await fetchGetSearchMovie(searchValue, pageValue)
-//       .then(({ total_pages }) => total_pages)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-// }
-
 /**
  * This function get the information about renres a movie from API,
  * filmId accepts current movie id 
@@ -190,11 +157,4 @@ function reMapFilmToStorage(arrayGenres) {
   return arrayGenres;
 }
 
-export {
-  // getFilms,
-  getFilmInfo,
-  // getPages,
-  getRenres,
-  getFilmsPagination,
-  getFilmInfoToStorage,
-};
+export { getFilmInfo, getRenres, getFilmsPagination, getFilmInfoToStorage };
