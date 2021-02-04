@@ -1,12 +1,15 @@
 {{#each this}}
 <li class="card" id="{{id}}" data-index="card">
-  {{#if poster_path}}
-  <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' loading="lazy"
+  <button data-id="{{id}}" data-index="btn-youtube" class="btn-youtube">
+    <i class="material-icons youtube"> smart_display </i> </button>
+
+  {{#if poster_path}} <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' loading="lazy"
     alt='Film {{title}} poster' />
   {{else}}
   <img class="card-img" src='https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png'
     loading="lazy" alt='Film {{title}} poster' />
   {{/if}}
+
   <div class="card-info">
     <h2 class="card-title"> {{title}} </h2>
     <p class="card-genre"> {{#if genre_ids}}{{genre_ids}}{{/if}}{{#if genres}}{{genres}}{{/if}} </p>

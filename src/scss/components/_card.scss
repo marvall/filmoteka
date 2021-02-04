@@ -129,3 +129,18 @@
     border: 1px solid $orange-color;
   }
 }
+
+.material-icons.youtube {
+  color: $red-color;
+  cursor: pointer;
+  font-size: 26px;
+  margin: 0;
+}
+.btn-youtube {
+  position: absolute;
+  z-index: 1;
+  width: max-content;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
