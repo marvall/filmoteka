@@ -2,7 +2,9 @@ import axios from 'axios';
 
 const API_KEY = '4c4fcd40981097a4f391c61f2f249de1';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-
+/**
+ * Auxiliary function. Is not exported.
+ */
 async function fetchGetTrending(pageValue) {
   const { data } = await axios.get(
     `/trending/movie/week?api_key=${API_KEY}&page=${pageValue}`,
@@ -10,7 +12,9 @@ async function fetchGetTrending(pageValue) {
   const { results, total_pages, page, total_results } = data;
   return { results, total_pages, page, total_results };
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ */
 async function fetchGetSearchMovie(valueSearch, pageValue) {
   const { data } = await axios.get(
     `/search/movie?api_key=${API_KEY}&page=${pageValue}&query=${valueSearch}`,
@@ -18,12 +22,17 @@ async function fetchGetSearchMovie(valueSearch, pageValue) {
   const { results, total_pages, page, total_results } = data;
   return { results, total_pages, page, total_results };
 }
+/**
+ * Auxiliary function. Is not exported.
+ */
 async function fetchGetMovieById(id) {
   const { data } = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
 
   return data;
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ */
 async function fetchGetMovieGenres() {
   const { data } = await axios.get(`/genre/movie/list?api_key=${API_KEY}`);
   const { genres } = data;
@@ -45,12 +54,20 @@ async function fetchGetMovieGenres() {
 //     return data;
 //   }
 // }
-
+/**
+ * This function get the primary information about a movie from API,
+ * filmId takes current id movie
+ * @param {number} filmId
+ */
 async function getFilmInfo(filmId) {
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilm(data);
 }
-
+/**
+ * This function get the primary information about a movie from Local Storage,
+ * filmId takes current id movie
+ * @param {number} filmId
+ */
 async function getFilmInfoToStorage(filmId) {
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilmToStorage(data);
@@ -72,11 +89,21 @@ async function getFilmInfoToStorage(filmId) {
 //   }
 // }
 
+/**
+ * This function get the information about renres a movie from API,
+ * filmId takes current id movie
+ */
 async function getRenres() {
   const data = await fetchGetMovieGenres().catch(err => console.log(err));
   return data;
 }
-
+/**
+ * This function get movie (trending or query search),
+ * searchValue takes dynamic search value
+ * pageValue takes dynamic page value
+ * @param {string} searchValue
+ * @param {number} pageValue
+ */
 async function getFilmsPagination(searchValue, pageValue = 1) {
   if (!searchValue) {
     const data = await fetchGetTrending(pageValue).catch(err =>
@@ -92,7 +119,9 @@ async function getFilmsPagination(searchValue, pageValue = 1) {
     return reMapFilmsArray(data);
   }
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ */
 async function reMapFilmsArray(array) {
   let genres = await getRenres();
   array.results.map(result => {
@@ -119,7 +148,9 @@ async function reMapFilmsArray(array) {
   });
   return array;
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ */
 function reMapFilm(arrayGenres) {
   let releaseYear = '';
   if (!arrayGenres.release_date) {
@@ -135,7 +166,9 @@ function reMapFilm(arrayGenres) {
   arrayGenres.release_date = releaseYear;
   return arrayGenres;
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ */
 function reMapFilmToStorage(arrayGenres) {
   let releaseYear = '';
   if (!arrayGenres.release_date) {
