@@ -4,44 +4,9 @@ import { checkNavigation } from './js/components/nav/checkNavigation';
 import { loadStartContent } from './js/components/eventToLoad/loadStartContent';
 import { renderLoginBtnAfterGetAuthState } from './js/components/firebase/firebase-auth';
 
-//==============TEST FOR FIREBASE BY MARVALL=================
-/*
-import db, {
-  createToEmailPass,
-  loginToEmailPass,
-  getFromDB,
-  setToDB,
-  logout,
-  magic,
-} from './js/components/firebase/firebaseUtils';
-
-const Yo = {
-  email: 'cheburechec@tipa.gnom.ua',
-  password: 'slonpelmen',
-};
-
-const data = {
-  userName: 'cheburechec',
-  state: {
-    ID: 'ww',
-    slon: 'pelmen',
-    krot: 'rokoko',
-  },
-};
-//createToEmailPass(Yo);
-
-loginToEmailPass(Yo);
-//logout();
-//getFromDB(data);
-//setToDB(data);
-magic();
-*/
-//========================================
-
 renderLoginBtnAfterGetAuthState();
 
 window.addEventListener('DOMContentLoaded', loadStartContent);
-
 window.document
   .querySelector('body')
   .addEventListener('click', checkNavigation);

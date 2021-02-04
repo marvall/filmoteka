@@ -57,3 +57,11 @@ $dark-choko-color: rgb(41, 32, 25);
 .card-vote.small {
   justify-items: flex-end;
 }
+
+.not-active {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 398px;
+
+  cursor: pointer;
+}

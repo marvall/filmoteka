@@ -8,7 +8,7 @@ import {
   headerDinamicContentMarkupUpdate,
   checkClickTarget,
 } from './cpaNavLogic';
-import { setModalAttribute, showTeam } from '../modal';
+import { setModalAttribute, showTeam, showVideo } from '../modal';
 import { spinner } from '../spinner';
 import initPagination from '../pagination/paginationInit';
 import { getSearch } from '../keyWorldSearch';
@@ -16,6 +16,7 @@ import initPaginationLS from '../pagination/paginationLS';
 import { addToStorage } from '../addToStorage';
 import getFromStorage from '../getFromStorage';
 import { checkFilmInStack } from '../checkFimlInStack';
+import { setToDB } from '../firebase/firebaseUtils';
 
 /**
  * This function render started-page from localStorage or localState (class State);
@@ -75,7 +76,8 @@ export const checkNavigation = function (e) {
   if (e.type === 'DOMContentLoaded') {
     //Started LAST PAGE
     changeStartedPage();
-  } else if (e.target !== e.currentTarget) {
+  }
+  else if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
       //Started HOME PAGE
       startHome();
@@ -89,7 +91,7 @@ export const checkNavigation = function (e) {
       //THIS FUNC OPEN MODLA IN GALLERY
       setModalAttribute(e.target.parentNode);
     } else if (e.target.dataset.index === 'team') {
-      //THIS FUNC OPEN MODLA IN FOOTER
+      //THIS FUNC OPEN MODAL IN FOOTER
       showTeam(e.target);
     } else if (e.target.dataset.index === 'btn-to-wached') {
       //ADD TO WATCHED
@@ -99,6 +101,7 @@ export const checkNavigation = function (e) {
       ).then(data => {
         addToStorage(data, 'watched');
         checkFilmInStack();
+        setToDB(State.Auth);
       });
     } else if (e.target.dataset.index === 'btn-to-queue') {
       //ADD TO QUEUE
@@ -109,12 +112,15 @@ export const checkNavigation = function (e) {
         addToStorage(data, 'queue');
         checkFilmInStack();
       });
+      setToDB(State.Auth);
     } else if (e.target.dataset.index === 'watched') {
       //RENDER STACK WATCHED
       initPaginationLS(getFromStorage('watched'));
     } else if (e.target.dataset.index === 'queue') {
       //RENDER STACK QUEUE
       initPaginationLS(getFromStorage('queue'));
-    }
-  }
+    } else if (e.target.dataset.index === 'btn-youtube') {
+      // OPEN MODAL with official trailer 
+    showVideo(e.target);}
+  } 
 };

@@ -3,6 +3,8 @@ import 'firebase/auth';
 import { firebaseConfig } from './firebaseConfig';
 import { saveAuthStateOnStorage } from '../addToStorage';
 import getAuthStateFromStorage from '../getFromStorage';
+import { State } from '../../utils/state';
+import { getFromDB } from './firebaseUtils';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -16,7 +18,8 @@ const navAuthText = document.querySelector('[data-index="nav__auth-text"]');
 function login() {
   function newLoginHappend(user) {
     if (user) {
-      app(user);
+      //app(user);
+      obFromIndexedDB();
     } else {
       const provider = new firebase.auth.GoogleAuthProvider();
       firebase
@@ -43,8 +46,8 @@ function logout() {
       (navAuthText.textContent = 'Sign In'),
     )
     .catch(error => {
-        throw error;
-    })
+      throw error;
+    });
 }
 
 function app(user) {
@@ -68,6 +71,10 @@ function obFromIndexedDB() {
       dump[stores] = req.result;
       dump[stores].forEach(elem => {
         app(elem.value);
+        console.log(elem.value.uid);
+        State.Auth = elem.value.uid;
+        console.log(State.Auth);
+        getFromDB(State.Auth);
       });
     };
   };
@@ -79,7 +86,7 @@ function renderLoginBtnAfterGetAuthState() {
   }
 }
 
-navStyleContainer.addEventListener('click', e => {
+navStyleContainer.addEventListener('mouseup', e => {
   if (e.currentTarget.lastElementChild.textContent === 'Sign In') {
     login();
   }
