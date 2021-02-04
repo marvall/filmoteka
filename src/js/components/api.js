@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { reMapFilmsArray } from './reMapFilmsArray'; //
+
 const API_KEY = '4c4fcd40981097a4f391c61f2f249de1';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 /**
