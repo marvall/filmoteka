@@ -1,32 +1,59 @@
+$dark-choko-color: rgb(41, 32, 25);
+
 .card-list {
   position: absolute;
   background-color: $white-color;
-  z-index: 11;
+  width: 100%;
+
+  background-image: linear-gradient(
+    120deg,
+    rgb(133, 59, 10) 0%,
+    rgb(240, 213, 195) 100%
+  );
+
+  z-index: 100;
 }
+
+.card-title.small {
+  display: flex;
+  align-items: center;
+
+  flex-basis: 70%;
+  text-align: start;
+
+  color: $dark-choko-color;
+}
+
 .card_small {
   display: flex;
   padding: 5px;
-  cursor: pointer;
-  border: 1px solid #000;
+
+  border-bottom: 1px solid $dark-choko-color;
   @include transition(all);
+
+  cursor: pointer;
+
   &:hover,
   &:focus {
-    background-color: $footer-background-color;
-    transform: scale(1.05);
+    // transform: scale(1.05);
+
+    .card-title.small {
+      color: $dark-choko-color;
+    }
+
+    background-image: linear-gradient(
+      120deg,
+      rgb(235, 99, 8) 0%,
+      rgb(240, 213, 195) 100%
+    );
   }
 }
+
 .card-img_small {
   margin-right: 10px;
   width: 40px;
 }
-.card-info.small {
-  text-align: start;
-  .card-title {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-}
+
 .card-vote.small {
-  // margin-right: 5px;
   justify-items: flex-end;
 }

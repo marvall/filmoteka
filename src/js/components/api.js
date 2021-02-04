@@ -47,7 +47,6 @@ async function fetchGetMovieGenres() {
 // }
 
 async function getFilmInfo(filmId) {
-  console.log(filmId);
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilm(data);
 }

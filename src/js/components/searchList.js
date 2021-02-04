@@ -31,6 +31,7 @@ function deleteListSearch() {
   searchListRef.innerHTML = '';
   searchListRef.classList.remove('open');
   document.removeEventListener('click', handlerCloseList);
+  makeCardsActive();
 }
 /**
  * Auxiliary function. Is not exported.
@@ -55,4 +56,34 @@ function handlerCloseList(event) {
   }
 }
 
-export { renderListSearch, deleteListSearch };
+/**
+ * this function makes cards under the pop-up bar insensitive to hover
+ * when the pop-up bar is opened
+ */
+function makeCardsNotActive() {
+  const searchListRef = document.querySelector("[data-index='card-list']");
+  const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  if (searchListRef.classList.contains('open')) {
+    cardImgs.forEach((cardImg, index) => {
+      if (index <= 2) {
+        cardImg.classList.remove('card-img');
+        cardImg.classList.add('not-active');
+      }
+    });
+  }
+}
+/**
+ * this function makes cards sensitive to hover when the pop-up bar is closed
+ */
+function makeCardsActive() {
+  const searchListRef = document.querySelector("[data-index='card-list']");
+  const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  cardImgs.forEach((cardImg, index) => {
+    if (index <= 2) {
+      cardImg.classList.remove('not-active');
+      cardImg.classList.add('card-img');
+    }
+  });
+}
+
+export { renderListSearch, deleteListSearch, makeCardsNotActive };
