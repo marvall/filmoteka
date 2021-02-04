@@ -23,7 +23,7 @@ function getFromStorage(filmType) {
     case 'state':
       let state = localStorage.getItem('state');
       if (state === null) {
-        state = '';
+        return state;
       } else {
         return state;
       }
