@@ -5,6 +5,7 @@ import { saveAuthStateOnStorage } from '../addToStorage';
 import getAuthStateFromStorage from '../getFromStorage';
 import { State } from '../../utils/state';
 import { getFromDB } from './firebaseUtils';
+import { showModalAuth } from '../modal';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -86,7 +87,8 @@ function renderLoginBtnAfterGetAuthState() {
 
 navStyleContainer.addEventListener('mouseup', e => {
   if (e.currentTarget.lastElementChild.textContent === 'Sign In') {
-    login();
+    //login();
+    showModalAuth(e.target);
   }
   if (e.target.nodeName === 'IMG' || e.target.textContent === 'Sign Out') {
     logout();
