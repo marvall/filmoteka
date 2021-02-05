@@ -62,7 +62,7 @@ function app(user) {
   navAuthText.textContent = 'Sign Out';
 }
 
-function obFromIndexedDB() {
+export function obFromIndexedDB() {
   const dump = {};
   const dbRequest = window.indexedDB.open('firebaseLocalStorageDb');
   dbRequest.onsuccess = () => {

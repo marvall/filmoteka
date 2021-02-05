@@ -1,10 +1,10 @@
 import firebase from 'firebase/app';
-//import 'firebase/auth';
 import 'firebase/database';
-//import 'firebase/storage';
+import { State } from '../../utils/state';
 import getFromStorage from '../getFromStorage';
 import { resetStorage, addToStorageFromBase } from '../addToStorage';
-import { loginGoogle } from './firebase-auth';
+import { loginGoogle, obFromIndexedDB } from './firebase-auth';
+import MicroModal from 'micromodal';
 
 //============= DATABASE ====================
 
@@ -15,7 +15,6 @@ const getFromDB = function (authKey) {
     return;
   } else {
     const user = db.ref(authKey);
-    console.log(user.key);
     user.on('value', elem => {
       let data = elem.val();
       if (data) {
@@ -51,24 +50,25 @@ const setToDB = function (authKey) {
  * This func not use in this project
  * Create acc with Login and Password
  */
-const createToEmailPass = function (data) {
-  firebase
+async function createToEmailPass(obj) {
+  const data = await firebase
     .auth()
-    .createUserWithEmailAndPassword(data.email, data.password)
-    .catch(error => console.log(error.message));
-};
+    .createUserWithEmailAndPassword(obj.email, obj.password);
+  return data;
+}
 
 /**
  * This func not use in this project/
  * Login with Login and Password
  */
-const loginToEmailPass = function (data) {
-  firebase
+async function loginToEmailPass(obj) {
+  const data = await firebase
     .auth()
-    .signInWithEmailAndPassword(data.email, data.password)
-    .then(data => console.log(data.user.uid))
-    .catch(error => console.log(error.message));
-};
+    .signInWithEmailAndPassword(obj.email, obj.password);
+  MicroModal.close();
+  magic();
+  return data;
+}
 /**
  * This func not use in this project
  *The function pulls the authorization object out of indexedDB
@@ -84,8 +84,13 @@ const magic = function () {
     req.onsuccess = () => {
       dump[stores] = req.result;
       dump[stores].forEach(elem => {
-        console.log(elem.value.uid);
-        //There should be logic for working with authorization
+        State.Auth = elem.value.uid;
+        getFromDB(State.Auth);
+        document.querySelector('[data-index="nav__auth-text"]').textContent =
+          'Sign Out';
+        document
+          .querySelector('[data-index="nav__style-container"]')
+          .classList.add('loggined');
       });
     };
   };
@@ -104,7 +109,12 @@ const logout = function () {
 };
 
 //=====================
-const loginEmail = function () {};
+const loginEmail = function () {
+  let login = document.querySelector('[data-index="insertEmail"]').value;
+  let pass = document.querySelector('[data-index="insertPassword"]').value;
+  createToEmailPass({ email: login, password: pass });
+  loginToEmailPass({ email: login, password: pass });
+};
 
 const checkAuth = function () {
   document

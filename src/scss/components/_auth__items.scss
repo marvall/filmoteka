@@ -5,6 +5,20 @@
   line-height: 1.17;
   text-align: center;
   color: $white-color;
+  &:hover .auth__icon,
+  &:hover .nav__auth-link,
+  &:hover .nav__auth-text {
+    color: $orange-slave-color;
+  }
+}
+.loggined {
+  color: $orange-color;
+  .nav__auth-link {
+    border-color: $orange-color;
+    i {
+      color: $orange-color;
+    }
+  }
 }
 
 .nav__auth-link {
@@ -15,9 +29,9 @@
   border-radius: 50%;
   border: 1px solid $white-color;
   background-color: transparent;
-  &:hover {
-    border-color: $orange-color;
-  }
+  //&:hover {
+  //  border-color: $orange-slave-color;
+  //}
 }
 
 .nav__auth-text {
