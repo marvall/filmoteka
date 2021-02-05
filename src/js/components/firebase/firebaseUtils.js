@@ -51,9 +51,21 @@ const setToDB = function (authKey) {
  * Create acc with Login and Password
  */
 async function createToEmailPass(obj) {
+  let login = document.querySelector('[data-index="insertEmail"]').value;
+  let pass = document.querySelector('[data-index="insertPassword"]').value;
   const data = await firebase
     .auth()
-    .createUserWithEmailAndPassword(obj.email, obj.password);
+    .createUserWithEmailAndPassword(obj.email, obj.password)
+    .then(data => {
+      loginToEmailPass({ email: login, password: pass });
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        loginToEmailPass({ email: login, password: pass });
+      }
+      document.querySelector("[data-index='error_in__auth']").textContent =
+        error.message;
+    });
   return data;
 }
 
@@ -64,8 +76,13 @@ async function createToEmailPass(obj) {
 async function loginToEmailPass(obj) {
   const data = await firebase
     .auth()
-    .signInWithEmailAndPassword(obj.email, obj.password);
-  MicroModal.close();
+    .signInWithEmailAndPassword(obj.email, obj.password)
+    .then(() => MicroModal.close())
+    .catch(error => {
+      document.querySelector("[data-index='error_in__auth']").textContent =
+        error.message;
+    });
+
   magic();
   return data;
 }
@@ -113,7 +130,6 @@ const loginEmail = function () {
   let login = document.querySelector('[data-index="insertEmail"]').value;
   let pass = document.querySelector('[data-index="insertPassword"]').value;
   createToEmailPass({ email: login, password: pass });
-  loginToEmailPass({ email: login, password: pass });
 };
 
 const checkAuth = function () {
