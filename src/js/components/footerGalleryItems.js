@@ -73,7 +73,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/elena-tsemko/',
     github: 'https://github.com/OlenaTsemko',
     doing:
-      'spiner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS)',
+      'spinner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS)',
   },
   {
     name: 'Viktoriia Ksenofontova',
@@ -115,7 +115,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/evhenya-krot-5837b28/',
     github: 'https://gist.github.com/yevheniia-petrychenko',
     doing:
-      'модальное окно для карточки фильма (HTML+CSS); проверка стилей + кроссбраузерность',
+      'модальное окно для карточки фильма (HTML+CSS); проверка стилей+кроссбраузерность',
   },
   {
     name: 'Myroslava Nikolaenko',
