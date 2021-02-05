@@ -31,6 +31,7 @@ function deleteListSearch() {
   searchListRef.innerHTML = '';
   searchListRef.classList.remove('open');
   document.removeEventListener('click', handlerCloseList);
+  window.removeEventListener('keydown', hendlerEscCloseList);
   makeCardsActive();
 }
 /**
@@ -50,12 +51,23 @@ function sortByRating(array) {
  */
 function handlerCloseList(event) {
   event.preventDefault();
+  window.addEventListener('keydown', hendlerEscCloseList);
   const searchListRef = document.querySelector("[data-index='card-list']");
   if (!searchListRef.contains(event.target)) {
     deleteListSearch();
   }
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ * This function close a pop-up bar when clicked 'Esc'
+ * @param {event} event
+ *
+ */
+function hendlerEscCloseList({ code }) {
+  if (code === 'Escape') {
+    deleteListSearch();
+  }
+}
 /**
  * this function makes cards under the pop-up bar insensitive to hover
  * when the pop-up bar is opened
