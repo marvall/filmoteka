@@ -21,7 +21,9 @@ export function loginGoogle() {
   MicroModal.close();
   function newLoginHappend(user) {
     if (user) {
-      obFromIndexedDB();
+      app(user);
+      State.Auth = user.uid;
+      getFromDB(State.Auth);
     } else {
       const provider = new firebase.auth.GoogleAuthProvider();
       provider.setCustomParameters({

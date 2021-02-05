@@ -77,13 +77,21 @@ async function loginToEmailPass(obj) {
   const data = await firebase
     .auth()
     .signInWithEmailAndPassword(obj.email, obj.password)
-    .then(() => MicroModal.close())
+    .then(data => {
+      State.Auth = data.user.uid;
+      getFromDB(State.Auth);
+      document.querySelector('[data-index="nav__auth-text"]').textContent =
+        'Sign Out';
+      document
+        .querySelector('[data-index="nav__style-container"]')
+        .classList.add('loggined');
+      MicroModal.close();
+    })
     .catch(error => {
       document.querySelector("[data-index='error_in__auth']").textContent =
         error.message;
     });
 
-  magic();
   return data;
 }
 /**
@@ -100,15 +108,7 @@ const magic = function () {
     const req = tx.objectStore(stores).getAll();
     req.onsuccess = () => {
       dump[stores] = req.result;
-      dump[stores].forEach(elem => {
-        State.Auth = elem.value.uid;
-        getFromDB(State.Auth);
-        document.querySelector('[data-index="nav__auth-text"]').textContent =
-          'Sign Out';
-        document
-          .querySelector('[data-index="nav__style-container"]')
-          .classList.add('loggined');
-      });
+      dump[stores].forEach(elem => {});
     };
   };
 };
