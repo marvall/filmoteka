@@ -26,6 +26,7 @@ $dark-choko-color: rgb(41, 32, 25);
 
 .card_small {
   display: flex;
+  align-items: center;
   padding: 5px;
 
   border-bottom: 1px solid $dark-choko-color;
