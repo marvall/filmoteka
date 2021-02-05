@@ -22,6 +22,7 @@ function renderListSearch(searchValue, objects) {
   searchListRef.innerHTML = markup;
 
   document.addEventListener('click', handlerCloseList);
+  window.addEventListener('keydown', hendlerEscCloseList);
 }
 /**
   This function delete a pop-up bar
@@ -51,7 +52,6 @@ function sortByRating(array) {
  */
 function handlerCloseList(event) {
   event.preventDefault();
-  window.addEventListener('keydown', hendlerEscCloseList);
   const searchListRef = document.querySelector("[data-index='card-list']");
   if (!searchListRef.contains(event.target)) {
     deleteListSearch();
