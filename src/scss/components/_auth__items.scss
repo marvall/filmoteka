@@ -6,9 +6,11 @@
   text-align: center;
   color: $white-color;
   &:hover .auth__icon,
-  &:hover .nav__auth-link,
   &:hover .nav__auth-text {
     color: $orange-slave-color;
+  }
+  &:hover .nav__auth-link {
+    border-color: $orange-slave-color;
   }
 }
 .loggined {
