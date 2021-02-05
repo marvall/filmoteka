@@ -10,5 +10,5 @@ window.addEventListener('DOMContentLoaded', loadStartContent);
 window.document
   .querySelector('body')
   .addEventListener('click', checkNavigation);
-// This eventListener observes the evet "changeHistoryEvent". This event is customed, and is not used anythere.
+// This eventListener observes the evet "changeHistoryEvent". This event is customed, and is not used anywhere.
 window.addEventListener('changeHistoryEvent', renderHeader);

@@ -25,7 +25,7 @@ function renderListSearch(searchValue, objects) {
   window.addEventListener('keydown', hendlerEscCloseList);
 }
 /**
-  This function delete a pop-up bar
+  This function deletes a pop-up bar
  */
 function deleteListSearch() {
   const searchListRef = document.querySelector("[data-index='card-list']");
@@ -37,7 +37,7 @@ function deleteListSearch() {
 }
 /**
  * Auxiliary function. Is not exported.
- * This function sorted  objects of array descending by vote_average
+ * This function sorted objects of array descending by vote_average
  * @param {array} array
  *
  */

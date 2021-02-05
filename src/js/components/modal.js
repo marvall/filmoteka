@@ -9,7 +9,7 @@ import { getVideoUrl } from './getVideoUrl';
 
 MicroModal.init();
 // * This function removes markup of the previous modal window,
-// *and updates markup for a new one.
+// *and updates markup, taken from modalMarkup.hbs, for a new one.
 
 const updateModalMarkup = function (film) {
   document.querySelector('#modal-1').innerHTML = '';
@@ -22,6 +22,11 @@ const updateModalMarkup = function (film) {
 /**
  * You need to pass the node(card of one film) of the element card to this function.
  * @param {Node} event
+ * This function opens modal, using function
+ * getFilmInfo(accepts film.id from gallery element)
+ * adds some styles if needed
+ * draws status on btns if needed (checkFilmInStack) and removes attributes from
+ * closed modal 
  */
 export function setModalAttribute(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
