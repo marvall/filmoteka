@@ -25,6 +25,9 @@ export function loginGoogle() {
       obFromIndexedDB();
     } else {
       const provider = new firebase.auth.GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account',
+      });
       firebase
         .auth()
         .signInWithPopup(provider)
@@ -47,6 +50,7 @@ function logout() {
         `<i class="material-icons auth__icon">person_outline</i>`,
       ),
       (navAuthText.textContent = 'Sign In'),
+      (State.Auth = undefined),
     )
     .catch(error => {
       throw error;
@@ -57,7 +61,7 @@ function app(user) {
   navAuthLink.innerHTML = '';
   navAuthLink.insertAdjacentHTML(
     'beforeend',
-    `<img class="nav__auth-img"src="${user.photoURL}" alt="${user.displayName}"></img>`,
+    `<img class="nav__auth-img"src="${user.photoURL}"></img>`,
   );
   navAuthText.textContent = 'Sign Out';
 }
