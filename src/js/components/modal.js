@@ -21,7 +21,6 @@ const updateModalMarkup = function (film) {
 };
 
 const resetModal = function () {
-  console.log('function start');
   document.querySelector('.modal__overlay').addEventListener('click', () => {
     document.querySelector('#modal-1').innerHTML = '';
   });
