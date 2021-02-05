@@ -8,6 +8,7 @@ import { containerLS } from './paginationLS';
 import arrowTop from '../arrowTop';
 
 import { paginationSizeChanger } from './mediaQuery';
+import { makeCardsNotActive, deleteListSearch } from '../searchList';
 
 export const container = $('[data-index="pagination"]');
 arrowTop();
@@ -56,6 +57,8 @@ export function showMoreCards(totalRes = 20) {
  * @param {string} query
  */
 async function initPagination(data, query) {
+  makeCardsNotActive();
+
   const paginationWrapper = document.querySelector('[data-index="pagination"]');
 
   paginationWrapper.innerHTML = '';
@@ -93,6 +96,7 @@ async function initPagination(data, query) {
         spinner('stop');
         showMoreCards(results.length);
       });
+      deleteListSearch();
     },
   };
 
