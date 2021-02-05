@@ -22,6 +22,7 @@ function renderListSearch(searchValue, objects) {
   searchListRef.innerHTML = markup;
 
   document.addEventListener('click', handlerCloseList);
+  window.addEventListener('keydown', hendlerEscCloseList);
 }
 /**
   This function delete a pop-up bar
@@ -31,6 +32,7 @@ function deleteListSearch() {
   searchListRef.innerHTML = '';
   searchListRef.classList.remove('open');
   document.removeEventListener('click', handlerCloseList);
+  window.removeEventListener('keydown', hendlerEscCloseList);
   makeCardsActive();
 }
 /**
@@ -55,7 +57,17 @@ function handlerCloseList(event) {
     deleteListSearch();
   }
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ * This function close a pop-up bar when clicked 'Esc'
+ * @param {event} event
+ *
+ */
+function hendlerEscCloseList({ code }) {
+  if (code === 'Escape') {
+    deleteListSearch();
+  }
+}
 /**
  * this function makes cards under the pop-up bar insensitive to hover
  * when the pop-up bar is opened
