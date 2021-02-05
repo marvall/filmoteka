@@ -31,6 +31,9 @@ const starSearch = function (searchString) {
     return;
   }
   getFilmsPagination(searchString).then(data => {
+    if (!data) {
+      return;
+    }
     fetchStatus.classList.remove('hidden');
     if (data.total_results === 0) {
       deleteListSearch();

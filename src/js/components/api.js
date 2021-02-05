@@ -40,7 +40,7 @@ async function fetchGetMovieGenres() {
 }
 /**
  * This function get the primary information about a movie from API,
- * filmId accepts current movie id 
+ * filmId accepts current movie id
  * @param {number} filmId
  */
 async function getFilmInfo(filmId) {
@@ -49,7 +49,7 @@ async function getFilmInfo(filmId) {
 }
 /**
  * This function get the primary information about a movie from Local Storage,
- * filmId accepts current movie id 
+ * filmId accepts current movie id
  * @param {number} filmId
  */
 async function getFilmInfoToStorage(filmId) {
@@ -58,7 +58,7 @@ async function getFilmInfoToStorage(filmId) {
 }
 /**
  * This function get the information about renres a movie from API,
- * filmId accepts current movie id 
+ * filmId accepts current movie id
  */
 async function getRenres() {
   const data = await fetchGetMovieGenres().catch(err => console.log(err));
@@ -91,6 +91,9 @@ async function getFilmsPagination(searchValue, pageValue = 1) {
  */
 async function reMapFilmsArray(array) {
   let genres = await getRenres();
+  if (!array) {
+    return;
+  }
   array.results.map(result => {
     let releaseYear = '';
     if (!result.release_date) {
