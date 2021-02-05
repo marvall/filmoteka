@@ -84,7 +84,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/viktoriia-ksenofontova/',
     github: 'https://github.com/Viktoriia-Ksenofontova',
     doing:
-      'шаблон карточки фильма+CSS; function toggleHiden(); проверка стилей+кроссбраузерность',
+      'movie card template with SCSS; a function that returns a link to the official movie trailer and modal view form; style check',
   },
   {
     name: 'Anton Korotenko',

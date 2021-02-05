@@ -8,6 +8,7 @@ import { checkFilmInStack } from './checkFimlInStack';
 import { getVideoUrl } from './getVideoUrl';
 
 MicroModal.init();
+
 // * This function removes markup of the previous modal window,
 // *and updates markup, taken from modalMarkup.hbs, for a new one.
 
@@ -19,6 +20,13 @@ const updateModalMarkup = function (film) {
   MicroModal.show('modal-1');
 };
 
+const resetModal = function () {
+  console.log('function start');
+  document.querySelector('.modal__overlay').addEventListener('click', () => {
+    document.querySelector('#modal-1').innerHTML = '';
+  });
+};
+
 /**
  * You need to pass the node(card of one film) of the element card to this function.
  * @param {Node} event
@@ -26,7 +34,7 @@ const updateModalMarkup = function (film) {
  * getFilmInfo(accepts film.id from gallery element)
  * adds some styles if needed
  * draws status on btns if needed (checkFilmInStack) and removes attributes from
- * closed modal 
+ * closed modal
  */
 export function setModalAttribute(Node) {
   Node.setAttribute('data-micromodal-trigger', 'modal-1');
@@ -71,14 +79,15 @@ export function showVideo(Node) {
     const markup = `<div class="modal__overlay" tabindex="-1" data-micromodal-close>
                   <div class="modal__container video" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                   <div class="movie-tmpl" data-index="modal-video">
-                        <iframe src=${url} frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                        <iframe src=${url} data-index="iframe" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
                           encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         </iframe>
                       </div>
                  </div>
                 </div >`;
     document.querySelector('#modal-1').insertAdjacentHTML('beforeend', markup);
-    });
+    resetModal();
+  });
   MicroModal.show('modal-1');
   Node.removeAttribute('data-micromodal-trigger');
 }
