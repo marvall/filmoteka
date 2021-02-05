@@ -21,7 +21,6 @@ export function loginGoogle() {
   MicroModal.close();
   function newLoginHappend(user) {
     if (user) {
-      //app(user);
       obFromIndexedDB();
     } else {
       const provider = new firebase.auth.GoogleAuthProvider();
@@ -44,6 +43,7 @@ function logout() {
     .signOut()
     .then(
       saveAuthStateOnStorage(false),
+      navStyleContainer.classList.remove('loggined'),
       (navAuthLink.innerHTML = ''),
       navAuthLink.insertAdjacentHTML(
         'beforeend',
@@ -58,11 +58,13 @@ function logout() {
 }
 
 function app(user) {
-  navAuthLink.innerHTML = '';
-  navAuthLink.insertAdjacentHTML(
-    'beforeend',
-    `<img class="nav__auth-img"src="${user.photoURL}"></img>`,
-  );
+  if (user.photoURL) {
+    navAuthLink.innerHTML = '';
+    navAuthLink.insertAdjacentHTML(
+      'beforeend',
+      `<img class="nav__auth-img"src="${user.photoURL}"></img>`,
+    );
+  }
   navAuthText.textContent = 'Sign Out';
 }
 
@@ -93,7 +95,6 @@ function renderLoginBtnAfterGetAuthState() {
 
 navStyleContainer.addEventListener('mouseup', e => {
   if (e.currentTarget.lastElementChild.textContent === 'Sign In') {
-    //login();
     showModalAuth(e.target);
   }
   if (e.target.nodeName === 'IMG' || e.target.textContent === 'Sign Out') {
