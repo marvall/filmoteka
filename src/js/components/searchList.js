@@ -53,6 +53,9 @@ function sortByRating(array) {
 function handlerCloseList(event) {
   event.preventDefault();
   const searchListRef = document.querySelector("[data-index='card-list']");
+  if (searchListRef === null) {
+    return;
+  }
   if (!searchListRef.contains(event.target)) {
     deleteListSearch();
   }
