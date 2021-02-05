@@ -22,20 +22,22 @@ function renderListSearch(searchValue, objects) {
   searchListRef.innerHTML = markup;
 
   document.addEventListener('click', handlerCloseList);
+  window.addEventListener('keydown', hendlerEscCloseList);
 }
 /**
-  This function delete a pop-up bar
+  This function deletes a pop-up bar
  */
 function deleteListSearch() {
   const searchListRef = document.querySelector("[data-index='card-list']");
   searchListRef.innerHTML = '';
   searchListRef.classList.remove('open');
   document.removeEventListener('click', handlerCloseList);
+  window.removeEventListener('keydown', hendlerEscCloseList);
   makeCardsActive();
 }
 /**
  * Auxiliary function. Is not exported.
- * This function sorted  objects of array descending by vote_average
+ * This function sorted objects of array descending by vote_average
  * @param {array} array
  *
  */
@@ -51,11 +53,24 @@ function sortByRating(array) {
 function handlerCloseList(event) {
   event.preventDefault();
   const searchListRef = document.querySelector("[data-index='card-list']");
+  if (searchListRef === null) {
+    return;
+  }
   if (!searchListRef.contains(event.target)) {
     deleteListSearch();
   }
 }
-
+/**
+ * Auxiliary function. Is not exported.
+ * This function close a pop-up bar when clicked 'Esc'
+ * @param {event} event
+ *
+ */
+function hendlerEscCloseList({ code }) {
+  if (code === 'Escape') {
+    deleteListSearch();
+  }
+}
 /**
  * this function makes cards under the pop-up bar insensitive to hover
  * when the pop-up bar is opened
@@ -63,12 +78,19 @@ function handlerCloseList(event) {
 function makeCardsNotActive() {
   const searchListRef = document.querySelector("[data-index='card-list']");
   const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  const icons = document.querySelectorAll('[data-index="btn-youtube"]');
+
   if (searchListRef.classList.contains('open')) {
     cardImgs.forEach((cardImg, index) => {
       if (index <= 2) {
         cardImg.classList.remove('card-img');
         cardImg.classList.add('not-active');
       }
+    });
+
+    icons.forEach((icon, index) => {
+      // icon.textContent = '';
+      icon.classList.add('position-icon-youtube');
     });
   }
 }
@@ -78,11 +100,18 @@ function makeCardsNotActive() {
 function makeCardsActive() {
   const searchListRef = document.querySelector("[data-index='card-list']");
   const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  const icons = document.querySelectorAll('[data-index="btn-youtube"]');
+
   cardImgs.forEach((cardImg, index) => {
     if (index <= 2) {
       cardImg.classList.remove('not-active');
       cardImg.classList.add('card-img');
     }
+  });
+
+  icons.forEach((icon, index) => {
+    // icon.textContent = 'smart_display';
+    icon.classList.remove('position-icon-youtube');
   });
 }
 

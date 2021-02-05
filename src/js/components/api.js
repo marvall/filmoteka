@@ -38,25 +38,9 @@ async function fetchGetMovieGenres() {
   const { genres } = data;
   return genres;
 }
-
-// async function getFilms(searchValue, pageValue = 1) {
-//   if (!searchValue) {
-//     const data = await fetchGetTrending(pageValue)
-//       .then(({ results }) => results)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-
-//   if (searchValue) {
-//     const data = await fetchGetSearchMovie(searchValue, pageValue)
-//       .then(({ results }) => results)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-// }
 /**
  * This function get the primary information about a movie from API,
- * filmId takes current id movie
+ * filmId accepts current movie id 
  * @param {number} filmId
  */
 async function getFilmInfo(filmId) {
@@ -65,33 +49,16 @@ async function getFilmInfo(filmId) {
 }
 /**
  * This function get the primary information about a movie from Local Storage,
- * filmId takes current id movie
+ * filmId accepts current movie id 
  * @param {number} filmId
  */
 async function getFilmInfoToStorage(filmId) {
   const data = await fetchGetMovieById(filmId).catch(err => console.log(err));
   return reMapFilmToStorage(data);
 }
-
-// async function getPages(searchValue, pageValue = 1) {
-//   if (!searchValue) {
-//     const data = await fetchGetTrending(pageValue)
-//       .then(({ total_pages }) => total_pages)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-
-//   if (searchValue) {
-//     const data = await fetchGetSearchMovie(searchValue, pageValue)
-//       .then(({ total_pages }) => total_pages)
-//       .catch(err => console.log(err));
-//     return data;
-//   }
-// }
-
 /**
  * This function get the information about renres a movie from API,
- * filmId takes current id movie
+ * filmId accepts current movie id 
  */
 async function getRenres() {
   const data = await fetchGetMovieGenres().catch(err => console.log(err));
@@ -99,8 +66,8 @@ async function getRenres() {
 }
 /**
  * This function get movie (trending or query search),
- * searchValue takes dynamic search value
- * pageValue takes dynamic page value
+ * searchValue accepts dynamic search value
+ * pageValue accepts dynamic page value
  * @param {string} searchValue
  * @param {number} pageValue
  */
@@ -190,11 +157,4 @@ function reMapFilmToStorage(arrayGenres) {
   return arrayGenres;
 }
 
-export {
-  // getFilms,
-  getFilmInfo,
-  // getPages,
-  getRenres,
-  getFilmsPagination,
-  getFilmInfoToStorage,
-};
+export { getFilmInfo, getRenres, getFilmsPagination, getFilmInfoToStorage };

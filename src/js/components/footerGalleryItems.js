@@ -8,7 +8,7 @@ export default [
     linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
     doing:
-      'Team-lead, Page-navigation, Status queue button, render gallery, page-state',
+      'Team-lead, Firebase DB realization, Page-navigation, Status queue button, render gallery, page-state',
   },
   {
     name: 'Anton Tkachenko',
@@ -18,7 +18,8 @@ export default [
     facebook: 'https://www.facebook.com/Mr.TonyTkachenko',
     linkedin: 'http://linkedin.com/in/tony-tkachenko',
     github: 'https://github.com/TkachenkoAnton',
-    doing: 'Scrum master, Header myLibrary(HTML+CSS), navigation in myLibrary',
+    doing:
+      'Scrum master, Firebase Auth, Auth (HTML+CSS), CPA logic, Header myLibrary(HTML+CSS), navigation in myLibrary',
   },
   {
     name: 'Alex Deviatov',
@@ -29,7 +30,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/lewyk',
     github: 'https://github.com/lewyk',
     doing:
-      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей+кроссбраузерность',
+      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей + кроссбраузерность',
   },
   {
     name: 'Artem Sergieiev',
@@ -61,7 +62,7 @@ export default [
     facebook: '',
     linkedin: '',
     github: 'https://github.com/Xoyk23',
-    doing: 'управляющая навигация',
+    doing: 'Header home(HTML+CSS), логика строки поиска',
   },
   {
     name: 'Olena Tsemko',
@@ -72,7 +73,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/elena-tsemko/',
     github: 'https://github.com/OlenaTsemko',
     doing:
-      'spiner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS)',
+      'spinner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS)',
   },
   {
     name: 'Viktoriia Ksenofontova',
@@ -99,8 +100,8 @@ export default [
     name: 'Yehor Rudzinskiy',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/yehor.jpg',
-    instagram: '',
-    facebook: '',
+    instagram: 'https://instagram.com/yehor_rudz?igshid=1irfeqp5nhl9n',
+    facebook: 'https://www.facebook.com/IehorRudzinskiy/',
     linkedin: '',
     github: 'https://github.com/Yehor-Rudzinskyi',
     doing: 'функции для работы с API',

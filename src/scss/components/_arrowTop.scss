@@ -1,3 +1,5 @@
+$hover-color: rgb(238, 233, 222);
+
 .arrowTop {
   position: fixed;
   bottom: 110px;
@@ -17,7 +19,7 @@
     @include transition(all);
     &:hover,
     &:focus {
-      background-color: $footer-background-color;
+      background-color: $hover-color;
       transform: scale(1.15);
     }
   }

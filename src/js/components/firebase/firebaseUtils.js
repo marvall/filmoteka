@@ -26,14 +26,10 @@ const getFromDB = function (authKey) {
 
 const setToDB = function (authKey) {
   const db = firebase.database();
-  if (getFromStorage('watched') || getFromStorage('queue')) {
-    db.ref(authKey).set({
-      watched: getFromStorage('watched'),
-      queue: getFromStorage('queue'),
-    });
-  } else {
-    db.ref(authKey).set('empty');
-  }
+  db.ref(authKey).set({
+    watched: getFromStorage('watched'),
+    queue: getFromStorage('queue'),
+  });
 };
 
 //================== AUTH ================

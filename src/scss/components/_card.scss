@@ -129,3 +129,37 @@
     border: 1px solid $orange-color;
   }
 }
+
+.material-icons.youtube {
+  width: auto;
+  color: $red-color;
+  cursor: pointer;
+  font-size: 26px;
+  position: absolute;
+  z-index: 2;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.btn-youtube {
+  position: absolute;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.movie-tmpl > iframe {
+  width: calc(100%);
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 560px;
+    height: 315px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 720px;
+    height: 405px;
+  }
+}
+.modal__container.video {
+  background-color: rgba($color: $white-color, $alpha: 0.7);
+  padding: 10px;
+}
