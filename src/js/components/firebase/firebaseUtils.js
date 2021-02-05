@@ -4,6 +4,7 @@ import 'firebase/database';
 //import 'firebase/storage';
 import getFromStorage from '../getFromStorage';
 import { resetStorage, addToStorageFromBase } from '../addToStorage';
+import { loginGoogle } from './firebase-auth';
 
 //============= DATABASE ====================
 
@@ -102,4 +103,16 @@ const logout = function () {
     .catch(error => console.log(error));
 };
 
-export { getFromDB, setToDB };
+//=====================
+const loginEmail = function () {};
+
+const checkAuth = function () {
+  document
+    .querySelector("[data-index='signEmail']")
+    .addEventListener('click', loginEmail);
+  document
+    .querySelector("[data-index='signGoogle']")
+    .addEventListener('click', loginGoogle);
+};
+
+export { getFromDB, setToDB, checkAuth };

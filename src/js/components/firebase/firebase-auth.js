@@ -6,6 +6,7 @@ import getAuthStateFromStorage from '../getFromStorage';
 import { State } from '../../utils/state';
 import { getFromDB } from './firebaseUtils';
 import { showModalAuth } from '../modal';
+import MicroModal from 'micromodal';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -16,7 +17,8 @@ const navStyleContainer = document.querySelector(
 const navAuthLink = document.querySelector('[data-index="nav__auth-link"]');
 const navAuthText = document.querySelector('[data-index="nav__auth-text"]');
 
-function login() {
+export function loginGoogle() {
+  MicroModal.close();
   function newLoginHappend(user) {
     if (user) {
       //app(user);

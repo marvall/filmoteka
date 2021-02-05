@@ -7,6 +7,7 @@ import { getFilmInfo } from './api';
 import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
 import { getVideoUrl } from './getVideoUrl';
+import { checkAuth } from '../components/firebase/firebaseUtils';
 
 MicroModal.init();
 
@@ -99,7 +100,7 @@ export function showModalAuth(Node) {
   document
     .querySelector('#modal-1')
     .insertAdjacentHTML('beforeend', modalAuth());
-  //function to add event
+  checkAuth();
   spinner('stop');
   MicroModal.show('modal-1');
   Node.removeAttribute('data-micromodal-trigger');
