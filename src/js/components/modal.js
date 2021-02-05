@@ -2,10 +2,12 @@ import MicroModal from 'micromodal';
 import modalMarkup from '../../templates/modalMarkup.hbs';
 import modalFooter from '../../templates/modalFooter.hbs';
 import footerGalleryItem from '../../js/components/footerGalleryItems';
+import modalAuth from '../../templates/modalAuth.hbs';
 import { getFilmInfo } from './api';
 import { spinner } from './spinner';
 import { checkFilmInStack } from './checkFimlInStack';
 import { getVideoUrl } from './getVideoUrl';
+import { checkAuth } from '../components/firebase/firebaseUtils';
 
 MicroModal.init();
 
@@ -87,6 +89,19 @@ export function showVideo(Node) {
     document.querySelector('#modal-1').insertAdjacentHTML('beforeend', markup);
     resetModal();
   });
+  MicroModal.show('modal-1');
+  Node.removeAttribute('data-micromodal-trigger');
+}
+
+export function showModalAuth(Node) {
+  Node.setAttribute('data-micromodal-trigger', 'modal-1');
+  document.querySelector('#modal-1').innerHTML = '';
+  spinner('start');
+  document
+    .querySelector('#modal-1')
+    .insertAdjacentHTML('beforeend', modalAuth());
+  checkAuth();
+  spinner('stop');
   MicroModal.show('modal-1');
   Node.removeAttribute('data-micromodal-trigger');
 }

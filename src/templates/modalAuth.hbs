@@ -1,0 +1,23 @@
+<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container__auth" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <h2 class="auth-header">Sign IN to Firebase</h2>
+        <main class="modal__content modal__content__auth" id="modal-1-content">
+            <div class="modal__auth">
+                <div class="line_wrapper">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" autocomplete="off" data-index="insertEmail"
+                        placeholder="example@domain.com" class="input__auth">
+                </div>
+                <div class="line_wrapper">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" autocomplete="off" data-index="insertPassword"
+                        placeholder="use a strong password" class="input__auth">
+                </div>
+                <div class="line_wrapper">
+                    <button class="btn__to_sing_in" data-index="signEmail">SIGN IN FROM EMAIL</button>
+                    <button class="btn__to_sing_in" data-index="signGoogle">SIGN IN FROM GOOGLE</button>
+                </div>
+                <p class="auth__error_message" data-index="error_in__auth"></p>
+        </main>
+    </div>
+</div>

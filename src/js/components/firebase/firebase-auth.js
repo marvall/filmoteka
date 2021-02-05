@@ -5,6 +5,8 @@ import { saveAuthStateOnStorage } from '../addToStorage';
 import getAuthStateFromStorage from '../getFromStorage';
 import { State } from '../../utils/state';
 import { getFromDB } from './firebaseUtils';
+import { showModalAuth } from '../modal';
+import MicroModal from 'micromodal';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -15,13 +17,16 @@ const navStyleContainer = document.querySelector(
 const navAuthLink = document.querySelector('[data-index="nav__auth-link"]');
 const navAuthText = document.querySelector('[data-index="nav__auth-text"]');
 
-function login() {
+export function loginGoogle() {
+  MicroModal.close();
   function newLoginHappend(user) {
     if (user) {
-      //app(user);
       obFromIndexedDB();
     } else {
       const provider = new firebase.auth.GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account',
+      });
       firebase
         .auth()
         .signInWithPopup(provider)
@@ -38,12 +43,14 @@ function logout() {
     .signOut()
     .then(
       saveAuthStateOnStorage(false),
+      navStyleContainer.classList.remove('loggined'),
       (navAuthLink.innerHTML = ''),
       navAuthLink.insertAdjacentHTML(
         'beforeend',
         `<i class="material-icons auth__icon">person_outline</i>`,
       ),
       (navAuthText.textContent = 'Sign In'),
+      (State.Auth = undefined),
     )
     .catch(error => {
       throw error;
@@ -51,15 +58,17 @@ function logout() {
 }
 
 function app(user) {
-  navAuthLink.innerHTML = '';
-  navAuthLink.insertAdjacentHTML(
-    'beforeend',
-    `<img class="nav__auth-img"src="${user.photoURL}" alt="${user.displayName}"></img>`,
-  );
+  if (user.photoURL) {
+    navAuthLink.innerHTML = '';
+    navAuthLink.insertAdjacentHTML(
+      'beforeend',
+      `<img class="nav__auth-img"src="${user.photoURL}"></img>`,
+    );
+  }
   navAuthText.textContent = 'Sign Out';
 }
 
-function obFromIndexedDB() {
+export function obFromIndexedDB() {
   const dump = {};
   const dbRequest = window.indexedDB.open('firebaseLocalStorageDb');
   dbRequest.onsuccess = () => {
@@ -86,7 +95,7 @@ function renderLoginBtnAfterGetAuthState() {
 
 navStyleContainer.addEventListener('mouseup', e => {
   if (e.currentTarget.lastElementChild.textContent === 'Sign In') {
-    login();
+    showModalAuth(e.target);
   }
   if (e.target.nodeName === 'IMG' || e.target.textContent === 'Sign Out') {
     logout();

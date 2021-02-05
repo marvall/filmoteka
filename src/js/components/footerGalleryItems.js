@@ -8,7 +8,7 @@ export default [
     linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
     doing:
-      'Team-lead, Firebase DB realization, Page-navigation, Status queue button, render gallery, page-state',
+      'Team-lead, Firebase DB realization, Firebase Auth, Auth modal, Page-navigation, Status queue button, render gallery, page-state, control & fix bugs',
   },
   {
     name: 'Anton Tkachenko',
@@ -19,7 +19,7 @@ export default [
     linkedin: 'http://linkedin.com/in/tony-tkachenko',
     github: 'https://github.com/TkachenkoAnton',
     doing:
-      'Scrum master, Firebase Auth, Auth (HTML+CSS), CPA logic, Header myLibrary(HTML+CSS), navigation in myLibrary',
+      'Scrum master, Firebase Auth, Auth (HTML+CSS), CPA logic, Header myLibrary(HTML+CSS), navigation in myLibrary, control & fix bugs',
   },
   {
     name: 'Alex Deviatov',
@@ -30,7 +30,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/lewyk',
     github: 'https://github.com/lewyk',
     doing:
-      'карточка одного фильма, контейнер для карточек (HNML+CSS); проверка стилей + кроссбраузерность',
+      "Template card, card conteiner, control & fix bugs, control styles, important involvement in planning project's architecture ",
   },
   {
     name: 'Artem Sergieiev',
@@ -41,7 +41,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/artem-sergieiev-447084180/',
     github: 'https://github.com/ArtemS83',
     doing:
-      'functions for working with API; pop-up bar search input; arrow for returning to the top of the page',
+      'functions for working with API; pop-up bar search input; arrow for returning to the top of the page, control styles, control & fix bugs',
   },
   {
     name: 'Andrii Stanislav',
@@ -52,7 +52,7 @@ export default [
     linkedin: 'https://www.linkedin.com/mwlite/in/andrii-stanislav-7ba669201',
     github: 'https://github.com/Andrii-Stanislav',
     doing:
-      'функция addToStorage, проверка на наличие фильма в localStorage; функция getFromStorage ()',
+      "Functions to work whith localStorage, Deploy project to Netlify, important involvement in planning project's architecture, control & fix bugs",
   },
   {
     name: 'Ihor Prokopets',
@@ -62,7 +62,7 @@ export default [
     facebook: '',
     linkedin: '',
     github: 'https://github.com/Xoyk23',
-    doing: 'Header home(HTML+CSS), логика строки поиска',
+    doing: 'Header Home(HTML+CSS), search-line logic, control & fix bugs',
   },
   {
     name: 'Olena Tsemko',
@@ -73,7 +73,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/elena-tsemko/',
     github: 'https://github.com/OlenaTsemko',
     doing:
-      'spinner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS)',
+      'spinner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS), control & fix bugs',
   },
   {
     name: 'Viktoriia Ksenofontova',
@@ -84,7 +84,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/viktoriia-ksenofontova/',
     github: 'https://github.com/Viktoriia-Ksenofontova',
     doing:
-      'movie card template with SCSS; a function that returns a link to the official movie trailer and modal view form; style check',
+      'movie card template with SCSS; a function that returns a link to the official movie trailer and modal view form; control and fix styles',
   },
   {
     name: 'Anton Korotenko',
@@ -104,7 +104,8 @@ export default [
     facebook: 'https://www.facebook.com/IehorRudzinskiy/',
     linkedin: '',
     github: 'https://github.com/Yehor-Rudzinskyi',
-    doing: 'функции для работы с API',
+    doing:
+      "Functions to work whith localStorage, important involvement in planning project's architecture",
   },
   {
     name: 'Yevheniia Petruchenko',
@@ -115,7 +116,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/evhenya-krot-5837b28/',
     github: 'https://gist.github.com/yevheniia-petrychenko',
     doing:
-      'модальное окно для карточки фильма (HTML+CSS); проверка стилей+кроссбраузерность',
+      'Function to open modal, Modal template (HTML+CSS); control and fix styles, documentations spelling control',
   },
   {
     name: 'Myroslava Nikolaenko',
@@ -125,6 +126,7 @@ export default [
     facebook: 'https://www.facebook.com/mira.abdulaeva/',
     linkedin: '',
     github: 'https://github.com/Mira1702',
-    doing: 'футер страницы, модальное окно (HTML+CSS)',
+    doing:
+      'Modal from footer(HTML+CSS), fuction to open modal, control and fix stylescontrol and fix styles',
   },
 ];

@@ -1,0 +1,96 @@
+.modal__container__auth {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px $black-color;
+}
+.auth-header {
+  height: 35px;
+  color: $orange-slave-color;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.16em;
+  text-align: center;
+}
+.modal__auth {
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  color: $white-color;
+}
+.line_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  button {
+    padding: 10px;
+    border: 1px solid $white-color;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.33;
+    color: $white-color;
+    &:hover {
+      background-color: $orange-slave-color;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.input__auth {
+  display: block;
+  background: transparent;
+  border: transparent;
+  border-bottom: 1px solid $white-color;
+  font-size: 16px;
+  line-height: 1.17;
+
+  color: $white-color;
+
+  @include transition(border-bottom);
+
+  &::placeholder {
+    color: $modal-slave-color;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $orange-color;
+  }
+}
+.auth__error_message {
+  font-size: 14px;
+  color: $red-color;
+}
+@media screen and (min-width: 320px) {
+  .modal__container__auth {
+    padding: 5px;
+  }
+  .auth-header {
+    height: 25px;
+    font-size: 25px;
+  }
+  .modal__auth {
+    width: 300px;
+    padding: 5px;
+  }
+  .line_wrapper {
+    button {
+      font-size: 12px;
+    }
+  }
+}
