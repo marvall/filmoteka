@@ -1,5 +1,5 @@
 /**
- * The Function add scroll-button in bottom of gallery
+ * The Function add scroll-button in a bottom of the gallery
  */
 export default function arrowTop() {
   const arrowTopRef = document.querySelector("[data-index='arrowTop']");

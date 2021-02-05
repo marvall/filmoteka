@@ -88,10 +88,10 @@ export const checkNavigation = function (e) {
       e.target.parentNode.dataset.index === 'card' ||
       e.target.parentNode.dataset.index === 'card-small'
     ) {
-      //THIS FUNC OPEN MODLA IN GALLERY
+      //THIS FUNC OPENS MODAL IN GALLERY
       setModalAttribute(e.target.parentNode);
     } else if (e.target.dataset.index === 'team') {
-      //THIS FUNC OPEN MODAL IN FOOTER
+      //THIS FUNC OPENS MODAL IN FOOTER
       showTeam(e.target);
     } else if (e.target.dataset.index === 'btn-to-wached') {
       //ADD TO WATCHED

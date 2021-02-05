@@ -10,9 +10,9 @@ const _ = require('lodash');
 import { showMoreCards } from './pagination/paginationInit';
 
 /**
- * This function search query in search-line.
- * It have 3 state: not found, one request searched,
- * more that one request searched. If request not null start render gallery.
+ * This function search query in a search-line.
+ * It has 3 states: not found, one request found,
+ * more that one request found. If request is not a null it starts to render a gallery.
  * @param {string} searchString
  */
 const starSearch = function (searchString) {
@@ -23,7 +23,7 @@ const starSearch = function (searchString) {
     deleteListSearch();
     fetchStatus.classList.remove('hidden');
     fetchStatus.textContent =
-      'Search result not successful! Enter the correct movie name and genre!';
+      'Search result is not successful! Enter the correct movie name and genre!';
     fetchStatus.classList.add('error');
     setTimeout(() => {
       fetchStatus.classList.add('hidden');
@@ -35,12 +35,12 @@ const starSearch = function (searchString) {
     if (data.total_results === 0) {
       deleteListSearch();
       fetchStatus.textContent =
-        'Search result not successful! Enter the correct movie name and genre!';
+        'Search result is not successful! Enter the correct movie name and genre!';
       fetchStatus.classList.add('error');
     } else if (data.total_results === 1) {
       deleteListSearch();
       fetchStatus.textContent =
-        'Search result are successful! Searched one result';
+        'Search result is successful! One result is found';
       fetchStatus.classList.add('success');
       spinner('start');
       getFilmInfo(data.results[0].id)
@@ -51,7 +51,7 @@ const starSearch = function (searchString) {
         .then(() => checkFilmInStack());
       spinner('stop');
     } else {
-      fetchStatus.textContent = `Search result are successful! Searched ${data.total_results} result`;
+      fetchStatus.textContent = `Search results are successful! Found ${data.total_results} results`;
       fetchStatus.classList.add('success');
       spinner('start');
       renderListSearch(searchString, data.results);

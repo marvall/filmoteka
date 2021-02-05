@@ -8,7 +8,7 @@ const refs = {
   ),
 };
 /**
- * This function change background for page: home
+ * This function changes background for page: home
  */
 function homePageMarkupUpdate() {
   refs.header.classList.remove('header__background-myLibrary');
@@ -17,7 +17,7 @@ function homePageMarkupUpdate() {
   refs.homeBtn.classList.add('current');
 }
 /**
- * This function change background for page: myLibrary
+ * This function changes background for page: myLibrary
  */
 function myLibraryPageMarkupUpdate() {
   refs.header.classList.remove('header__background-home');
@@ -27,7 +27,7 @@ function myLibraryPageMarkupUpdate() {
   refs.mylibraryBtn.classList.add('current');
 }
 /**
- * This function render current button in myLibrary
+ * This function renders current button in myLibrary
  */
 function headerDinamicContentMarkupUpdate() {
   refs.headerDinamicContent.addEventListener('click', e => {
@@ -43,7 +43,7 @@ function headerDinamicContentMarkupUpdate() {
   });
 }
 /**
- * This function check click target in nav menu
+ * This function checks click target in nav menu
  * @param {event} e
  */
 function checkClickTarget(e) {
