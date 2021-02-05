@@ -8,7 +8,7 @@ export default [
     linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
     doing:
-      'Team-lead, Page-navigation, Status queue button, render gallery, page-state',
+      'Team-lead, Firebase DB realization, Page-navigation, Status queue button, render gallery, page-state',
   },
   {
     name: 'Anton Tkachenko',
@@ -18,7 +18,8 @@ export default [
     facebook: 'https://www.facebook.com/Mr.TonyTkachenko',
     linkedin: 'http://linkedin.com/in/tony-tkachenko',
     github: 'https://github.com/TkachenkoAnton',
-    doing: 'Scrum master, Header myLibrary(HTML+CSS), navigation in myLibrary',
+    doing:
+      'Scrum master, Firebase Auth, Auth (HTML+CSS), CPA logic, Header myLibrary(HTML+CSS), navigation in myLibrary',
   },
   {
     name: 'Alex Deviatov',
@@ -61,7 +62,7 @@ export default [
     facebook: '',
     linkedin: '',
     github: 'https://github.com/Xoyk23',
-    doing: 'управляющая навигация',
+    doing: 'Header home(HTML+CSS), логика строки поиска',
   },
   {
     name: 'Olena Tsemko',
