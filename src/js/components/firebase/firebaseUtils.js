@@ -9,7 +9,6 @@ import { resetStorage, addToStorageFromBase } from '../addToStorage';
 
 const getFromDB = function (authKey) {
   const db = firebase.database();
-  console.log(authKey);
   if (authKey === undefined) {
     console.log('not have UID-key for work with firebase');
     return;
@@ -18,7 +17,6 @@ const getFromDB = function (authKey) {
     user.on('value', elem => {
       let data = elem.val();
       resetStorage();
-      console.log(data);
       if (data) {
         addToStorageFromBase(data);
       }
@@ -27,14 +25,15 @@ const getFromDB = function (authKey) {
 };
 
 const setToDB = function (authKey) {
-  console.log(authKey);
   const db = firebase.database();
-  db.ref(authKey).set({
-    watched: getFromStorage('watched'),
-  });
-  db.ref(authKey).set({
-    queue: getFromStorage('queue'),
-  });
+  if (getFromStorage('watched') || getFromStorage('queue')) {
+    db.ref(authKey).set({
+      watched: getFromStorage('watched'),
+      queue: getFromStorage('queue'),
+    });
+  } else {
+    db.ref(authKey).set('empty');
+  }
 };
 
 //================== AUTH ================

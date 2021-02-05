@@ -71,9 +71,7 @@ function obFromIndexedDB() {
       dump[stores] = req.result;
       dump[stores].forEach(elem => {
         app(elem.value);
-        console.log(elem.value.uid);
         State.Auth = elem.value.uid;
-        console.log(State.Auth);
         getFromDB(State.Auth);
       });
     };
