@@ -3,7 +3,7 @@
   <button class="btn-youtube">
     <i data-id="{{id}}" data-index="btn-youtube" class="material-icons youtube"> smart_display</i>
   </button>
-  {{#if poster_path}} <img class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' loading="lazy"
+  {{#if poster_path}} <img data-index="card-img" class="card-img" src='https://image.tmdb.org/t/p/w300{{poster_path}}' loading="lazy"
     alt='Film {{title}} poster' />
   {{else}}
   <img data-index="card-img" class="card-img" src='https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/no-poster.png'

@@ -64,4 +64,21 @@ $dark-choko-color: rgb(41, 32, 25);
   height: 398px;
 
   cursor: pointer;
+
+  @media screen and (max-width: 767px) {
+    width: 280px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 294px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 274px;
+  }
+}
+
+.position-icon-youtube {
+  top: 360px;
+  right: -50px;
 }

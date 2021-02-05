@@ -63,12 +63,19 @@ function handlerCloseList(event) {
 function makeCardsNotActive() {
   const searchListRef = document.querySelector("[data-index='card-list']");
   const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  const icons = document.querySelectorAll('[data-index="btn-youtube"]');
+
   if (searchListRef.classList.contains('open')) {
     cardImgs.forEach((cardImg, index) => {
       if (index <= 2) {
         cardImg.classList.remove('card-img');
         cardImg.classList.add('not-active');
       }
+    });
+
+    icons.forEach((icon, index) => {
+      // icon.textContent = '';
+      icon.classList.add('position-icon-youtube');
     });
   }
 }
@@ -78,11 +85,18 @@ function makeCardsNotActive() {
 function makeCardsActive() {
   const searchListRef = document.querySelector("[data-index='card-list']");
   const cardImgs = document.querySelectorAll('[data-index="card-img"]');
+  const icons = document.querySelectorAll('[data-index="btn-youtube"]');
+
   cardImgs.forEach((cardImg, index) => {
     if (index <= 2) {
       cardImg.classList.remove('not-active');
       cardImg.classList.add('card-img');
     }
+  });
+
+  icons.forEach((icon, index) => {
+    // icon.textContent = 'smart_display';
+    icon.classList.remove('position-icon-youtube');
   });
 }
 
