@@ -8,7 +8,7 @@ export default [
     linkedin: 'www.linkedin.com/in/marvall',
     github: 'https://github.com/marvall',
     doing:
-      'Team-lead, Firebase DB realization, Firebase Auth, Auth modal, Page-navigation, Status queue button, render gallery, page-state, control & fix bugs',
+      'Team-lead, Firebase DB implementation, Firebase Auth, modal Auth, page-navigation, status queue button, render gallery, page-state, control & fix bugs',
   },
   {
     name: 'Anton Tkachenko',
@@ -19,7 +19,7 @@ export default [
     linkedin: 'http://linkedin.com/in/tony-tkachenko',
     github: 'https://github.com/TkachenkoAnton',
     doing:
-      'Scrum master, Firebase Auth, Auth (HTML+CSS), CPA logic, Header myLibrary(HTML+CSS), navigation in myLibrary, control & fix bugs',
+      'Scrum master, Firebase Auth, Auth (HTML+CSS), CPA logic, Header myLibrary(HTML+CSS), myLibrary navigation, control & fix bugs',
   },
   {
     name: 'Alex Deviatov',
@@ -30,7 +30,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/lewyk',
     github: 'https://github.com/lewyk',
     doing:
-      "Template card, card conteiner, control & fix bugs, control styles, important involvement in planning project's architecture ",
+      "Template card, card container, control & fix bugs, control styles, important involvement in project architecture planning",
   },
   {
     name: 'Artem Sergieiev',
@@ -52,7 +52,7 @@ export default [
     linkedin: 'https://www.linkedin.com/mwlite/in/andrii-stanislav-7ba669201',
     github: 'https://github.com/Andrii-Stanislav',
     doing:
-      "Functions to work whith localStorage, Deploy project to Netlify, important involvement in planning project's architecture, control & fix bugs",
+      "Functions to work whith localStorage, deploy project to Netlify, important involvement in project architecture planning, control & fix bugs",
   },
   {
     name: 'Ihor Prokopets',
@@ -73,7 +73,7 @@ export default [
     linkedin: 'https://www.linkedin.com/in/elena-tsemko/',
     github: 'https://github.com/OlenaTsemko',
     doing:
-      'spinner; pagination (CSS+JS); adaptation amount of cards on a page for different media queries (CSS+JS), control & fix bugs',
+      'spinner; pagination (CSS+JS); adaptation of cards on a page for different media queries (CSS+JS), control & fix bugs',
   },
   {
     name: 'Viktoriia Ksenofontova',
@@ -105,10 +105,10 @@ export default [
     linkedin: '',
     github: 'https://github.com/Yehor-Rudzinskyi',
     doing:
-      "Functions to work whith localStorage, important involvement in planning project's architecture",
+      "Functions to work whith localStorage, important involvement in project architecture planning",
   },
   {
-    name: 'Yevheniia Petruchenko',
+    name: 'Yevheniia Petrychenko',
     photo:
       'https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/team-photo/yevheniia.jpg',
     instagram: '',
@@ -127,6 +127,6 @@ export default [
     linkedin: '',
     github: 'https://github.com/Mira1702',
     doing:
-      'Modal from footer(HTML+CSS), fuction to open modal, control and fix stylescontrol and fix styles',
+      'Footer modal(HTML+CSS), fuction to open modal, control and fix styles',
   },
 ];
