@@ -50,8 +50,6 @@
 }
 
 .input__auth {
-  width: 280px;
-
   background: transparent;
   border: transparent;
   border-bottom: 1px solid $white-color;
@@ -87,9 +85,5 @@
     button {
       font-size: 10px;
     }
-  }
-
-  .input__auth {
-    width: 260px;
   }
 }
