@@ -9,15 +9,16 @@ import { resetStorage, addToStorageFromBase } from '../addToStorage';
 
 const getFromDB = function (authKey) {
   const db = firebase.database();
-  if (authKey === undefined) {
+  if (!authKey) {
     console.log('not have UID-key for work with firebase');
     return;
   } else {
     const user = db.ref(authKey);
+    console.log(user.key);
     user.on('value', elem => {
       let data = elem.val();
-      resetStorage();
       if (data) {
+        resetStorage();
         addToStorageFromBase(data);
       }
     });
@@ -26,10 +27,22 @@ const getFromDB = function (authKey) {
 
 const setToDB = function (authKey) {
   const db = firebase.database();
+  //if (
+  //  getFromStorage('watched').length !== 0 ||
+  //  getFromStorage('queue').length !== 0
+  //) {
+  //  console.log(getFromStorage('watched'));
+  //  console.log(getFromStorage('queue'));
   db.ref(authKey).set({
     watched: getFromStorage('watched'),
     queue: getFromStorage('queue'),
   });
+  //} else {
+  //  db.ref(authKey).set({
+  //    watched: 'not watched',
+  //    queue: 'not watched',
+  //  });
+  //}
 };
 
 //================== AUTH ================

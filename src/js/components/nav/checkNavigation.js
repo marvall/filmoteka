@@ -76,8 +76,7 @@ export const checkNavigation = function (e) {
   if (e.type === 'DOMContentLoaded') {
     //Started LAST PAGE
     changeStartedPage();
-  }
-  else if (e.target !== e.currentTarget) {
+  } else if (e.target !== e.currentTarget) {
     if (checkClickTarget(e)) {
       //Started HOME PAGE
       startHome();
@@ -111,8 +110,8 @@ export const checkNavigation = function (e) {
       ).then(data => {
         addToStorage(data, 'queue');
         checkFilmInStack();
+        setToDB(State.Auth);
       });
-      setToDB(State.Auth);
     } else if (e.target.dataset.index === 'watched') {
       //RENDER STACK WATCHED
       initPaginationLS(getFromStorage('watched'));
@@ -120,7 +119,8 @@ export const checkNavigation = function (e) {
       //RENDER STACK QUEUE
       initPaginationLS(getFromStorage('queue'));
     } else if (e.target.dataset.index === 'btn-youtube') {
-      // OPEN MODAL with official trailer 
-    showVideo(e.target);}
-  } 
+      // OPEN MODAL with official trailer
+      showVideo(e.target);
+    }
+  }
 };
