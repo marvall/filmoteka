@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --env.mode development --config ./webpack/config.js",
     "build": "webpack --env.mode production --config ./webpack/config.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "netlify deploy -p"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/marvall/filmoteka/issues"
   },
-  "homepage": "https://marvall.github.io/filmoteka",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
