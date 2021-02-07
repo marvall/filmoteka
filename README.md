@@ -1,28 +1,28 @@
 ## Проект "Filmoteka". Команда_1 Группа_24 GOIT
 
-<img align="left" alt="JavaScript" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+<img align="left" alt="JavaScript" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/js.png" />
 
-<img align="left" alt="Node.js" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />
+<img align="left" alt="Node.js" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/node.png" />
 
-<img align="left" alt="HTML5" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+<img align="left" alt="HTML5" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/html.png" />
 
-<img align="left" alt="CSS3" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+<img align="left" alt="CSS3" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/css.png" />
 
-<img align="left" alt="Sass" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png" />
+<img align="left" alt="Sass" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/sass.png" />
 
-<img align="left" alt="MySQL" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/webpack/webpack.png" />
+<img align="left" alt="MySQL" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/webpack.png" />
 
-<img align="left" alt="MySQL" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/babel/babel.png" />
+<img align="left" alt="MySQL" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/babel.png" />
 
-<img align="left" alt="Git" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" />
+<img align="left" alt="Git" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/git.png" />
 
-<img align="left" alt="GitHub" width="64px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
+<img align="left" alt="GitHub" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/github.png" />
 
-<img align="left" alt="Terminal" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" />
+<img align="left" alt="Terminal" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/consol.png" />
 
-<img alt="Visual Studio Code" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
+<img alt="Visual Studio Code" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/vsc.png" />
 
-<img alt="Firebase" width="64px" src="https://www.cleanpng.com/png-firebase-cloud-messaging-google-developers-softwar-1568454/preview.html" />
+<img alt="Firebase" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/firebase.png" />
 
  
 ## Авторизация FireBase через логин-провайдера Google (Антон ткаченко)
