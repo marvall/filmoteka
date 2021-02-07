@@ -16,7 +16,9 @@
 <img alt="jQuery" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/jquery.png" />
 
 ## Проект выполнет согласно тех.задания.
-  Для выполнения работы командой был состевлен <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/BackLogFilmoteka.pdf">Backlog.</a>
+
+  Для выполнения работы командой был составлен <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/BackLogFilmoteka.pdf">Backlog.</a>
+  
   Для контроля качества, все баги вносились в <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/Check-List.pdf">testCheckList</a>  
 
 
@@ -25,6 +27,10 @@
 Реализовал авторизацию через социального логин-провайдера Google с помощью платформы разработки мобильных и веб-приложений Firebase, а именно службу Firebase Auth.
 	Firebase Auth – это служба, которая может аутентифицировать пользователей, используя только код на стороне клиента. Кроме этого, она включает в себя систему управления пользователями, с ее помощью разработчики могут включить аутентификацию пользователя при помощи входа с электронной почты и пароля, которые хранятся в Firebase.
 	Используя HTML, CSS и JS реализована разметка, стилизация и логика доступа к модальному окну для ввода данных о пользователе и отображение смены статуса “Sign in” & “Sign out”.
+  
+ ## Работа с базей Firebase 
+ 
+ Для работы с базой Rialtime Database использовалась библиоткка firebase. в качестве ключа в BD используется uid пользователя. При авторизации пользователся идет запрос в базу по UID и если такая таблица существует, то возвращет очереди из базы. Сохранение очереди происходит при клике по соотвествующтм кномкам в карточках фильмов, сначала данные сохраняются в localStorage и срузе же дублируется в RealTime Database. 
   
  ## Динамическое изменение стилей и разметки при навигации страницы. (Антон ткаченко)
  Выполнение переключения между страницами “Home” & “My library” в Header (SPA), кнопок переключения “Watched” & “Queue” в “My library” выполнено с помощью HTML, CSS, JS, а также использовался шаблонизатор “Handlebars Webpack Plugin”.
