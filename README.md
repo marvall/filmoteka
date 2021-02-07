@@ -15,6 +15,9 @@
 <img align="left" alt="Handlebars" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/handlebars.png" />
 <img align="left" alt="jQuery" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/jquery.png" />
 
+
+
+
 ## Авторизация FireBase через логин-провайдера Google (Антон ткаченко)
 
 Реализовал авторизацию через социального логин-провайдера Google с помощью платформы разработки мобильных и веб-приложений Firebase, а именно службу Firebase Auth.
