@@ -1,4 +1,4 @@
-## Проект "Filmoteka". Комманда_1 Группа_24 GOIT
+## Проект "Filmoteka". Команда_1 Группа_24 GOIT
 
 <img align="left" alt="JavaScript" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
 
@@ -21,6 +21,9 @@
 <img align="left" alt="Terminal" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" />
 
 <img alt="Visual Studio Code" width="64px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
+
+<img alt="Firebase" width="64px" src="https://www.cleanpng.com/png-firebase-cloud-messaging-google-developers-softwar-1568454/preview.html" />
+
  
 ## Авторизация FireBase через логин-провайдера Google (Антон ткаченко)
 
