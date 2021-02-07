@@ -15,7 +15,7 @@
 <img align="left" alt="Handlebars" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/handlebars.png" />
 <img alt="jQuery" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/jquery.png" />
 
-## Проект выполнет согласно тех.задания.
+## Проект выполнен согласно тех.задания.
 
   Для выполнения работы командой был составлен <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/BackLogFilmoteka.pdf">Backlog.</a>
   
