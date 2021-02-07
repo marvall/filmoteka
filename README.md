@@ -15,7 +15,9 @@
 <img align="left" alt="Handlebars" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/handlebars.png" />
 <img alt="jQuery" width="64px" src="https://raw.githubusercontent.com/marvall/filmoteka/main/src/images/stack/jquery.png" />
 
-
+## Проект выполнет согласно тех.задания.
+  Для выполнения работы командой был состевлен <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/BackLogFilmoteka.pdf">Backlog.</a>
+  Для контроля качества, все баги вносились в <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/Check-List.pdf">testCheckList</a>  
 
 
 ## Авторизация FireBase через логин-провайдера Google (Антон ткаченко)
