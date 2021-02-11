@@ -21,6 +21,10 @@
   
   Для контроля качества, все баги вносились в <a href="https://raw.githubusercontent.com/marvall/filmoteka/main/src/documentation/Check-List.pdf">testCheckList</a>  
 
+## 
+Презентация проекта: https://youtu.be/Mi6p9FXvPRI
+
+Проект на Netlify: https://filmoteka-team1.netlify.app/
 
 ## Авторизация FireBase через email и пароль (Ярослав Безуглый)
 
